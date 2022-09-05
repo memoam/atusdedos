@@ -8,6 +8,17 @@
     "start": "next start",
     "lint": "next lint"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/memoam/atusdedos.git"
+  },
+  "keywords": [],
+  "author": "development team atusdedos",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/memoam/atusdedos/issues"
+  },
+  "homepage": "https://github.com/memoam/atusdedos#readme",
   "dependencies": {
     "next": "^12.2.5",
     "react": "^18.2.0",
