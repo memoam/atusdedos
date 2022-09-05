@@ -1,0 +1,193 @@
+@import "vars";
+.menu {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  flex-direction: column;
+  position: fixed;
+  min-width: 140px;
+  width: fit-content;
+  height: calc(100% - 7em);
+  top: 5em;
+  left: 10%;
+  z-index: 2;
+  padding: 5em 0;
+  border-right: 1px solid $borderGray;
+
+  &__links {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    a {
+      width: fit-content;
+      margin-bottom: 1em;
+    }
+    &_active {
+      border-bottom: 3px solid $primary;
+    }
+  }
+  &__logout {
+    width: 100%;
+    display: flex;
+    @media (max-width: $tablets) {
+      justify-content: flex-end;
+      margin-top: 0.3em;
+    }
+    button {
+      padding: 0;
+      background: 0;
+      color: inherit;
+      text-decoration: none;
+      font-weight: 400;
+      width: fit-content;
+      &:hover {
+        color: red;
+      }
+      @media (prefers-color-scheme: dark) {
+        color: $textWhite;
+      }
+    }
+  }
+  @media (max-width: $desktoplong) {
+    left: 5%;
+    min-width: 120px;
+  }
+  @media (max-width: 900px) {
+    left: 2%;
+  }
+  @media (max-width: $tablets) {
+    display: none;
+  }
+  @media (prefers-color-scheme: dark) {
+    background-color: $backgroundDark;
+  }
+}
+.menuMovil {
+  width: 20%;
+  transform: translate(400%, 0) !important;
+  position: absolute;
+  height: fit-content;
+  height: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+  white-space: break-spaces;
+  box-shadow: -10px 0px 94px rgba(0, 0, 0, 0.55);
+  background: $textWhite;
+  padding: 2em 1em;
+
+  @media (max-width: $tablets) {
+    width: 50%;
+    transform: translate(100%, 0) !important;
+  }
+  @media (max-width: $phone) {
+    width: 90%;
+    transform: translate(11%, 0) !important;
+  }
+  @media (prefers-color-scheme: dark) {
+    background: $backgroundItemDark;
+  }
+  &__burger {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
+    padding: 0;
+    position: fixed;
+    top: 0.5em;
+    right: 1em;
+    z-index: 3;
+    border-radius: 50%;
+    height: 30px;
+    width: 30px;
+    @media (max-width: $tablets) {
+      display: flex;
+    }
+  }
+  &__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    height: 100%;
+    // display: flex;
+    // flex-direction: column;
+    position: relative;
+  }
+  &__logo {
+    display: flex;
+    font-weight: bold;
+    font-size: 70px;
+    position: relative;
+    @media (prefers-color-scheme: dark) {
+      color: $textWhite;
+    }
+    span {
+      color: $primary;
+      &:last-child {
+        color: $textBlack;
+        position: absolute;
+        font-size: 9px;
+        bottom: 0.5em;
+        left: 9.5em;
+        font-weight: normal;
+        @media (prefers-color-scheme: dark) {
+          color: $textWhite;
+        }
+      }
+    }
+  }
+  &__menu {
+    display: flex;
+    flex-direction: column;
+    padding: 1em;
+    margin: 1em 0;
+    border-top: 1px solid $borderGray;
+    border-bottom: 1px solid $borderGray;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    a {
+      text-decoration: underline;
+      @media (prefers-color-scheme: dark) {
+        color: $textWhite;
+      }
+    }
+  }
+  &__footer {
+    display: flex;
+    flex-direction: column;
+    a {
+      text-decoration: underline;
+      margin-top: 0.5em;
+      @media (prefers-color-scheme: dark) {
+        color: $textWhite;
+      }
+    }
+  }
+  &__close {
+    position: fixed;
+    left: calc(80% - 2.5vh);
+    top: calc(1% - 1px);
+    display: flex;
+    z-index: 4;
+    padding: 0.75em;
+    border-radius: 50%;
+    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
+    color: $textBlack;
+    background: $textWhite;
+    z-index: 5;
+    @media (max-width: $desktoplong) {
+      left: calc(75% - 3.5vh);
+    }
+    @media (max-width: $laptops) {
+      left: calc(70% - 2.5vh);
+    }
+    @media (max-width: $tablets) {
+      left: calc(49% - 2.5vh);
+    }
+    @media (max-width: $phone) {
+      left: calc(9% - 2.5vh);
+    }
+  }
+}

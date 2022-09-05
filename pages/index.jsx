@@ -1,0 +1,116 @@
+/* eslint-disable linebreak-style */
+/* eslint-disable jsx-a11y/label-has-associated-control */
+import React, { useState } from 'react';
+import Image from 'next/image';
+import Header from '../components/header';
+import Cards from '../components/cards';
+import Notification from '../components/notifications';
+import styles from '../styles/Home.module.scss';
+import Footer from '../components/footer';
+
+export default function Home() {
+  const cards = [
+    {
+      name: 'saxofon alto',
+      id: '124534',
+      icon: '/images/saxo.png',
+    },
+    {
+      name: 'violin',
+      id: '124534',
+      icon: '/images/saxo.png',
+    },
+    {
+      name: 'guitarra',
+      id: '124534',
+      icon: '/images/saxo.png',
+    },
+    {
+      name: 'piano',
+      id: '124534',
+      icon: '/images/saxo.png',
+    },
+    {
+      name: 'arpa',
+      id: '124534',
+      icon: '/images/saxo.png',
+    },
+    {
+      name: 'bajo',
+      id: '124534',
+      icon: '/images/saxo.png',
+    },
+  ];
+  const changeInput = (event, field) => {
+    const prevState = dataOrder;
+    prevState[field] = event.target.value;
+    setDataOrder(prevState);
+  };
+  return (
+    <div className={styles.container}>
+      <Header home />
+      <Notification />
+      <div className={styles.topHome}>
+        <div className={styles.topHome__info}>
+          <Image src="/images/logoAtril.png" alt="Logo" width={75} height={135} />
+          <div className={styles.topHome__text}>
+            <p className={styles.topHome__text_title}>¿que instrumento suena en ti?</p>
+            <p className={styles.topHome__text_txt}>dale sonido, dale ritmo... dale vida </p>
+          </div>
+        </div>
+        <Image src="/images/saxoPeople.jpg" alt="Logo" width={248} height={482} />
+      </div>
+      <div className={styles.main}>
+        <p className={styles.main__title}>APRENDE ALGO NUEVO CADA DÍA</p>
+        <div className={styles.section}>
+          <p className={styles.section__title}>Para aprender</p>
+          <div className={styles.section__cards}>
+            <Cards data={cards} />
+          </div>
+        </div>
+        <div className={styles.section}>
+          <p className={styles.section__title}>Inspiracion</p>
+          <div className={styles.section__info}>
+            <div className={styles.section__info_data}>
+              <Image src="/images/audioFile.svg" alt="saxo" width={85} height={77.2} />
+              <p>Partituras</p>
+            </div>
+          </div>
+        </div>
+        <div className={styles.section}>
+          <p className={styles.section__title}>Habilidades</p>
+          <div className={styles.section__info}>
+            <div className={styles.section__info_data}>
+              <Image src="/images/hear.svg" alt="saxo" width={85} height={77.2} />
+              <p>Oido perfecto</p>
+            </div>
+          </div>
+        </div>
+        <p className={styles.main__title}>Accede a TODOS los cursos las veces que quieras</p>
+        <div className={styles.prices}>
+          <div className={styles.prices__price}>
+            <p className={styles.prices__price_txt}>1 Mes</p>
+            <p className={styles.prices__price_price}>$80.00 MXN</p>
+            <p className={styles.prices__price_txt}>Acceso a todos los cursos</p>
+            <button type="button">Suscribete</button>
+          </div>
+          <div className={styles.prices__price}>
+            <p className={styles.prices__price_txt}>3 Meses</p>
+            <p className={styles.prices__price_price}>$225.00 MXN</p>
+            <p className={styles.prices__price_txt}>Acceso a todos los cursos</p>
+            <p className={styles.prices__price_txt}>$75.00 MXN /mes</p>
+            <button type="button">Suscribete</button>
+          </div>
+          <div className={styles.prices__price}>
+            <p className={styles.prices__price_txt}>12 Meses</p>
+            <p className={styles.prices__price_price}>$870.00 MXN</p>
+            <p className={styles.prices__price_txt}>Acceso a todos los cursos</p>
+            <p className={styles.prices__price_txt}>$72.50 MXN /mes</p>
+            <button type="button">Suscribete</button>
+          </div>
+        </div>
+      </div>
+      <Footer />
+    </div>
+  );
+}
