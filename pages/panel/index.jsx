@@ -5,6 +5,7 @@ import React, {
 import Header from '../../components/header';
 import Menu from '../../components/menu';
 import Notification from '../../components/notifications';
+import Metronome from '../../components/metronome';
 import PreLoadContext from '../../context/preLoadContext';
 import styles from '../../styles/Dashboard.module.scss';
 
@@ -22,7 +23,7 @@ export default function Dashboard() {
       <Header />
       <Notification />
       <Menu courses />
-      {orders === undefined
+      {orders !== undefined
         ? (
           <div className={styles.skeleton}>
             <div className={styles.component50Skeleton} />
@@ -35,7 +36,7 @@ export default function Dashboard() {
           </div>
         ) : (
           <div className={styles.main}>
-            main
+            <Metronome />
           </div>
         )}
     </div>
