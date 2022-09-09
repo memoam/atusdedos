@@ -1,11 +1,14 @@
 @import "vars";
+
 .container {
   min-height: 100vh;
   background-color: $background;
+
   @media (prefers-color-scheme: dark) {
     background-color: $backgroundDark;
   }
 }
+
 .main {
   display: flex;
   justify-content: space-between;
@@ -15,12 +18,14 @@
   margin-left: 20%;
   padding-top: 5em;
   height: 100%;
+
   @media (max-width: $tablets) {
     max-width: 95%;
     margin: 0 auto;
     padding-top: 9em;
   }
 }
+
 .dashboard {
   width: 100%;
   margin-bottom: 5em;
@@ -38,7 +43,44 @@
     }
   }
 }
-.card{
+.metronome{
+  width: 100%;
+  &__controls{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 100%;
+
+    button{
+      padding: 0;
+      background: $textGray;
+      border: 2px solid $textGray;
+    }
+    &_active{
+      border: 2px solid $primary !important;
+    }
+  }
+}
+.controls {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  width: 100%;
+  margin-top: 1.5em;
+
+  &__cancel {
+    background: none;
+    color: $textBlack;
+    padding: 0;
+    margin-right: 1em;
+
+    @media (prefers-color-scheme: dark) {
+      color: $textWhite;
+    }
+  }
+}
+
+.card {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -51,12 +93,14 @@
   border-radius: 30%;
   margin-bottom: 0.5em;
   margin-left: 0.5em;
-  &:hover{
+
+  &:hover {
     box-shadow: 0px 2.6769px 4.3538px rgba(0, 0, 0, 0.25);
     border: 1px solid $primary;
     color: $primary;
   }
 }
+
 .modal {
   padding: 2em 1em;
   position: absolute;
@@ -71,17 +115,21 @@
   max-height: 90%;
   min-width: 450px;
   overflow-y: auto;
+
   @media (max-width: $phone) {
     min-width: 90%;
   }
+
   @media (prefers-color-scheme: dark) {
     background: $backgroundItemDark;
   }
+
   &__txt {
     &_sub {
       font-size: 20px;
       text-align: center;
     }
+
     &_body {
       font-size: 24px;
       font-weight: 500;
@@ -90,6 +138,7 @@
       margin-top: 1em;
       text-decoration: underline;
     }
+
     &_characterCounter {
       font-size: 12px;
       color: $textGray;
@@ -97,34 +146,42 @@
       margin-top: 0.1em;
     }
   }
+
   &__form {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+
     &_zone25 {
       width: calc(25% - 1em);
+
       @media (max-width: $tablets) {
         width: calc(50% - 0.5em);
       }
     }
+
     &_zone50 {
       width: calc(50% - 0.5em);
+
       @media (max-width: $tablets) {
         width: 100%;
       }
     }
   }
+
   &__controls {
     display: flex;
     justify-content: flex-end;
     align-items: center;
     width: 100%;
     margin-top: 1.5em;
+
     &_cancel {
       background: none;
       color: $textBlack;
       padding: 0;
       margin-right: 1em;
+
       @media (prefers-color-scheme: dark) {
         color: $textWhite;
       }
@@ -138,6 +195,7 @@
     background-position: 315px 0, 0 0, 0 190px, 50px 195px;
   }
 }
+
 .componentCircleSkeleton:empty,
 .component100Skeleton:empty,
 .component50Skeleton:empty {
@@ -150,22 +208,27 @@
   background-position: -315px 0, 0 0, 0px 190px, 50px 195px;
   animation: loading 1s infinite;
 }
+
 .componentCircleSkeleton:empty {
   width: 70px;
   border-radius: 50%;
 }
+
 .component50Skeleton:empty {
   width: calc(50% - 1em);
 }
+
 .component100Skeleton:empty {
   width: 100%;
 }
+
 .componentCircleSkeleton:empty,
 .component100Skeleton:empty,
 .component50Skeleton:empty {
   height: 70px;
   margin-bottom: 1.5em;
 }
+
 .skeleton {
   display: flex;
   justify-content: space-between;

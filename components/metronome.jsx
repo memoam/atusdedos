@@ -1,5 +1,7 @@
 /* eslint-disable linebreak-style */
 import React, { useState } from 'react';
+import Image from 'next/image';
+import styles from '../styles/Dashboard.module.scss';
 
 export default function Metronome() {
   const [bpm, setBpm] = useState(100);
@@ -17,14 +19,10 @@ export default function Metronome() {
     } else {
       click1.play();
     }
-    if (count === beatsPerMeasure - 1) {
-      console.log(count, 'puto');
+    if (count === beatsPerMeasure - 1)
       count = 0
-    }
-    else {
+    else
       count += 1;
-      console.log(count, 'puto1');
-    }
   };
   const playing = () => {
     if (!isPlaying) {
@@ -37,17 +35,32 @@ export default function Metronome() {
     count = 0;
   }
   return (
-    <div>
-      <p>{bpm} BPM</p>
-      <input
-        type="range"
-        min="60"
-        max="240"
-        value={bpm}
-        onChange={(e) => setBpm(e.target.value)}
-      />
-      <button type="button" onClick={() => playing()}>Start</button>
-      <button type="button" onClick={() => stop()}>Stop</button>
+    <div className={styles.metronome}>
+      <div className={styles.controls}>
+        <button className={styles.controls__cancel} type="button" onClick={() => stop()}>detener</button>
+        <button type="button" onClick={() => playing()}>Iniciar</button>
+      </div>
+      <div >
+        <p>{`${bpm} BPM`}</p>
+        <input
+          type="range"
+          min="60"
+          max="240"
+          value={bpm}
+          onChange={(e) => setBpm(e.target.value)}
+        />
+      </div>
+      <div className={styles.metronome__controls}>
+        <button type="button" className={beatsPerMeasure === 4 ? styles.metronome__controls_active : null} onClick={() => setBeatsPerMeasure(4)}>
+          <Image src="/images/4Times.png" alt="4Times" width={224} height={224} />
+        </button>
+        <button type="button" className={beatsPerMeasure === 3 ? styles.metronome__controls_active : null} onClick={() => setBeatsPerMeasure(3)}>
+          <Image src="/images/3Times.png" alt="3Times" width={200} height={224} />
+        </button>
+        <button type="button" className={beatsPerMeasure === 2 ? styles.metronome__controls_active : null} onClick={() => setBeatsPerMeasure(2)}>
+          <Image src="/images/2Times.png" alt="2Times" width={124} height={224} />
+        </button>
+      </div>
     </div>
   );
 }

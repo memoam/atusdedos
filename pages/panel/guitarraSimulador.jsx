@@ -15,7 +15,7 @@ import styles from '../../styles/Dashboard.module.scss';
 
 export default function GuitarSimulator() {
   const { preLoad, setPreLoad } = useContext(PreLoadContext);
-  const [strings, setStrings] = useState([0, 0, 0, 0, 0, 0]);
+  const [strings, setStrings] = useState([0, 0, 3, 0, 0, 0]);
   const { play } = useSound({ fretting: strings, tuning: standard });
 
   return (
