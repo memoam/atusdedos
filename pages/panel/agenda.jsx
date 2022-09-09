@@ -25,19 +25,21 @@ export default function Calendar() {
       <Notification />
       <Menu calendar />
       <div className={styles.main}>
-      <FullCalendar
-          plugins={[interactionPlugin, dayGridPlugin, timeGridPlugin]}
-          initialView="dayGridMonth"
-          locale="es"
-          dayMaxEventRows
-          editable
-          eventClick={
-            (info) => {
-              console.log(info.event.title);
+        <div className={styles.calendar}>
+          <FullCalendar
+            plugins={[interactionPlugin, dayGridPlugin, timeGridPlugin]}
+            initialView="dayGridMonth"
+            locale="es"
+            dayMaxEventRows
+            editable
+            eventClick={
+              (info) => {
+                console.log(info.event.title);
+              }
             }
-          }
-          events={[{title: "hola", start: new Date()}]}
-        />
+            events={[{ title: "hola", start: new Date() }]}
+          />
+        </div>
       </div>
     </div>
   );
