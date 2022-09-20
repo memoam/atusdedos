@@ -24,43 +24,56 @@
     margin: 0 auto;
     padding-top: 9em;
   }
+
+  &__title {
+    font-size: 2em;
+    font-weight: bold;
+    margin-bottom: 1em;
+  }
 }
 
 .dashboard {
   width: 100%;
   margin-bottom: 5em;
+
   &__header {
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: space-between;
+
     p {
       font-size: 24px;
     }
+
     span {
       color: $primary;
       margin-left: 0.3em;
     }
   }
 }
-.metronome{
+
+.metronome {
   width: 100%;
-  &__controls{
+
+  &__controls {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
     width: 100%;
 
-    button{
+    button {
       padding: 0;
       background: $textGray;
       border: 2px solid $textGray;
     }
-    &_active{
-      border: 2px solid $primary !important;
+
+    &_active {
+      border: 2px solid $primary  !important;
     }
   }
 }
+
 .controls {
   display: flex;
   justify-content: flex-end;
@@ -101,6 +114,113 @@
   }
 }
 
+.courseGuitar {
+  &__exercise {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+
+    &_play {
+      display: flex;
+      flex-direction: column;
+      background: none;
+      padding: 0;
+      color: $textGray;
+      border: 2px solid $textGray;
+
+      &:hover {
+        border: 2px solid $green;
+        color: $green;
+      }
+    }
+  }
+
+  &__actFalse {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+
+    &_example {
+      font-weight: bold;
+      margin-top: 1em;
+    }
+
+    &_atc {
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      border: 1px solid $textGray;
+      background: $backgroundItem2;
+      padding: 1em;
+      border-radius: 10px;
+      margin: 1em 0;
+      position: relative;
+
+      p {
+        margin-bottom: 1em;
+      }
+    }
+
+    &_note {
+      font-size: 2em;
+      font-weight: bold;
+      position: absolute;
+      right: 1em;
+      top: 2em;
+      color: $textWhite;
+      padding: 0.3em;
+      border-radius: 50%;
+      background: $primary;
+    }
+  }
+
+  &__controls {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 3em;
+
+    button {
+      background: none;
+      padding: 0;
+      width: 33.33%;
+      font-size: 20px;
+      color: $textBlack;
+      border-bottom: 1px solid $borderGray;
+      border-radius: 0;
+    }
+
+    &_active {
+      border-bottom: 3px solid $primary  !important;
+    }
+  }
+}
+
+.course {
+  &__controls {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 3em;
+
+    button {
+      background: none;
+      padding: 0;
+      width: 50%;
+      font-size: 20px;
+      color: $textBlack;
+      border-bottom: 1px solid $borderGray;
+      border-radius: 0;
+    }
+
+    &_active {
+      border-bottom: 3px solid $primary  !important;
+    }
+  }
+}
+
 .modal {
   padding: 2em 1em;
   position: absolute;
@@ -122,6 +242,17 @@
 
   @media (prefers-color-scheme: dark) {
     background: $backgroundItemDark;
+  }
+
+  &__close {
+    position: absolute;
+    right: 0.5em;
+    top: 0.5em;
+    font-size: 2em;
+    text-decoration: none;
+    background: none;
+    padding: 0;
+    color: $textBlack;
   }
 
   &__txt {
@@ -185,6 +316,84 @@
       @media (prefers-color-scheme: dark) {
         color: $textWhite;
       }
+    }
+  }
+}
+
+.modal2 {
+  padding: 0;
+  position: absolute;
+  height: fit-content;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) !important;
+  width: fit-content;
+  max-width: 90%;
+  max-height: 90%;
+  min-width: 450px;
+  overflow-y: auto;
+
+  @media (max-width: $phone) {
+    min-width: 90%;
+  }
+
+  &__atc {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    flex-direction: column;
+    position: relative;
+  }
+
+  &__time {
+    font-size: 1em;
+    font-weight: 500;
+    border-radius: 1em;
+    background: $backgroundItem2;
+    width: fit-content;
+    padding: 0.3em 0.5em;
+    margin: 0.5em 0;
+    // color: $textWhite;
+  }
+
+  &__note {
+    font-size: 1.5em;
+    font-weight: bold;
+    position: absolute;
+    right: 0.5em;
+    top: 2.5em;
+    color: $textWhite;
+    padding: 0.3em;
+    border-radius: 50%;
+    background: $primary;
+  }
+}
+
+
+.index {
+  display: flex;
+  flex-direction: column;
+  // align-items: center;
+  justify-content: center;
+  width: 100%;
+
+  &__courses {
+    display: flex;
+    flex-wrap: wrap;
+
+    p {
+      width: 100%;
+      font-weight: bold;
+    }
+
+    &_title {
+      font-size: 2em;
+      margin-bottom: 1em;
+    }
+
+    &_subtitle {
+      font-size: 1.5em;
+      margin: 1.5em 0;
     }
   }
 }
