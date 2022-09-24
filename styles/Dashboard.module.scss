@@ -115,11 +115,55 @@
 }
 
 .courseGuitar {
+  &__difficulty {
+    margin-bottom: 1em;
+
+    button {
+      margin-right: 1em;
+      margin-bottom: 1em;
+      background: none;
+      color: $primary;
+      border: 2px solid $primary;
+      border-radius: 2em;
+      padding: 0.5em 2em;
+    }
+
+    p {
+      font-weight: 600;
+      margin-bottom: 0.5em;
+    }
+
+    &_active {
+      background: $primary  !important;
+      color: $textWhite  !important;
+    }
+  }
+
   &__exercise {
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 100%;
+
+    &_exercise {
+      margin-bottom: 1em;
+      font-weight: 600;
+      font-size: 1.5em;
+
+      span {
+        // color: $textWhite;
+        // background: $primary;
+        padding: 0 2em;
+        margin-left: 1em;
+        border-bottom: 2px solid $primary;
+        // border-radius: 2em;
+      }
+    }
+
+    &_answer {
+      margin-top: 1em;
+      width: 50%;
+    }
 
     &_play {
       display: flex;
@@ -222,6 +266,10 @@
 }
 
 .modal {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
   padding: 2em 1em;
   position: absolute;
   border-radius: 10px;
@@ -233,7 +281,7 @@
   width: fit-content;
   max-width: 90%;
   max-height: 90%;
-  min-width: 450px;
+  // min-width: 450px;
   overflow-y: auto;
 
   @media (max-width: $phone) {
