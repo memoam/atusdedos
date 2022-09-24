@@ -28,15 +28,15 @@ export default function Calendar() {
   const [event, setEvent] = useState();
   const [seeEvent, setSeeEvent] = useState(false);
   const [events, setEvents] = useState([]);
-  
+
   const getEvents = () => {
     setEvents([{ title: "hola", start: new Date() }])
   };
-/*   useEffect(() => {
-    getEvents();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []); */
-  
+  /*   useEffect(() => {
+      getEvents();
+      // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, []); */
+
   // update events----------------------------------------------------------------------------------
   const updateEvent = (e) => {
     e.preventDefault();
@@ -69,7 +69,7 @@ export default function Calendar() {
       <Notification />
       <Header />
       <button type="button" className={styles.add} onClick={() => setModal(true)}>
-        +
+        <Image src="/images/add.svg" alt="add" width={24} height={24} />
       </button>
       <Menu calendar />
       <div className={styles.main}>
