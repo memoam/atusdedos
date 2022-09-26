@@ -1,13 +1,13 @@
 /* eslint-disable linebreak-style */
-import React, { useRef, useState, useEffect } from 'react';
+import React, { useRef, useState } from 'react';
 import Image from 'next/image';
 import ReactModal from 'react-modal';
-import Guitar, { getRenderFingerSpn } from 'react-guitar'
+import Guitar, { getRenderFingerRelative } from 'react-guitar'
 import { standard } from "react-guitar-tunings";
 import useSound from "react-guitar-sound";
 import styles from '../styles/Dashboard.module.scss';
 // helpers
-import GuitarExercises from '../helpers/guitarExercises';
+import GuitarExercises, { chords } from '../helpers/guitarExercises';
 
 export default function GuitarAct() {
   // status
@@ -63,76 +63,96 @@ export default function GuitarAct() {
   const [answersModal, setAnswersModal] = useState(false);
   const [isRight, setIsRight] = useState(true);
   const [exercise, setExercise] = useState({});
-  const [typeGame, setTypeGame] = useState('notes');
+  const [typeGame, setTypeGame] = useState('major');
+  const [guitarCapo, setGuitarCapo] = useState(0);
 
-  useEffect(() => {
-    // answers
-
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
   const start = () => {
-    const max = typeGame === 'notes' ? 3
-      : typeGame === 'chords' ? 3
-        : 6;
+    const max = typeGame === 'major' ? 1
+      : typeGame === 'minor' ? 1
+        : typeGame === 'fifth' ? 1
+          : typeGame === 'seventh' ? 1
+            : typeGame === 'majSeven' ? 1
+              : typeGame === 'mSeven' ? 1
+                : typeGame === 'susFour' ? 1
+                  : typeGame === 'addNine' ? 1
+                    : typeGame === 'susTwo' ? 1
+                      : typeGame === 'sevenSusFour' ? 1
+                        : typeGame === 'sevenNnine' ? 1
+                          : typeGame === 'nine' ? 1
+                            : 6;
     const randomId = Math.floor(Math.random() * max);
-    console.log(typeGame, randomId);
     setExercise(GuitarExercises(typeGame, randomId));
     setModal(true);
     onClickReset();
   }
+  // answers
   const isItOk = () => {
     setAnswersModal(true);
-    setIsRight(JSON.stringify(exercise.answers) === JSON.stringify(strings));
+    setIsRight((JSON.stringify(exercise.answers) === JSON.stringify(strings)) && guitarCapo === exercise.guitarCapo);
   }
   const nextExercise = () => {
     setAnswersModal(false);
     setStrings([0, 0, 0, 0, 0, 0]);
+    setGuitarCapo(0);
     start();
+  }
+  const finalize = () => {
+    setAnswersModal(false);
+    setPlaying(false);
+    setStrings([0, 0, 0, 0, 0, 0]);
+    setGuitarCapo(0);
   }
   return (
     <>
-      {
-        !playing ? (
-          <div className={styles.courseGuitar__exercise}>
-            <div className={styles.courseGuitar__difficulty}>
-              <p>Tipo de juego</p>
-              <button type="button" className={typeGame === 'notes' ? styles.courseGuitar__difficulty_active : null} onClick={() => setTypeGame('notes')}>Notas</button>
-              <button type="button" className={typeGame === 'chords' ? styles.courseGuitar__difficulty_active : null} onClick={() => setTypeGame('chords')}>Acordes</button>
-              <button type="button" className={typeGame === 'all' ? styles.courseGuitar__difficulty_active : null} onClick={() => setTypeGame('all')}>Todo</button>
-            </div>
-            <div className={styles.courseGuitar__actFalse}>
-              <div>
-                <p>Las actividades te ayudaran mejorar tus Habilidades</p>
-                <p className={styles.courseGuitar__actFalse_example}>Ejemplo:</p>
-                <div className={styles.courseGuitar__actFalse_atc}>
-                  <p>Visualisa la imagen y trata de compreneder la nota que representa</p>
-                  <Image src="/images/g_a1.png" alt="play" width={550} height={250} />
-                  <span className={styles.courseGuitar__actFalse_note}>Do</span>
-                </div>
+      {!playing ? (
+        <div className={styles.courseGuitar__exercise}>
+          <div className={styles.courseGuitar__difficulty}>
+            <p>Tipo de acorde</p>
+            {chords.map((chord, index) => {
+              const keyIndex = index + 1;
+              return (<button key={keyIndex} type="button" className={typeGame === chord.value ? styles.courseGuitar__difficulty_active : null} onClick={() => setTypeGame(chord.value)}>{chord.name}</button>);
+            })}
+          </div>
+          <div className={styles.courseGuitar__actFalse}>
+            <div>
+              <p>Las actividades te ayudaran mejorar tus Habilidades</p>
+              <p className={styles.courseGuitar__actFalse_example}>Ejemplo:</p>
+              <div className={styles.courseGuitar__actFalse_atc}>
+                <p>Visualisa la imagen y trata de compreneder la nota que representa</p>
+                <Image src="/images/g_a1.png" alt="play" width={550} height={250} />
+                <span className={styles.courseGuitar__actFalse_note}>Do</span>
               </div>
-              <button className={styles.courseGuitar__exercise_play} type="button" onClick={() => start()}>
-                <Image src="/images/play.svg" alt="play" width={150} height={150} />
-                Iniciar
-              </button>
             </div>
+            <button className={styles.courseGuitar__exercise_play} type="button" onClick={() => start()}>
+              <Image src="/images/play.svg" alt="play" width={150} height={150} />
+              Iniciar
+            </button>
           </div>
-        ) : (
+        </div>
+      ) : (
+        <div className={styles.courseGuitar__exercise}>
+          <p className={styles.courseGuitar__exercise_exercise}>Identifica:<span>{exercise.name}</span></p>
           <div className={styles.courseGuitar__exercise}>
-            <p className={styles.courseGuitar__exercise_exercise}>Identifica:<span>{exercise.name}</span></p>
-            <div className={styles.courseGuitar__exercise}>
-              <Guitar
-                renderFinger={getRenderFingerSpn(standard)}
-                frets={{ from: 0, amount: 22 }}
-                playOnHover
-                strings={strings}
-                onChange={setStrings}
-                onPlay={play}
-              />
-            </div>
-            <button type="button" className={styles.courseGuitar__exercise_answer} onClick={() => isItOk()}>Responder</button>
+            <Guitar
+              renderFinger={getRenderFingerRelative(standard)}
+              frets={{ from: 0, amount: 22 }}
+              playOnHover
+              strings={strings}
+              onChange={setStrings}
+              onPlay={play}
+            />
+            {guitarCapo !== 0 && (<div className={styles.courseGuitar__exercise_guitarCapo} style={{ left: `${guitarCapo * 10.1}em` }} />)}
           </div>
-        )
-      }
+          <div className={styles.courseGuitar__capo}>
+            <button type="button" className={guitarCapo === 0 ? styles.courseGuitar__capo_active : null} onClick={() => setGuitarCapo(0)}>Sin cejilla</button>
+            {[1, 2, 3, 4].map((capo, index) => {
+              const keyIndex = index + 1;
+              return (<button type="button" key={keyIndex} className={guitarCapo === capo ? styles.courseGuitar__capo_active : null} onClick={() => setGuitarCapo(capo)}>{`Cejilla ${capo}`}</button>);
+            })}
+          </div>
+          <button type="button" className={styles.courseGuitar__exercise_answer} onClick={() => isItOk()}>Responder</button>
+        </div>
+      )}
       <ReactModal
         isOpen={modal}
         className={styles.modal2}
@@ -159,15 +179,11 @@ export default function GuitarAct() {
         <p>{`Respuesta ${isRight ? 'correcta' : 'incorrecta'}`}</p>
         <Image src={isRight ? '/images/nice.svg' : '/images/fail.svg'} alt="play" width={150} height={150} />
         <div className={styles.modal__controls}>
-          <button className={styles.modal__controls_cancel} type="button" onClick={() => { setAnswersModal(false), setPlaying(false) }}>Terminar</button>
-          {isRight ? (
-            <button type="button" onClick={() => nextExercise()}>Siguiente</button>
-          ) : (
-            <button type="button" onClick={() => { setAnswersModal(false), setModal(true); onClickReset(); }}>Repetir</button>
-          )}
+          <button className={styles.modal__controls_cancel} type="button" onClick={() => finalize()}>Terminar</button>
+          {isRight ? (<button type="button" onClick={() => nextExercise()}>Siguiente</button>)
+            : (<button type="button" onClick={() => { setAnswersModal(false), setModal(true); onClickReset(); }}>Repetir</button>)}
         </div>
       </ReactModal>
     </>
   );
 }
-

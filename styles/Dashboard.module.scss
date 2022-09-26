@@ -144,6 +144,17 @@
     flex-direction: column;
     align-items: center;
     width: 100%;
+    position: relative;
+
+    &_guitarCapo {
+      background: orange;
+      width: 40px;
+      height: 85%;
+      position: absolute;
+      border-radius: 2em;
+      margin-top: 0.8em;
+      box-shadow: 10px 5px 5px black;
+    }
 
     &_exercise {
       margin-bottom: 1em;
@@ -151,12 +162,9 @@
       font-size: 1.5em;
 
       span {
-        // color: $textWhite;
-        // background: $primary;
         padding: 0 2em;
         margin-left: 1em;
         border-bottom: 2px solid $primary;
-        // border-radius: 2em;
       }
     }
 
@@ -177,6 +185,28 @@
         border: 2px solid $green;
         color: $green;
       }
+    }
+  }
+
+  &__capo {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 100%;
+    margin: 1em 0;
+
+    button {
+      background: none;
+      padding: 0.5em 2em;
+      font-size: 20px;
+      color: $textBlack;
+      border: 1px solid $primary;
+      border-radius: 2em;
+    }
+
+    &_active {
+      background: $primary !important;
+      color: $textWhite !important;
     }
   }
 
