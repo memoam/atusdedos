@@ -67,19 +67,19 @@ export default function GuitarAct() {
   const [guitarCapo, setGuitarCapo] = useState(0);
 
   const start = () => {
-    const max = typeGame === 'major' ? 1
-      : typeGame === 'minor' ? 1
-        : typeGame === 'fifth' ? 1
-          : typeGame === 'seventh' ? 1
-            : typeGame === 'majSeven' ? 1
-              : typeGame === 'mSeven' ? 1
-                : typeGame === 'susFour' ? 1
-                  : typeGame === 'addNine' ? 1
-                    : typeGame === 'susTwo' ? 1
-                      : typeGame === 'sevenSusFour' ? 1
-                        : typeGame === 'sevenNnine' ? 1
-                          : typeGame === 'nine' ? 1
-                            : 6;
+    const max = typeGame === 'major' ? 12
+      : typeGame === 'minor' ? 12
+        : typeGame === 'fifth' ? 12
+          : typeGame === 'seventh' ? 12
+            : typeGame === 'majSeven' ? 12
+              : typeGame === 'mSeven' ? 12
+                : typeGame === 'susFour' ? 12
+                  : typeGame === 'addNine' ? 12
+                    : typeGame === 'susTwo' ? 12
+                      : typeGame === 'sevenSusFour' ? 12
+                        : typeGame === 'sevenNnine' ? 12
+                          : typeGame === 'nine' ? 12
+                            : 144;
     const randomId = Math.floor(Math.random() * max);
     setExercise(GuitarExercises(typeGame, randomId));
     setModal(true);
