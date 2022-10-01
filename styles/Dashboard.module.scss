@@ -498,6 +498,7 @@
   }
 }
 
+.modal3,
 .modal {
   display: flex;
   align-items: center;
@@ -601,6 +602,8 @@
   }
 }
 
+
+
 .modal2 {
   padding: 0;
   position: absolute;
@@ -613,6 +616,7 @@
   max-height: 90%;
   min-width: 450px;
   overflow-y: auto;
+  border-radius: 1em;
 
   @media (max-width: $phone) {
     min-width: 90%;

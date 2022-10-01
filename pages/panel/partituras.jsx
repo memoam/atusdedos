@@ -1,6 +1,7 @@
 /* eslint-disable linebreak-style */
 import React, { useState, useContext, useRef } from 'react';
 import Image from 'next/image';
+import ReactModal from 'react-modal';
 import Link from 'next/link';
 import Header from '../../components/header';
 import Menu from '../../components/menu';
@@ -11,9 +12,15 @@ import styles from '../../styles/Dashboard.module.scss';
 
 export default function SheetMusic() {
   const { preLoad, setPreLoad } = useContext(PreLoadContext);
+  const [modal, setModal] = useState(false);
+  const [link, setLink] = useState('/');
   const filterRef = useRef();
   const [search, setSearch] = useState('');
-  const [filter, setFilter] = useState('')
+  const [filter, setFilter] = useState('');
+  const openDoc = (value) => {
+    setLink(value);
+    setModal(true);
+  };
   return (
     <div className={styles.container}>
       <Header />
@@ -47,14 +54,14 @@ export default function SheetMusic() {
           </button>
         </div>
         <div className={styles.sheetMusic}>
-          {/* <object data="files/husky.pdf" height="100%" width="100%" /> */}
           {sheetMusic.map((card, index) => {
             const keyIndex = index + 1;
             const sheetMusic = () => {
               return (
-                <button type="button" key={keyIndex} className={styles.sheetMusic__card} >
+                <button type="button" key={keyIndex} className={styles.sheetMusic__card} onClick={() => openDoc(card.link)} >
                   <Image src="/images/pdfIcon.svg" alt={card.name} width={38} height={38} />
                   <span>{card.name}</span>
+                  <span>{card.author}</span>
                   <span>{card.instruments}</span>
                 </button>
               )
@@ -71,9 +78,7 @@ export default function SheetMusic() {
                 return sheetMusic();
               }
             } else if (search !== '' && filter === '') {
-              if (
-                search.toUpperCase() === (`${card.name}`.slice(0, search.length)).toUpperCase()
-              ) {
+              if (search.toUpperCase() === (`${card.name}`.slice(0, search.length)).toUpperCase()) {
                 return sheetMusic();
               }
             } else if (search === '' && filter === '') {
@@ -84,6 +89,20 @@ export default function SheetMusic() {
           })}
         </div>
       </div>
+      <ReactModal
+        isOpen={modal}
+        onRequestClose={() => setModal(false)}
+        className={styles.modal2}
+        onAfterOpen={() => { document.body.style.overflow = 'hidden'; }}
+        onAfterClose={() => { document.body.removeAttribute('style'); }}
+        ariaHideApp={false}
+        style={{ overlay: { backgroundColor: 'rgba(34,34,34, 0.9)', zIndex: '3' } }}
+      >
+        <button onClick={() => setModal(false)} className={styles.modal__close} type="button">
+          &times;
+        </button>
+        <object data={link} height="680px" width="840px" />
+      </ReactModal>
     </div>
   );
 }
