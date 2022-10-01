@@ -3,7 +3,7 @@ export const music = [
     name: 'Teoria musical',
     link: '/panel/teoria_musical',
     icon: '/images/saxo.png',
-  }
+  },
 ];
 export const instruments = [
   {
@@ -43,31 +43,60 @@ export const perfectEar = [
     name: 'Identificar notas',
     link: '/panel/notas',
     icon: '/images/saxo.png',
-  }
+  },
 ];
 export const means = [
   {
     name: 'Partituras',
     link: '/panel/partituras',
     icon: '/images/saxo.png',
-  }
+  },
 ];
 export const sheetMusic = [
   {
     name: 'las mañanitas',
     icon: '/images/pdfIcon.svg',
     instruments: 'Guitarra',
-    link: '/'
+    link: '/',
   },
   {
     name: 'las mañanitas',
     icon: '/images/pdfIcon.svg',
     instruments: 'Violin',
-    link: '/'
-  },  {
+    link: '/',
+  },
+  {
     name: 'azul',
     icon: '/images/pdfIcon.svg',
     instruments: 'Guitarra',
-    link: '/'
+    link: '/',
+  },
+];
+
+export const dataIndex = [
+  {
+    name: 'saxofon alto',
+    id: '124534',
+    icon: '/images/saxo.png',
+  },
+  {
+    name: 'violin',
+    id: '124534',
+    icon: '/images/saxo.png',
+  },
+  {
+    name: 'guitarra',
+    id: '124534',
+    icon: '/images/saxo.png',
+  },
+  {
+    name: 'lauta transversal',
+    id: '124534',
+    icon: '/images/saxo.png',
+  },
+  {
+    name: 'ukelele',
+    id: '124534',
+    icon: '/images/saxo.png',
   },
 ];

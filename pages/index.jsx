@@ -6,46 +6,10 @@ import Header from '../components/header';
 import Cards from '../components/cards';
 import Notification from '../components/notifications';
 import styles from '../styles/Home.module.scss';
+import { dataIndex } from '../helpers/toLearn';
 import Footer from '../components/footer';
 
 export default function Home() {
-  const cards = [
-    {
-      name: 'saxofon alto',
-      id: '124534',
-      icon: '/images/saxo.png',
-    },
-    {
-      name: 'violin',
-      id: '124534',
-      icon: '/images/saxo.png',
-    },
-    {
-      name: 'guitarra',
-      id: '124534',
-      icon: '/images/saxo.png',
-    },
-    {
-      name: 'piano',
-      id: '124534',
-      icon: '/images/saxo.png',
-    },
-    {
-      name: 'arpa',
-      id: '124534',
-      icon: '/images/saxo.png',
-    },
-    {
-      name: 'bajo',
-      id: '124534',
-      icon: '/images/saxo.png',
-    },
-  ];
-  const changeInput = (event, field) => {
-    const prevState = dataOrder;
-    prevState[field] = event.target.value;
-    setDataOrder(prevState);
-  };
   return (
     <div className={styles.container}>
       <Header home />
@@ -65,7 +29,7 @@ export default function Home() {
         <div className={styles.section}>
           <p className={styles.section__title}>Para aprender</p>
           <div className={styles.section__cards}>
-            <Cards data={cards} />
+            <Cards data={dataIndex} />
           </div>
         </div>
         <div className={styles.section}>
