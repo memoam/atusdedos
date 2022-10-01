@@ -1,5 +1,6 @@
 /* eslint-disable linebreak-style */
 import React, { useContext, useState } from 'react';
+import Image from 'next/image';
 import Header from '../../components/header';
 import Menu from '../../components/menu';
 import Notification from '../../components/notifications';
@@ -16,6 +17,9 @@ export default function GuitarCourse() {
       <Header />
       <Notification />
       <Menu value />
+      <div className={styles.people}>
+        <Image src="/images/guitarPeople.svg" alt="play" width={200} height={204} />
+      </div>
       <div className={styles.main}>
         <p className={styles.main__title}>Guitarra</p>
         <div className={styles.courseGuitar__controls}>
@@ -29,6 +33,7 @@ export default function GuitarCourse() {
               : (<GuitarCom />)
         }
       </div>
+
     </div>
   );
 }

@@ -52,13 +52,13 @@ export default function Metronome() {
       </div>
       <div className={styles.metronome__controls}>
         <button type="button" className={beatsPerMeasure === 4 ? styles.metronome__controls_active : null} onClick={() => setBeatsPerMeasure(4)}>
-          <Image unoptimized loader={({ src }) => src} src="https://res.cloudinary.com/dpu632wp1/image/upload/v1664492044/metronome/3Times_cypmsu.png" alt="4Times" width={224} height={224} />
+          <Image unoptimized loader={({ src }) => src} src="https://res.cloudinary.com/atusdedos/image/upload/v1664492044/metronome/4Times_u7jfju.png" alt="4Times" width={224} height={224} />
         </button>
         <button type="button" className={beatsPerMeasure === 3 ? styles.metronome__controls_active : null} onClick={() => setBeatsPerMeasure(3)}>
-          <Image unoptimized loader={({ src }) => src} src="https://res.cloudinary.com/dpu632wp1/image/upload/v1664492044/metronome/4Times_u7jfju.png" alt="3Times" width={200} height={224} />
+          <Image unoptimized loader={({ src }) => src} src="https://res.cloudinary.com/atusdedos/image/upload/v1664492044/metronome/3Times_cypmsu.png" alt="3Times" width={200} height={224} />
         </button>
         <button type="button" className={beatsPerMeasure === 2 ? styles.metronome__controls_active : null} onClick={() => setBeatsPerMeasure(2)}>
-          <Image unoptimized loader={({ src }) => src} src="https://res.cloudinary.com/dpu632wp1/image/upload/v1664492044/metronome/2Times_gtivuu.png" alt="2Times" width={124} height={224} />
+          <Image unoptimized loader={({ src }) => src} src="https://res.cloudinary.com/atusdedos/image/upload/v1664492044/metronome/2Times_gtivuu.png" alt="2Times" width={124} height={224} />
         </button>
       </div>
     </div>
