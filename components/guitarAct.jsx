@@ -67,7 +67,7 @@ export default function GuitarAct() {
   const [guitarCapo, setGuitarCapo] = useState(0);
 
   const start = () => {
-    const max = typeGame === 'major' ? 12
+    const max = typeGame === 'major' ? 1
       : typeGame === 'minor' ? 12
         : typeGame === 'fifth' ? 12
           : typeGame === 'seventh' ? 12
@@ -119,7 +119,7 @@ export default function GuitarAct() {
               <p className={styles.courseGuitar__actFalse_example}>Ejemplo:</p>
               <div className={styles.courseGuitar__actFalse_atc}>
                 <p>Visualisa la imagen y trata de compreneder la nota que representa</p>
-                <Image src="/images/g_a1.png" alt="play" width={550} height={250} />
+                <Image unoptimized loader={({ src }) => src} src="https://res.cloudinary.com/atusdedos/image/upload/v1664851464/guitarExercises/major/do_major_esk5ly.png" alt="play" width={550} height={250} />
                 <span className={styles.courseGuitar__actFalse_note}>Do</span>
               </div>
             </div>
@@ -163,7 +163,7 @@ export default function GuitarAct() {
       >
         <div className={styles.modal2__atc}>
           <p className={styles.modal2__time}>{timer}</p>
-          <Image src={exercise.img} alt="play" width={550} height={250} />
+          <Image unoptimized loader={({ src }) => src} src={exercise.img} alt="play" width={550} height={250} />
           <span className={styles.modal2__note}>{exercise.name}</span>
           <p className={styles.modal2__time}>Visualiza la reprecentacion de la nota</p>
         </div>

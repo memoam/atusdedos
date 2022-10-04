@@ -4,6 +4,7 @@ import Header from '../../components/header';
 import Menu from '../../components/menu';
 import Notification from '../../components/notifications';
 import PreLoadContext from '../../context/preLoadContext';
+import FiddleText from '../../components/fiddleText';
 import styles from '../../styles/Dashboard.module.scss';
 
 export default function Fiddle() {
@@ -20,7 +21,7 @@ export default function Fiddle() {
           <button type="button" className={course ? styles.course__controls_active : null} onClick={() => setCourse(true)}>Teoria</button>
           <button type="button" className={!course ? styles.course__controls_active : null} onClick={() => setCourse(false)}>Actividades</button>
         </div>
-        {course ? (<p>teoria</p>) : (<p>Actividades</p>)}
+        {course ? (<FiddleText />) : (<p>Actividades</p>)}
       </div>
     </div>
   );

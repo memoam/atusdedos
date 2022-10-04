@@ -5,6 +5,7 @@ import Menu from '../../components/menu';
 import Notification from '../../components/notifications';
 import PreLoadContext from '../../context/preLoadContext';
 import FluteAct from '../../components/fluteAct';
+import FluteText from '../../components/fluteText';
 import styles from '../../styles/Dashboard.module.scss';
 
 export default function Flute() {
@@ -21,7 +22,7 @@ export default function Flute() {
           <button type="button" className={course ? styles.course__controls_active : null} onClick={() => setCourse(true)}>Teoria</button>
           <button type="button" className={!course ? styles.course__controls_active : null} onClick={() => setCourse(false)}>Actividades</button>
         </div>
-        {course ? (<p>teoria</p>) : (<FluteAct />)}
+        {course ? (<FluteText />) : (<FluteAct />)}
       </div>
     </div>
   );

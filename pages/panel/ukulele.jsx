@@ -4,6 +4,7 @@ import Header from '../../components/header';
 import Menu from '../../components/menu';
 import Notification from '../../components/notifications';
 import PreLoadContext from '../../context/preLoadContext';
+import UkeleleText from '../../components/ukeleleText';
 import styles from '../../styles/Dashboard.module.scss';
 
 export default function Ukelele() {
@@ -15,6 +16,7 @@ export default function Ukelele() {
       <Menu value />
       <div className={styles.main}>
         <p className={styles.main__title}>Ukelele</p>
+        <UkeleleText />
       </div>
     </div>
   );
