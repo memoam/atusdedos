@@ -638,13 +638,13 @@ export default function GuitarExercises(typeGame, id) {
       name: 'Sol (sus2)',
       answers: [0, 8, 7, 0, -1, -1],
       img: '/images/g_a1.png',
-      guitarCapo: 5,
+      guitarCapo: 4,
     },
     {
       name: 'Sol# (sus2)',
       answers: [0, 9, 8, 0, -1, -1],
       img: '/images/g_a1.png',
-      guitarCapo: 6,
+      guitarCapo: 4,
     },
     {
       name: 'La (sus2)',
