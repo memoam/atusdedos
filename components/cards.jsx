@@ -12,7 +12,7 @@ export default function Cards({ data }) {
       return (
         <Link href={card.link || '/'} passHref key={keyIndex} >
           <a className={styles.card}>
-            <Image src={card.icon} alt={card.name} width={85} height={77.2} />
+            <Image src={card.icon} alt={card.name} width={70} height={70} />
             {card.name}
           </a>
         </Link>
