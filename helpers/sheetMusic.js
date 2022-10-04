@@ -25,6 +25,7 @@ export const sheetMusic = [
     author: 'B.Marini',
     icon: '/images/pdfIcon.svg',
     instruments: 'Violin',
-    link: 'http://pt.instr.scorser.com/D/20265.html',
+    link: 'https://drive.google.com/file/d/15dfwtRgB07XuT4BUuIWoo2MvirpWpTSf/preview',
   },
+  
 ];
