@@ -9,7 +9,7 @@ import PropTypes from 'prop-types';
 import styles from '../styles/Menu.module.scss';
 
 export default function Menu({
-  courses, profile, calendar, metronome
+  courses, profile, calendar
 }) {
   const router = useRouter();
   const [menuMovil, setMenuMovil] = useState(false);
@@ -22,9 +22,6 @@ export default function Menu({
       <div className={styles.menu__links}>
         <Link href="/panel">
           <a className={courses ? styles.menu__links_active : null}>Para aprender</a>
-        </Link>
-        <Link href="/panel/metronomo">
-          <a className={metronome ? styles.menu__links_active : null}>Metronomo</a>
         </Link>
         <Link href="/panel/agenda">
           <a className={calendar ? styles.menu__links_active : null}>Agenda</a>
@@ -81,12 +78,9 @@ Menu.propTypes = {
   profile: PropTypes.bool,
   calendar: PropTypes.bool,
   courses: PropTypes.bool,
-  metronome: PropTypes.bool,
-
 };
 Menu.defaultProps = {
   courses: false,
   profile: false,
   calendar: false,
-  metronome: false,
 };

@@ -14,7 +14,7 @@ export default function Value() {
     <div className={styles.container}>
       <Header />
       <Notification />
-      <Menu metronome />
+      <Menu />
       <div className={styles.people}>
         <Image src="/images/metronomePeople.svg" alt="play" width={300} height={204} />
       </div>
