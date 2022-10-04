@@ -5,11 +5,18 @@ import Image from 'next/image';
 import Header from '../components/header';
 import Cards from '../components/cards';
 import Notification from '../components/notifications';
+import Price from '../components/price';
 import styles from '../styles/Home.module.scss';
-import { dataIndex } from '../helpers/toLearn';
+import { dataIndex, libraryMusic, skills, dataIndexInit, libraryMusicInit, skillsInit } from '../helpers/homemMeans';
 import Footer from '../components/footer';
 
 export default function Home() {
+  const log = false;
+  const courses = [
+    { name: 'Para aprender', value: dataIndex, valueInit: dataIndexInit },
+    { name: 'Inspiracion', value: libraryMusic, valueInit: libraryMusicInit },
+    { name: 'Habilidades', value: skills, valueInit: skillsInit },
+  ]
   return (
     <div className={styles.container}>
       <Header home />
@@ -26,55 +33,21 @@ export default function Home() {
       </div>
       <div className={styles.main}>
         <p className={styles.main__title}>APRENDE ALGO NUEVO CADA DÍA</p>
-        <div className={styles.section}>
-          <p className={styles.section__title}>Para aprender</p>
-          <div className={styles.section__cards}>
-            <Cards data={dataIndex} />
-          </div>
-        </div>
-        <div className={styles.section}>
-          <p className={styles.section__title}>Inspiracion</p>
-          <div className={styles.section__info}>
-            <div className={styles.section__info_data}>
-              <Image src="/images/audioFile.svg" alt="saxo" width={85} height={77.2} />
-              <p>Partituras</p>
+        {courses.map((course, index) => {
+          const keyIndex = index + 1;
+          return (
+            <div className={styles.section} key={keyIndex}>
+              <p className={styles.section__title}>{course.name}</p>
+              <div className={styles.section__cards}>
+                <Cards data={!log ? course.value: course.valueInit} />
+              </div>
             </div>
-          </div>
-        </div>
-        <div className={styles.section}>
-          <p className={styles.section__title}>Habilidades</p>
-          <div className={styles.section__info}>
-            <div className={styles.section__info_data}>
-              <Image src="/images/hear.svg" alt="saxo" width={85} height={77.2} />
-              <p>Oido perfecto</p>
-            </div>
-          </div>
-        </div>
+          );
+        })}
         <p className={styles.main__title}>Accede a TODOS los cursos las veces que quieras</p>
-        <div className={styles.prices}>
-          <div className={styles.prices__price}>
-            <p className={styles.prices__price_txt}>1 Mes</p>
-            <p className={styles.prices__price_price}>$80.00 MXN</p>
-            <p className={styles.prices__price_txt}>Acceso a todos los cursos</p>
-            <button type="button">Suscribete</button>
-          </div>
-          <div className={styles.prices__price}>
-            <p className={styles.prices__price_txt}>3 Meses</p>
-            <p className={styles.prices__price_price}>$225.00 MXN</p>
-            <p className={styles.prices__price_txt}>Acceso a todos los cursos</p>
-            <p className={styles.prices__price_txt}>$75.00 MXN /mes</p>
-            <button type="button">Suscribete</button>
-          </div>
-          <div className={styles.prices__price}>
-            <p className={styles.prices__price_txt}>12 Meses</p>
-            <p className={styles.prices__price_price}>$870.00 MXN</p>
-            <p className={styles.prices__price_txt}>Acceso a todos los cursos</p>
-            <p className={styles.prices__price_txt}>$72.50 MXN /mes</p>
-            <button type="button">Suscribete</button>
-          </div>
-        </div>
-      </div>
+        <Price />
+      </div >
       <Footer />
-    </div>
+    </div >
   );
 }

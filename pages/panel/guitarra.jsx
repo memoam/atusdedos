@@ -7,6 +7,7 @@ import Notification from '../../components/notifications';
 import PreLoadContext from '../../context/preLoadContext';
 import GuitarCom from '../../components/guitarCom';
 import GuitarAct from '../../components/guitarAct';
+import GuitarText from '../../components/guitarText';
 import styles from '../../styles/Dashboard.module.scss';
 
 export default function GuitarCourse() {
@@ -28,7 +29,7 @@ export default function GuitarCourse() {
           <button type="button" className={course === 3 ? styles.courseGuitar__controls_active : null} onClick={() => setCourse(3)}>Practica</button>
         </div>
         {
-          course === 1 ? (<p>teoria</p>)
+          course === 1 ? (<GuitarText />)
             : course === 2 ? (<GuitarAct />)
               : (<GuitarCom />)
         }

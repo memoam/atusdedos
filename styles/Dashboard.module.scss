@@ -16,7 +16,7 @@
   max-width: 70%;
   margin: 0 auto;
   margin-left: 20%;
-  padding-top: 5em;
+  padding: 5em 0;
   height: 100%;
 
   @media (max-width: $tablets) {
@@ -90,6 +90,89 @@
       background: $background;
       margin-left: 0.5em;
     }
+  }
+
+  &__text {
+    width: 100%;
+    border-bottom: 1px solid $primary;
+    padding: 0.5em;
+    padding-bottom: 0;
+
+    &[open] {
+      summary {
+        &::before {
+          transform: rotate(90deg);
+          transition: all 0.5s;
+        }
+      }
+    }
+
+    summary {
+      cursor: pointer;
+      margin-bottom: 0.5em;
+      position: relative;
+      padding-left: 1.5em;
+
+      &::before {
+        content: "";
+        background-image: url(/images/arrow.svg);
+        transition: all 0.5s;
+        width: 20px;
+        height: 20px;
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+    }
+
+    &_title {
+      font-size: 1.2em;
+      font-weight: bold;
+    }
+
+    &_subTitle {
+      font-size: 1.1em;
+      font-weight: 550;
+      margin-bottom: 0.5em;
+    }
+
+    &_body {
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      flex-direction: column;
+      margin-bottom: 0.5em;
+      margin-left: 2em;
+      border-left: 1px solid $primary;
+      padding-left: 0.5em;
+    }
+
+    &_txt {
+      margin-bottom: 0.5em;
+      text-align: justify;
+    }
+
+    &_bold {
+      font-weight: bold;
+      margin: 0 0.3em;
+    }
+
+    &_link {}
+
+    &_imgs {
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      width: 100%;
+
+      span {
+        margin: 0.5em !important;
+        margin-left: 0 !important;
+        margin-top: 0 !important;
+      }
+    }
+
   }
 }
 

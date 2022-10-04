@@ -7,7 +7,7 @@ import Header from '../../components/header';
 import Menu from '../../components/menu';
 import Notification from '../../components/notifications';
 import PreLoadContext from '../../context/preLoadContext';
-import { sheetMusic } from '../../helpers/toLearn';
+import { sheetMusic } from '../../helpers/sheetMusic';
 import styles from '../../styles/Dashboard.module.scss';
 
 export default function SheetMusic() {
