@@ -10,14 +10,12 @@ export default function Footer() {
     <footer className={styles.footer}>
       <div className={styles.footer__main}>
         <Link href="/" passHref>
-          <p className={styles.footer__main_logo}>
-            AtusDedos
-          </p>
+          <p className={styles.footer__main_logo}>AtusDedos</p>
         </Link>
         <div>
           <div className={styles.footer__main_links}>
-            <Link href="/" passHref>Aviso de privacidad</Link>
-            <Link href="/" passHref>Términos y Condiciones</Link>
+            <Link href="/aviso_de_privacidad" passHref>Aviso de privacidad</Link>
+            <Link href="/terminos_y_condiciones" passHref>Términos y Condiciones</Link>
           </div>
           <div className={styles.footer__main_linksSocial}>
             <Link href="/" passHref>

@@ -12,8 +12,12 @@ import { music, instruments, perfectEar, means } from '../../helpers/toLearn';
 import styles from '../../styles/Dashboard.module.scss';
 
 export default function Dashboard() {
-  const [orders] = useState();
   const { preLoad, setPreLoad } = useContext(PreLoadContext);
+  const courses = [
+    { name: 'Instrumentos', value: instruments },
+    { name: 'Oido perfecto', value: perfectEar },
+    { name: 'Recursos', value: means },
+  ]
   useEffect(() => {
     // stop the preload
     if (preLoad) setPreLoad(false);
@@ -27,40 +31,23 @@ export default function Dashboard() {
       <div className={styles.people}>
         <Image src="/images/saxoPeople.jpg" alt="Logo" width={248} height={482} />
       </div>
-      {orders !== undefined
-        ? (
-          <div className={styles.skeleton}>
-            <div className={styles.component50Skeleton} />
-            <div className={styles.component100Skeleton} />
-            <div className={styles.component100Skeleton} />
-            <div className={styles.component100Skeleton} />
-            <div className={styles.component100Skeleton} />
-            <div className={styles.component100Skeleton} />
-            <div className={styles.component100Skeleton} />
+      <div className={styles.main}>
+        <div className={styles.index}>
+          <div className={styles.index__courses}>
+            <p className={styles.index__courses_title}>Para aprender</p>
+            <Cards data={music} />
           </div>
-        ) : (
-          <div className={styles.main}>
-            <div className={styles.index}>
-              <div className={styles.index__courses}>
-                <p className={styles.index__courses_title}>Para aprender</p>
-                <Cards data={music} />
+          {courses.map((course, index) => {
+            const keyIndex = index + 1;
+            return (
+              <div className={styles.index__courses} key={keyIndex}>
+                <p className={styles.index__courses_subtitle}>{course.name}</p>
+                <Cards data={course.value} />
               </div>
-              <div className={styles.index__courses}>
-                <p className={styles.index__courses_subtitle}>Instrumentos</p>
-                <Cards data={instruments} />
-              </div>
-              <div className={styles.index__courses}>
-                <p className={styles.index__courses_subtitle}>Oido perfecto</p>
-                <Cards data={perfectEar} />
-              </div>
-              <div className={styles.index__courses}>
-                <p className={styles.index__courses_subtitle}>Recursos</p>
-                <Cards data={means} />
-              </div>
-            </div>
-
-          </div>
-        )}
+            );
+          })}
+        </div>
+      </div>
     </div>
   );
 }
