@@ -16,7 +16,7 @@ export default function Value() {
       <Notification />
       <Menu />
       <div className={styles.people}>
-        <Image src="/images/metronomePeople.svg" alt="play" width={300} height={204} />
+        <Image src="/images/metronomo.svg" alt="metronomo" width={300} height={204} />
       </div>
       <div className={styles.main}>
         <div className={styles.dashboard}>
