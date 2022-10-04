@@ -1,11 +1,4 @@
-export const music = [
-  {
-    name: 'Teoria musical',
-    link: '/panel/teoria_musical',
-    icon: '/images/musicIcon2.svg',
-  },
-];
-export const instruments = [
+export const dataIndex = [
   {
     name: 'violin',
     link: '/panel/violin',
@@ -33,27 +26,17 @@ export const instruments = [
     icon: '/images/saxo.png',
   },
 ];
-export const perfectEar = [
-  {
-    name: 'Memorama',
-    link: '/panel/memorama',
-    icon: '/images/gameIcon.svg',
-  },
-  {
-    name: 'Identificar notas',
-    link: '/panel/notas',
-    icon: '/images/noteIcon.svg',
-  },
-];
-export const means = [
+export const libraryMusic = [
   {
     name: 'Partituras',
     link: '/panel/partituras',
     icon: '/images/libraryMusic.svg',
   },
-  {
-    name: 'Metronomo',
-    link: '/panel/metronomo',
-    icon: '/images/metronomeIcon.svg',
-  },
 ];
+export const skills =[
+  {
+    name: 'Oido perfecto',
+    link: '/panel',
+    icon: '/images/hear.svg',
+  },
+]

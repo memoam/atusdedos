@@ -6,7 +6,7 @@ import Header from '../components/header';
 import Cards from '../components/cards';
 import Notification from '../components/notifications';
 import styles from '../styles/Home.module.scss';
-import { dataIndex } from '../helpers/toLearn';
+import { dataIndex, libraryMusic, skills } from '../helpers/homemMeans';
 import Footer from '../components/footer';
 
 export default function Home() {
@@ -34,20 +34,14 @@ export default function Home() {
         </div>
         <div className={styles.section}>
           <p className={styles.section__title}>Inspiracion</p>
-          <div className={styles.section__info}>
-            <div className={styles.section__info_data}>
-              <Image src="/images/audioFile.svg" alt="saxo" width={85} height={77.2} />
-              <p>Partituras</p>
-            </div>
+          <div className={styles.section__cards}>
+            <Cards data={libraryMusic} />
           </div>
         </div>
         <div className={styles.section}>
           <p className={styles.section__title}>Habilidades</p>
-          <div className={styles.section__info}>
-            <div className={styles.section__info_data}>
-              <Image src="/images/hear.svg" alt="saxo" width={85} height={77.2} />
-              <p>Oido perfecto</p>
-            </div>
+          <div className={styles.section__cards}>
+            <Cards data={skills} />
           </div>
         </div>
         <p className={styles.main__title}>Accede a TODOS los cursos las veces que quieras</p>

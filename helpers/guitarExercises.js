@@ -3,7 +3,7 @@ export default function GuitarExercises(typeGame, id) {
     {
       name: 'Do (major)',
       answers: [0, 1, 0, 2, 3, -1],
-      img: '/images/g_a1.png',
+      img: 'https://res.cloudinary.com/atusdedos/image/upload/v1664851464/guitarExercises/major/do_major_esk5ly.png',
       guitarCapo: 0,
     },
     {
