@@ -12,7 +12,23 @@ export default function GuitarText() {
         <div className={styles.dashboard__text_body}>
           <p className={styles.dashboard__text_subTitle}>Subtitulo</p>
 
-
+          <div className={styles.dashboard__definitions}>
+            <p className={styles.dashboard__definitions_definition}>
+              <strong>definicion</strong>
+              <span>
+                significado
+              </span>
+            </p>
+            <p className={styles.dashboard__definitions_definition}>
+              <strong>defi</strong>
+              <span>
+                soluta veniam. Ducimus molestiae natus deleniti tempora.
+                Corporis eaque est similique dolor iure vero?
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                Enim deleniti mollitia incidunt praesentium id error.
+              </span>
+            </p>
+          </div>
           {/* parrafo ---------------------------------*/}
           <p className={styles.dashboard__text_txt}>
             texto ejemplo
