@@ -1,15 +1,19 @@
 /* eslint-disable linebreak-style */
 import React, { useContext, useEffect, useState } from 'react';
+import { useRouter } from 'next/router';
 import PropTypes from 'prop-types';
 import ReactModal from 'react-modal';
 import Link from 'next/link';
 import PreLoad from './preLoad';
 import SingIn from './singIn';
 import SingUp from './singUp';
+import AuthContext from '../context/authContext';
 import NotificationsContext from '../context/notificationsContext';
 import styles from '../styles/Header.module.scss';
 
 export default function Header({ home }) {
+  const router = useRouter();
+  const { authData } = useContext(AuthContext);
   const { notifications, setNotifications } = useContext(NotificationsContext);
   const [modal, setModal] = useState({ open: false, type: '' });
   useEffect(() => {
@@ -35,16 +39,25 @@ export default function Header({ home }) {
           </p>
         </Link>
         {/* <p className={styles.header__container_title}>Termy Panel</p> */}
-        {home ? (
-          <div className={styles.header__container_log}>
-            <button type="button" onClick={() => setModal({ open: true, type: 'SingIn' })}>Iniciar secion</button>
-            <button type="button" onClick={() => setModal({ open: true, type: 'SingUp' })}>Crear cuenta</button>
-          </div>
-        )
+        {home ?
+          <>
+            {
+              authData.token === null ? (
+                <div className={styles.header__container_log}>
+                  <button type="button" onClick={() => setModal({ open: true, type: 'SingIn' })}>Iniciar secion</button>
+                  <button type="button" onClick={() => setModal({ open: true, type: 'SingUp' })}>Crear cuenta</button>
+                </div>
+              ) : (
+                <div className={styles.header__container_log}>
+                  <button type="button" onClick={() => router.push('./panel')}>Panel</button>
+                </div>
+              )
+            }
+          </>
           : (
             <div className={styles.header__container_user}>
-              <p className={styles.header__container_name}>Hector Guillermo Angeles Maicas</p>
-              <p><span>memoangeles180@gmail.com</span></p>
+              <p className={styles.header__container_name}>{authData.user.username}</p>
+              <p><span>{authData.user.email}</span></p>
             </div>
           )}
       </div>

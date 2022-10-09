@@ -15,12 +15,31 @@ import 'react-datetime-picker/dist/DateTimePicker.css';
 import 'react-calendar/dist/Calendar.css';
 import 'react-clock/dist/Clock.css';
 import moment from 'moment-timezone';
-import 'moment/locale/es-mx';
 import ReactModal from 'react-modal';
+import 'moment/locale/es-mx';
+import AuthContext from '../../context/authContext';
+import NotificationsContext from '../../context/notificationsContext';
+import {
+  postEventService, getEventService, deleteEventService, putEventService,
+} from '../../services/eventServices';
 
+export async function getServerSideProps({ req }) {
+  const token = req.cookies.token || null;
+  if (token === null) {
+    return {
+      redirect: {
+        destination: '/',
+        permanent: false,
+      },
+    };
+  }
+  return { props: { token } };
+}
 
 export default function Calendar() {
+  const { authData } = useContext(AuthContext);
   const { preLoad, setPreLoad } = useContext(PreLoadContext);
+  const { addNotification, setNotifications } = useContext(NotificationsContext);
   const [modal, setModal] = useState(false);
   const [title, setTitle] = useState('');
   const [dateStart, setDateStart] = useState();
@@ -28,23 +47,24 @@ export default function Calendar() {
   const [event, setEvent] = useState();
   const [seeEvent, setSeeEvent] = useState(false);
   const [events, setEvents] = useState([]);
-
+  console.log(authData.user);
   const getEvents = () => {
-    setEvents([{ title: "hola", start: new Date() }])
+    setPreLoad(true);
+    getEventService(authData.user.id, authData.token)
+      .then((response) => response.json())
+      .then((result) => {
+        setEvents(result);
+        setPreLoad(false);
+      })
+      .catch(() => {
+        setNotifications([{ type: 'error', title: '', text: 'Hubo un error.' }]);
+        setPreLoad(false);
+      });
   };
-  /*   useEffect(() => {
-      getEvents();
-      // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, []); */
-
-  // update events----------------------------------------------------------------------------------
-  const updateEvent = (e) => {
-    e.preventDefault();
-  };
-  // create events----------------------------------------------------------------------------------
-  const createEvent = (e) => {
-    e.preventDefault();
-  };
+  useEffect(() => {
+    getEvents();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
   // reset values----------------------------------------------------------------------------------
   const reset = () => {
     setModal(false);
@@ -55,6 +75,90 @@ export default function Calendar() {
     setEvent();
     setSeeEvent(false);
   };
+  // update events----------------------------------------------------------------------------------
+  const updateEvent = (e) => {
+    e.preventDefault();
+    const dateEvent = {
+      title,
+      user: authData.user.id,
+      backgroundColor: 'white',
+      start: dateStart,
+      end: dateEnd,
+    };
+    setPreLoad(true);
+    // eslint-disable-next-line no-underscore-dangle
+    putEventService(dateEvent, event._def.extendedProps._id, authData.token)
+      .then((response) => {
+        if (response.status === 200) {
+          return response;
+        }
+        throw new Error(response);
+      })
+      .then((response) => response.json())
+      .then(() => {
+        addNotification('confirmation', '', 'Evento creado', '5');
+        reset();
+      })
+      .catch(() => {
+        setNotifications([{ type: 'error', title: '', text: 'Hubo un error al crear el evento.' }]);
+        setPreLoad(false);
+      });
+  };
+  // create events----------------------------------------------------------------------------------
+  const createEvent = (e) => {
+    e.preventDefault();
+    const dateEvent = {
+      title,
+      user: authData.user.id,
+      backgroundColor: 'white',
+      start: dateStart,
+      end: dateEnd,
+    };
+    setPreLoad(true);
+    postEventService(dateEvent, authData.token)
+      .then((response) => {
+        if (response.status === 201) {
+          return response;
+        }
+        throw new Error(response);
+      })
+      .then((response) => response.json())
+      .then(() => {
+        addNotification('confirmation', '', 'Evento creado', '5');
+        reset();
+      })
+      .catch(() => {
+        setNotifications([{ type: 'error', title: '', text: 'Hubo un error al crear el evento.' }]);
+        setPreLoad(false);
+      });
+  };
+  // delete events----------------------------------------------------------------------------------
+  const deleteEvents = () => {
+    setPreLoad(true);
+    // eslint-disable-next-line no-underscore-dangle
+    deleteEventService(event._def.extendedProps._id, authData.token)
+      .then((response) => {
+        if (response.status === 204) {
+          return response;
+        }
+        throw new Error(response);
+      })
+      .then(() => {
+        getEvents();
+        addNotification('confirmation', '', 'Evento eliminado', '5');
+        setModal(false);
+        setDateEnd(null);
+        setDateStart(null);
+        setTitle('');
+        getEvents();
+        setSeeEvent(false);
+      })
+      .catch(() => {
+        setNotifications([{ type: 'error', title: '', text: 'Hubo un error al eliminar el evento.' }]);
+        setPreLoad(false);
+      });
+  };
+
   const onEvent = (info) => {
     setEvent(info.event);
     setModal(true);

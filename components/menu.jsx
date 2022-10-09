@@ -1,11 +1,13 @@
 /* eslint-disable linebreak-style */
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import Image from 'next/image';
 import ReactModal from 'react-modal';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import PropTypes from 'prop-types';
+import { removeCookies } from '../pages/_app';
+import AuthContext from '../context/authContext';
 import styles from '../styles/Menu.module.scss';
 
 export default function Menu({
@@ -13,7 +15,11 @@ export default function Menu({
 }) {
   const router = useRouter();
   const [menuMovil, setMenuMovil] = useState(false);
+  const { resetAuthData } = useContext(AuthContext);
+
   const logout = () => {
+    resetAuthData();
+    removeCookies('token');
     router.push('/');
   };
 
