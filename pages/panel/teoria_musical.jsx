@@ -32,26 +32,23 @@ export default function MusicalTheory() {
         <div className={styles.dashboard}>
           {/* Inicio de ejemplo ---------------------------------*/}
           <details className={styles.dashboard__text}>
-            <summary className={styles.dashboard__text_title}>Titulo ejemplo</summary>
+            <summary className={styles.dashboard__text_title}>Elementos de la Partitura</summary>
             <div className={styles.dashboard__text_body}>
-              <p className={styles.dashboard__text_subTitle}>Subtitulo ejemplo</p>
+              <p className={styles.dashboard__text_subTitle}>Pentagrama</p>
               <p className={styles.dashboard__text_txt}>
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                Enim deleniti mollitia incidunt praesentium id error.
-                <span className={styles.dashboard__text_bold}>Aut,</span>
-                soluta veniam. Ducimus molestiae natus deleniti tempora.
-                Corporis eaque est similique dolor iure vero?
-              </p>
-              <p className={styles.dashboard__text_txt}>
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                Enim deleniti mollitia incidunt praesentium id error.
-                <span className={styles.dashboard__text_bold}>Aut,</span>
-                soluta veniam. Ducimus molestiae natus deleniti tempora.
-                Corporis eaque est similique dolor iure vero?
+                Es el lugar en el que se escriben las notas, se conforma de 5 lineas horizontales paralelas. 
+                Las lineas se cuentan de abajo hacia arriba.
               </p>
               <div className={styles.dashboard__text_imgs}>
-                <Image src="/images/g_a1.png" alt="play" width={550} height={250} />
-                <Image src="/images/nice.svg" alt="play" width={150} height={150} />
+                <Image src="/images/teoria_musical/1_1.png" alt="play" width={550} height={250} />  
+              </div>
+              <p className={styles.dashboard__text_subTitle}>Barra Inicial</p>
+              <p className={styles.dashboard__text_txt}>
+              Se coloca antes de la clave al inicio de la partitura y 
+              es el elemento que sirve para dividir el pentagrama en compases (un compas es una seriede segundos).
+              </p>
+              <div className={styles.dashboard__text_imgs}>
+                <Image src="/images/teoria_musical/barras_lineas.png" alt="play" width={550} height={250} />
               </div>
             </div>
           </details>

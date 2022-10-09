@@ -452,9 +452,9 @@ export default function GuitarExercises(typeGame, id) {
     },
     {
       name: 'Do# (sus4)',
-      answers: [0, 7, 6, 6, 0, -1],
+      answers: [0, 6, 5, 5, 0, -1],
       img: '/images/g_a1.png',
-      guitarCapo: 4,
+      guitarCapo: 3,
     },
     {
       name: 'Re (sus4)',
@@ -630,21 +630,21 @@ export default function GuitarExercises(typeGame, id) {
     },
     {
       name: 'Fa# (sus2)',
-      answers: [0, 7, 6, 0, -1, -1],
+      answers: [0, 6, 5, 0, -1, -1],
       img: '/images/g_a1.png',
-      guitarCapo: 4,
+      guitarCapo: 3,
     },
     {
       name: 'Sol (sus2)',
-      answers: [0, 8, 7, 0, -1, -1],
+      answers: [5, 8, 7, 5, -1, -1],
       img: '/images/g_a1.png',
-      guitarCapo: 4,
+      guitarCapo: 0,
     },
     {
       name: 'Sol# (sus2)',
-      answers: [0, 9, 8, 0, -1, -1],
+      answers: [6, 9, 8, 6, -1, -1],
       img: '/images/g_a1.png',
-      guitarCapo: 4,
+      guitarCapo: 0,
     },
     {
       name: 'La (sus2)',
@@ -674,7 +674,7 @@ export default function GuitarExercises(typeGame, id) {
     },
     {
       name: 'Do# (7sus4)',
-      answers: [0, 7, 0, 6, 0, -1],
+      answers: [0, 6, 0, 5, 0, -1],
       img: '/images/g_a1.png',
       guitarCapo: 4,
     },
