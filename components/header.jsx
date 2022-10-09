@@ -56,7 +56,7 @@ export default function Header({ home }) {
           </>
           : (
             <div className={styles.header__container_user}>
-              <p className={styles.header__container_name}>{authData.user.username}</p>
+              <p className={styles.header__container_name}>{`${authData.user.name} ${authData.user.lastName}`}</p>
               <p><span>{authData.user.email}</span></p>
             </div>
           )}

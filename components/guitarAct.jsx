@@ -67,7 +67,7 @@ export default function GuitarAct() {
   const [guitarCapo, setGuitarCapo] = useState(0);
 
   const start = () => {
-    const max = typeGame === 'major' ? 1
+    const max = typeGame === 'major' ? 12
       : typeGame === 'minor' ? 12
         : typeGame === 'fifth' ? 12
           : typeGame === 'seventh' ? 12
@@ -88,6 +88,7 @@ export default function GuitarAct() {
   // answers
   const isItOk = () => {
     setAnswersModal(true);
+    console.log(JSON.stringify(strings));
     setIsRight((JSON.stringify(exercise.answers) === JSON.stringify(strings)) && guitarCapo === exercise.guitarCapo);
   }
   const nextExercise = () => {
@@ -119,7 +120,7 @@ export default function GuitarAct() {
               <p className={styles.courseGuitar__actFalse_example}>Ejemplo:</p>
               <div className={styles.courseGuitar__actFalse_atc}>
                 <p>Visualisa la imagen y trata de compreneder la nota que representa</p>
-                <Image unoptimized loader={({ src }) => src} src="https://res.cloudinary.com/atusdedos/image/upload/v1664851464/guitarExercises/major/do_major_esk5ly.png" alt="play" width={550} height={250} />
+                <Image unoptimized loader={({ src }) => src} src="https://res.cloudinary.com/atusdedos/image/upload/v1665284479/guitarExercises/major/do__major_y8mzer.png" alt="play" width={550} height={250} />
                 <span className={styles.courseGuitar__actFalse_note}>Do</span>
               </div>
             </div>

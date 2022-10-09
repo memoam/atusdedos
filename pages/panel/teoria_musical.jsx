@@ -40,7 +40,7 @@ export default function MusicalTheory() {
                 Las lineas se cuentan de abajo hacia arriba.
               </p>
               <div className={styles.dashboard__text_imgs}>
-                <Image src="/images/teoria_musical/1_1.png" alt="play" width={550} height={250} />  
+                <Image unoptimized loader={({ src }) => src} src="https://res.cloudinary.com/atusdedos/image/upload/v1665284266/teoria_musical/1_1_yvwedk.png" alt="play" width={576} height={175} />  
               </div>
               <p className={styles.dashboard__text_subTitle}>Barra Inicial</p>
               <p className={styles.dashboard__text_txt}>
@@ -48,7 +48,7 @@ export default function MusicalTheory() {
               es el elemento que sirve para dividir el pentagrama en compases (un compas es una seriede segundos).
               </p>
               <div className={styles.dashboard__text_imgs}>
-                <Image src="/images/teoria_musical/barras_lineas.png" alt="play" width={550} height={250} />
+                <Image unoptimized loader={({ src }) => src} src="https://res.cloudinary.com/atusdedos/image/upload/v1665284266/teoria_musical/1_2_vrwj6c.png" alt="play" width={701} height={201} />
               </div>
             </div>
           </details>
