@@ -6,6 +6,7 @@ import { useRouter } from 'next/router';
 import Menu from '../../components/menu';
 import Header from '../../components/header';
 import PreLoadContext from '../../context/preLoadContext';
+import AuthContext from '../../context/authContext';
 import NotificationsContext from '../../context/notificationsContext';
 import Notification from '../../components/notifications';
 import styles from '../../styles/Profile.module.scss';
@@ -24,6 +25,7 @@ export async function getServerSideProps({ req }) {
 }
 
 export default function Profile() {
+  const { authData } = useContext(AuthContext);
   const { setPreLoad } = useContext(PreLoadContext);
   const { addNotification } = useContext(NotificationsContext);
   const [profile, setProfile] = useState(true);
@@ -67,8 +69,8 @@ export default function Profile() {
             <div className={styles.profile__profile_avatar}>
               <Image alt="Usuario" src="/images/person.svg" width={140} height={140} />
               <div>
-                <p className={styles.profile__profile_name}>Hector Guillermo Angeles Maicas</p>
-                <p><span>memoangeles180@gmail.com</span></p>
+                <p className={styles.profile__profile_name}>{`${authData.user.name} ${authData.user.lastName}`}</p>
+                <p><span>{authData.user.email}</span></p>
               </div>
             </div>
             <form className={styles.profile__profile_form} onSubmit={validateData}>

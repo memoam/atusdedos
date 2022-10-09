@@ -121,7 +121,7 @@ export default function GuitarAct() {
               <div className={styles.courseGuitar__actFalse_atc}>
                 <p>Visualisa la imagen y trata de compreneder la nota que representa</p>
                 <Image unoptimized loader={({ src }) => src} src="https://res.cloudinary.com/atusdedos/image/upload/v1665284479/guitarExercises/major/do__major_y8mzer.png" alt="play" width={550} height={250} />
-                <span className={styles.courseGuitar__actFalse_note}>Do</span>
+                <span className={styles.courseGuitar__actFalse_note}>Do# (major)</span>
               </div>
             </div>
             <button className={styles.courseGuitar__exercise_play} type="button" onClick={() => start()}>

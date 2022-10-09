@@ -49,7 +49,7 @@ export default function Header({ home }) {
                 </div>
               ) : (
                 <div className={styles.header__container_log}>
-                  <button type="button" onClick={() => router.push('./panel')}>Panel</button>
+                  <button type="button" onClick={() => router.push('./panel')}>Seguir aprendiendo</button>
                 </div>
               )
             }

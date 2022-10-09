@@ -1,17 +1,18 @@
 /* eslint-disable linebreak-style */
 /* eslint-disable jsx-a11y/label-has-associated-control */
-import React, { useState } from 'react';
+import React, { useContext } from 'react';
 import Image from 'next/image';
 import Header from '../components/header';
 import Cards from '../components/cards';
 import Notification from '../components/notifications';
+import AuthContext from '../context/authContext';
 import Price from '../components/price';
 import styles from '../styles/Home.module.scss';
 import { dataIndex, libraryMusic, skills, dataIndexInit, libraryMusicInit, skillsInit } from '../helpers/homemMeans';
 import Footer from '../components/footer';
 
 export default function Home() {
-  const log = false;
+  const { authData } = useContext(AuthContext);
   const courses = [
     { name: 'Para aprender', value: dataIndex, valueInit: dataIndexInit },
     { name: 'Inspiracion', value: libraryMusic, valueInit: libraryMusicInit },
@@ -39,7 +40,7 @@ export default function Home() {
             <div className={styles.section} key={keyIndex}>
               <p className={styles.section__title}>{course.name}</p>
               <div className={styles.section__cards}>
-                <Cards data={!log ? course.value: course.valueInit} />
+                <Cards data={ authData.token === null ? course.value: course.valueInit} />
               </div>
             </div>
           );

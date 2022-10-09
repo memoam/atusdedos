@@ -15,7 +15,7 @@ export default function Menu({
 }) {
   const router = useRouter();
   const [menuMovil, setMenuMovil] = useState(false);
-  const { resetAuthData } = useContext(AuthContext);
+  const { resetAuthData, authData } = useContext(AuthContext);
 
   const logout = () => {
     resetAuthData();
@@ -70,8 +70,8 @@ export default function Menu({
       >
         <div className={styles.menuMovil__container}>
           <div>
-            <p>Hector Guillermo Angeles Macias</p>
-            <p><span>memoangeles180@gmail.com</span></p>
+            <p>{`${authData.user.name} ${authData.user.lastName}`}</p>
+            <p><span>{authData.user.email}</span></p>
           </div>
           {links()}
           {logoutR()}
