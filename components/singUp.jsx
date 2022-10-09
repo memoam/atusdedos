@@ -11,9 +11,9 @@ export default function SingUp() {
   const days = [];
   for (let i = 1; i < 32; i += 1) { days[i] = i; }
   const [user, setUser] = useState({
+    username,
     name: '',
     lastName: '',
-    middleName: '',
     email: '',
     password: '',
     passwordConfirmation: '',
@@ -32,18 +32,50 @@ export default function SingUp() {
   };
   return (
     <form className={styles.form} onSubmit={validateForm}>
-      <label htmlFor="name">Primer nombre </label>
-      <input name="name" id="name" type="text" onChange={(ev) => changeInput(ev, 'name')} defaultValue={user.name} autoComplete="off" />
+      <p  className={styles.form__title}>Crear Cuenta</p>
+      <label htmlFor="username">Nombre(s)</label>
+        <input name="username" id="username" type="text" onChange={(ev) => changeInput(ev, 'username')} defaultValue={user.name} autoComplete="off" />
       <div className={styles.form__input50}>
-        <label htmlFor="lastName">Apellido Paterno</label>
-        <input id="lastName" type="text" onChange={(ev) => changeInput(ev, 'lastName')} defaultValue={user.lastName} />
+        <label htmlFor="name">Nombre(s)</label>
+        <input name="name" id="name" type="text" onChange={(ev) => changeInput(ev, 'name')} defaultValue={user.name} autoComplete="off" />
       </div>
       <div className={styles.form__input50}>
-        <label htmlFor="middleLastName">Apellido Materno</label>
-        <input id="middleLastName" type="text" onChange={(ev) => changeInput(ev, 'middleName')} defaultValue={user.middleName} />
+        <label htmlFor="lastName">Apellido(s)</label>
+        <input id="lastName" type="text" onChange={(ev) => changeInput(ev, 'lastName')} defaultValue={user.lastName} />
       </div>
       <label htmlFor="email">Correo</label>
       <input id="email" type="mail" onChange={(ev) => changeInput(ev, 'email')} defaultValue={user.email} />
+     <p className={styles.form__date}>Fecha de nacimiento</p>
+      <div className={styles.form__date_day}>
+        <label htmlFor="day">Día</label>
+        <select id="day" type="number" list="day" onChange={(ev) => changeInput(ev, 'birthDay')} defaultValue={user.birthDay}>
+          <option value="" disabled> </option>
+          {days.map((day, index) => {
+            const keyIndex = index + 1;
+            return (<option key={keyIndex} value={(`0${day}`).slice(-2)}>{day}</option>);
+          })}
+        </select>
+      </div>
+      <div className={styles.form__date_month}>
+        <label htmlFor="month">Mes</label>
+        <select id="month" list="month" onChange={(ev) => changeInput(ev, 'birthMonth')} defaultValue={user.birthMonth}>
+          <option value="" disabled> </option>
+          {months.map((month, index) => {
+            const keyIndex = index + 1;
+            return (<option key={keyIndex} value={(`0${keyIndex}`).slice(-2)}>{month}</option>);
+          })}
+        </select>
+      </div>
+      <div className={styles.form__date_year}>
+        <label htmlFor="year">Año</label>
+        <select id="year" list="year" onChange={(ev) => changeInput(ev, 'birthYear')} defaultValue={user.birthYear}>
+          <option value="" disabled> </option>
+          {years.map((y, index) => {
+            const keyIndex = index + 1;
+            return (<option key={keyIndex} value={`${y}`}>{y}</option>);
+          })}
+        </select>
+      </div>
       <div className={styles.form__input50}>
         <label htmlFor="password">Contraseña</label>
         <input id="password" type="password" onChange={(ev) => changeInput(ev, 'password')} defaultValue={user.password} />
@@ -51,43 +83,6 @@ export default function SingUp() {
       <div className={styles.form__input50}>
         <label htmlFor="passwordConfirmation">Confirmar Contraseña</label>
         <input id="passwordConfirmation" type="password" onChange={(ev) => changeInput(ev, 'passwordConfirmation')} defaultValue={user.passwordConfirmation} />
-      </div>
-
-      <div className={styles.form__date_day}>
-        <label htmlFor="day">Día</label>
-        <select id="day" type="number" list="day" onChange={(ev) => changeInput(ev, 'birthDay')} defaultValue={user.birthDay}>
-          <option value="" disabled> </option>
-          {
-            days.map((day, index) => {
-              const keyIndex = index + 1;
-              return (<option key={keyIndex} value={(`0${day}`).slice(-2)}>{day}</option>);
-            })
-          }
-        </select>
-      </div>
-      <div className={styles.form__date_month}>
-        <label htmlFor="month">Mes</label>
-        <select id="month" list="month" onChange={(ev) => changeInput(ev, 'birthMonth')} defaultValue={user.birthMonth}>
-          <option value="" disabled> </option>
-          {
-            months.map((month, index) => {
-              const keyIndex = index + 1;
-              return (<option key={keyIndex} value={(`0${keyIndex}`).slice(-2)}>{month}</option>);
-            })
-          }
-        </select>
-      </div>
-      <div className={styles.form__date_year}>
-        <label htmlFor="year">Año</label>
-        <select id="year" list="year" onChange={(ev) => changeInput(ev, 'birthYear')} defaultValue={user.birthYear}>
-          <option value="" disabled> </option>
-          {
-            years.map((y, index) => {
-              const keyIndex = index + 1;
-              return (<option key={keyIndex} value={`${y}`}>{y}</option>);
-            })
-          }
-        </select>
       </div>
       <div className={styles.form__submit}>
         <button type="submit">Crear Cuenta</button>

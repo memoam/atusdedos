@@ -8,6 +8,19 @@ import FluteAct from '../../components/fluteAct';
 import FluteText from '../../components/fluteText';
 import styles from '../../styles/Dashboard.module.scss';
 
+export async function getServerSideProps({ req }) {
+  const token = req.cookies.token || null;
+  if (token === null) {
+    return {
+      redirect: {
+        destination: '/',
+        permanent: false,
+      },
+    };
+  }
+  return { props: { token } };
+}
+
 export default function Flute() {
   const { preLoad, setPreLoad } = useContext(PreLoadContext);
   const [course, setCourse] = useState(true)

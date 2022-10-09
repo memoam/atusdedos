@@ -10,6 +10,19 @@ import NotificationsContext from '../../context/notificationsContext';
 import Notification from '../../components/notifications';
 import styles from '../../styles/Profile.module.scss';
 
+export async function getServerSideProps({ req }) {
+  const token = req.cookies.token || null;
+  if (token === null) {
+    return {
+      redirect: {
+        destination: '/',
+        permanent: false,
+      },
+    };
+  }
+  return { props: { token } };
+}
+
 export default function Profile() {
   const { setPreLoad } = useContext(PreLoadContext);
   const { addNotification } = useContext(NotificationsContext);

@@ -7,6 +7,19 @@ import PreLoadContext from '../../context/preLoadContext';
 import SaxoText from '../../components/saxoText';
 import styles from '../../styles/Dashboard.module.scss';
 
+export async function getServerSideProps({ req }) {
+  const token = req.cookies.token || null;
+  if (token === null) {
+    return {
+      redirect: {
+        destination: '/',
+        permanent: false,
+      },
+    };
+  }
+  return { props: { token } };
+}
+
 export default function Saxo() {
   const { preLoad, setPreLoad } = useContext(PreLoadContext);
   const [course, setCourse] = useState(true)
