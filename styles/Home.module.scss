@@ -196,15 +196,17 @@
   align-items: center;
   flex-wrap: wrap;
 
+  label,
   p {
     width: 100%;
   }
-  
+
   &__title {
     font-size: 1.5em;
     font-weight: 600;
   }
-  &__date{
+
+  &__date {
     font-size: 12px;
     margin-bottom: -1em;
     margin-top: 2em;

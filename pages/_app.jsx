@@ -13,7 +13,13 @@ function MyApp({ Component, pageProps }) {
     user: {
       id: null,
       username: null,
+      name: null,
+      lastName: null,
       email: null,
+      password: null,
+      birthDay: null,
+      birthMonth: null,
+      birthYear: null,
     },
     token: null,
   };

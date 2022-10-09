@@ -11,7 +11,7 @@ export default function SingUp() {
   const days = [];
   for (let i = 1; i < 32; i += 1) { days[i] = i; }
   const [user, setUser] = useState({
-    username,
+    username: '',
     name: '',
     lastName: '',
     email: '',
@@ -32,9 +32,7 @@ export default function SingUp() {
   };
   return (
     <form className={styles.form} onSubmit={validateForm}>
-      <p  className={styles.form__title}>Crear Cuenta</p>
-      <label htmlFor="username">Nombre(s)</label>
-        <input name="username" id="username" type="text" onChange={(ev) => changeInput(ev, 'username')} defaultValue={user.name} autoComplete="off" />
+      <p className={styles.form__title}>Crear Cuenta</p>
       <div className={styles.form__input50}>
         <label htmlFor="name">Nombre(s)</label>
         <input name="name" id="name" type="text" onChange={(ev) => changeInput(ev, 'name')} defaultValue={user.name} autoComplete="off" />
@@ -43,9 +41,13 @@ export default function SingUp() {
         <label htmlFor="lastName">Apellido(s)</label>
         <input id="lastName" type="text" onChange={(ev) => changeInput(ev, 'lastName')} defaultValue={user.lastName} />
       </div>
+      <div className={styles.form__input50}>
+        <label htmlFor="username">Usuario</label>
+        <input name="username" id="username" type="text" onChange={(ev) => changeInput(ev, 'username')} defaultValue={user.name} autoComplete="off" />
+      </div>
       <label htmlFor="email">Correo</label>
       <input id="email" type="mail" onChange={(ev) => changeInput(ev, 'email')} defaultValue={user.email} />
-     <p className={styles.form__date}>Fecha de nacimiento</p>
+      <p className={styles.form__date}>Fecha de nacimiento</p>
       <div className={styles.form__date_day}>
         <label htmlFor="day">Día</label>
         <select id="day" type="number" list="day" onChange={(ev) => changeInput(ev, 'birthDay')} defaultValue={user.birthDay}>
