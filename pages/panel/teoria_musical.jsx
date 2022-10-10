@@ -30,7 +30,7 @@ export default function MusicalTheory() {
       <div className={styles.main}>
         <p className={styles.main__title}>Teoría musical</p>
         <div className={styles.dashboard}>
-          {/* Inicio de ejemplo ---------------------------------*/}
+          {/* Inicio de elementos de partitura ---------------------------------*/}
           <details className={styles.dashboard__text}>
             <summary className={styles.dashboard__text_title}>Elementos de la Partitura</summary>
             <div className={styles.dashboard__text_body}>
@@ -85,8 +85,8 @@ export default function MusicalTheory() {
               </div>
             </div>
           </details>
-          {/* fin de ejemplo ---------------------------------*/}
-          {/* Inicio de ejemplo 2 ---------------------------------*/}
+          {/* fin de elementos de partitura ---------------------------------*/}
+          {/* Inicio de seccion de notas ---------------------------------*/}
           <details className={styles.dashboard__text}>
             <summary className={styles.dashboard__text_title}>Sección de Notas</summary>
             <div className={styles.dashboard__text_body}>
@@ -113,7 +113,8 @@ export default function MusicalTheory() {
               </p>
             </div>
           </details>
-          {/* fin de ejemplo 2---------------------------------*/}
+          {/* fin de seccion de notas---------------------------------*/}
+          {/* Inicio de seccion de claves---------------------------------*/}
           <details className={styles.dashboard__text}>
             <summary className={styles.dashboard__text_title}>Sección de Claves</summary>
             <div className={styles.dashboard__text_body}>
@@ -223,6 +224,7 @@ export default function MusicalTheory() {
               </p>
             </div>
           </details>
+          {/* fin de seccion de claves---------------------------------*/}
         </div>
       </div>
     </div>
