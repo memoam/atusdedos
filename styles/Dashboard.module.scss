@@ -196,6 +196,14 @@
       }
     }
   }
+  &__definitionImg{
+    display: flex;
+    align-items: center;
+    margin: 0.5em 0 0;
+    div{
+      padding-left: 1em;
+    }
+  }
 }
 
 .metronome {
