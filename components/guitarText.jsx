@@ -12,9 +12,30 @@ export default function GuitarText() {
         <div className={styles.dashboard__text_body}>
           <p className={styles.dashboard__text_subTitle}>Subtitulo</p>
 
+          {/* definiciones con img ---------------------------------*/}
+          {/* ejemplo 1 ---------------------------------*/}
+          <div className={styles.dashboard__definitionImg}>
+            <Image unoptimized loader={({ src }) => src} src="/images/nice.svg" alt="play" width={75} height={75} />
+            <div>
+              <strong>titulo</strong>
+              <p className={styles.dashboard__text_txt}>texto</p>
+            </div>
+          </div>
+          {/* ejemplo 2 ---------------------------------*/}
+          <div className={styles.dashboard__definitionImg}>
+            <Image unoptimized loader={({ src }) => src} src="/images/nice.svg" alt="play" width={75} height={75} />
+            <div>
+              <strong>titulo</strong>
+              <p className={styles.dashboard__text_txt}>texto</p>
+            </div>
+          </div>
+
+
+
+          {/* definiciones---------------------------------  */}
           <div className={styles.dashboard__definitions}>
             <p className={styles.dashboard__definitions_definition}>
-              <strong>definicion</strong>
+              <span className={styles.dashboard__text_bold}>negritas</span>
               <span>
                 significado
               </span>
