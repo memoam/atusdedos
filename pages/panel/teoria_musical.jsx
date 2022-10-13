@@ -95,7 +95,7 @@ export default function MusicalTheory() {
                 Son las figuras que representan los sonidos en el pentagrama.
               </p>
               <div className={styles.dashboard__text_imgs}>
-                <Image unoptimized loader={({ src }) => src} src="" alt="play" width={701} height={201} />
+                <Image unoptimized loader={({ src }) => src} src="https://res.cloudinary.com/atusdedos/image/upload/v1665632095/teoria_musical/figutas-musicales_vlj2lp.png" alt="play" width={500} height={316} />
               </div>
               <p className={styles.dashboard__text_subTitle}>Notas Musicales</p>
               <p className={styles.dashboard__text_txt}>

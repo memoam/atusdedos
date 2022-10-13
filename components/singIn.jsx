@@ -54,7 +54,7 @@ export default function SingIn() {
             setPreLoad(false);
           } else {
             console.log('memo es puto');
-            localStorage.setItem('auth', JSON.stringify(result));
+            sessionStorage.setItem('auth', JSON.stringify(result));
             setAuthData(result);
             createCookie('token', result.token);
             addNotification('confirmation', '', 'Bienvenido!', '5');

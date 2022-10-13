@@ -211,9 +211,6 @@
         color: red;
       }
 
-      @media (prefers-color-scheme: dark) {
-        color: $textWhite;
-      }
     }
   }
 
@@ -230,9 +227,6 @@
     display: none;
   }
 
-  @media (prefers-color-scheme: dark) {
-    background-color: $backgroundDark;
-  }
 }
 
 .menuMovil {
@@ -258,9 +252,6 @@
     transform: translate(11%, 0) !important;
   }
 
-  @media (prefers-color-scheme: dark) {
-    background: $backgroundItemDark;
-  }
 
   &__burger {
     display: none;
@@ -298,9 +289,6 @@
     font-size: 70px;
     position: relative;
 
-    @media (prefers-color-scheme: dark) {
-      color: $textWhite;
-    }
 
     span {
       color: $primary;
@@ -313,9 +301,6 @@
         left: 9.5em;
         font-weight: normal;
 
-        @media (prefers-color-scheme: dark) {
-          color: $textWhite;
-        }
       }
     }
   }
@@ -335,9 +320,6 @@
     a {
       text-decoration: underline;
 
-      @media (prefers-color-scheme: dark) {
-        color: $textWhite;
-      }
     }
   }
 
@@ -349,9 +331,6 @@
       text-decoration: underline;
       margin-top: 0.5em;
 
-      @media (prefers-color-scheme: dark) {
-        color: $textWhite;
-      }
     }
   }
 

@@ -362,10 +362,6 @@
 .circles div:nth-child(2) {
   border-color: $textBlack;
   animation-delay: -0.5s;
-
-  @media (prefers-color-scheme: dark) {
-    border-color: $textWhite;
-  }
 }
 
 .spinner {

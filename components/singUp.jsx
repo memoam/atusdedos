@@ -69,7 +69,7 @@ export default function SingUp() {
             addNotification('warning', '', 'Email ya existe', '5');
             setPreLoad(false);
           } else {
-            localStorage.setItem('auth', JSON.stringify(result));
+            sessionStorage.setItem('auth', JSON.stringify(result));
             setAuthData(result);
             createCookie('token', result.token);
             addNotification('confirmation', '', 'Bienvenido!', '5');

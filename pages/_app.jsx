@@ -27,12 +27,12 @@ function MyApp({ Component, pageProps }) {
   const [preLoad, setPreLoad] = useState(false);
   const [notifications, setNotifications] = useState([]);
   useEffect(() => {
-    let sessionAuth = localStorage.getItem('auth');
+    let sessionAuth = sessionStorage.getItem('auth');
     sessionAuth = JSON.parse(sessionAuth);
     if (sessionAuth) setAuthData(sessionAuth);
   }, []);
   const resetAuthData = () => {
-    localStorage.removeItem('auth');
+    sessionStorage.removeItem('auth');
     setAuthData(initAuthDta);
   };
 
