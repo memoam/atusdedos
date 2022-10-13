@@ -31,7 +31,7 @@ export default function SingIn() {
     setNotifications([]);
     if (user.email === '' || user.password === '') {
       addNotification('information', '', 'Recuerde que todos los campos son obligatorios.', '7');
-    } else if (!(/^(([^<>()[\]/.,;:\s@/"]+(\.[^<>()[\]/.,;:\s@/"]+)*)|('.+'))@(([^<>()[\]/.,;:\s@/"]+\.)+[^<>()[\]/.,;:\s/"]{2,})$/i.test(user.email))) {
+    } else if (!(/^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i.test(user.email))) {
       addNotification('warning', '', 'Ingrese un correo válido.', '7');
     } else {
       setPreLoad(true);
@@ -46,14 +46,13 @@ export default function SingIn() {
         .then((response) => response.json())
         .then((result) => {
           console.log(result.message);
-          if (result.message === 'User no found') {
+          if (result.message === 'User Not Found') {
             addNotification('warning', '', 'Usuario no encontrado', '5');
             setPreLoad(false);
-          } else if (result.message === 'Invalid password') {
+          } else if (result.message === 'Invalid Password') {
             addNotification('warning', '', 'Contraseña invalida', '5');
             setPreLoad(false);
           } else {
-            console.log('memo es puto');
             sessionStorage.setItem('auth', JSON.stringify(result));
             setAuthData(result);
             createCookie('token', result.token);

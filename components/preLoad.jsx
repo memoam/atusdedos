@@ -13,7 +13,7 @@ export default function PreLoad() {
       onAfterClose={() => { document.body.removeAttribute('style'); }}
       className={styles.preload}
       ariaHideApp={false}
-      style={{ overlay: { backgroundColor: 'rgba(34,34,34, 0.2)', zIndex: '4' } }}
+      style={{ overlay: { backgroundColor: 'rgba(34,34,34, 0.2)', zIndex: '7' } }}
     >
       <div className={styles.spinner}>
         <div className={styles.circles}>

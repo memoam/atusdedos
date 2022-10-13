@@ -46,7 +46,7 @@ export default function SingUp() {
     setNotifications([]);
     if (user.email === '' || user.password === '' || user.username === '' || user.passwordConfirmation === '') {
       addNotification('information', '', 'Recuerde que todos los campos son obligatorios.', '7');
-    } else if (!(/^(([^<>()[\]/.,;:\s@/"]+(\.[^<>()[\]/.,;:\s@/"]+)*)|('.+'))@(([^<>()[\]/.,;:\s@/"]+\.)+[^<>()[\]/.,;:\s/"]{2,})$/i.test(user.email))) {
+    } else if (!(/^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i.test(user.email))) {
       addNotification('warning', '', 'Ingrese un correo válido.', '7');
     } else if (user.password !== user.passwordConfirmation) {
       addNotification('warning', '', 'La contraseña y su confirmacion no coinciden.', '7');
