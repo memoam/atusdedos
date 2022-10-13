@@ -8,7 +8,7 @@ import { useRouter } from 'next/router';
 import PropTypes from 'prop-types';
 import { removeCookies } from '../pages/_app';
 import AuthContext from '../context/authContext';
-import styles from '../styles/Menu.module.scss';
+import styles from '../styles/Header.module.scss';
 
 export default function Menu({
   courses, profile, calendar

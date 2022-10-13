@@ -108,7 +108,7 @@ export default function GuitarAct() {
       {!playing ? (
         <div className={styles.courseGuitar__exercise}>
           <div className={styles.courseGuitar__difficulty}>
-            <p>Tipo de acorde</p>
+            <p>Elije el acorde que deses practicar</p>
             {chords.map((chord, index) => {
               const keyIndex = index + 1;
               return (<button key={keyIndex} type="button" className={typeGame === chord.value ? styles.courseGuitar__difficulty_active : null} onClick={() => setTypeGame(chord.value)}>{chord.name}</button>);

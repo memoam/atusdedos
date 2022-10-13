@@ -11,7 +11,7 @@ export default function GuitarText() {
         <summary className={styles.dashboard__text_title}>Titulo</summary>
         <div className={styles.dashboard__text_body}>
           <p className={styles.dashboard__text_subTitle}>Subtitulo</p>
-
+3
           {/* definiciones con img ---------------------------------*/}
           {/* ejemplo 1 ---------------------------------*/}
           <div className={styles.dashboard__definitionImg}>

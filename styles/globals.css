@@ -72,7 +72,7 @@ strong {
   margin-right: 0.3em;
   font-weight: 600;
 }
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
   p,
   label,
   strong,
@@ -81,4 +81,4 @@ strong {
   input {
     color: #fff;
   }
-}
+} */

@@ -92,54 +92,60 @@ export default function FluteAct() {
   return (
     <div className={styles.courseFlute}>
       {!playing ? (
-        <div className={styles.courseFlute__actFalse}>
+        <div className={styles.courseFlute__predata}>
           <Image src="/images/flauta.png" alt="flauta" width={183} height={600} />
-          <div className={styles.courseFlute__actFalse_act}>
-            <div>
-              <Image src="/images/fluteact1.png" alt="flautaAct" width={187} height={304} />
+          <div className={styles.courseFlute__data}>
+            <div className={styles.courseFlute__data_data}>
+              <p>Las actividades te ayudaran mejorar tus Habilidades</p>
+              <Image src="/images/mano.png" alt="mano" width={210} height={173} />
+              <div className={styles.courseFlute__data_ej}>
+                <strong>Ejemplo:</strong>
+                <p>Visualisa la imagen y trata de compreneder el acorde que representa</p>
+              </div>
             </div>
-            <button className={styles.courseFlute__exercise_play} type="button" onClick={() => start()}>
-              <Image src="/images/play.svg" alt="play" width={150} height={150} />
-              Iniciar
-            </button>
+            <div className={styles.courseFlute__data_act}>
+              <Image src="/images/fluteact1.png" alt="flautaAct" width={187} height={304} />
+              <button className={styles.courseFlute__exercise_play} type="button" onClick={() => start()}>
+                <Image src="/images/play.svg" alt="play" width={150} height={150} />
+                Iniciar
+              </button>
+            </div>
           </div>
-          <div>
-            <p>Las actividades te ayudaran mejorar tus Habilidades</p>
-            <Image src="/images/mano.png" alt="mano" width={210} height={173} />
-          </div>
+
         </div>
       ) : (
         <div className={styles.courseFlute__exercise}>
           <p className={styles.courseFlute__exercise_exercise}>Identifica:<span>{exercise.name}</span></p>
           <div className={styles.courseFlute__actFalse}>
-            <Image src="/images/flauta.png" alt="flauta" width={183} height={600} />
-            <div >
-              <form name="fluteForm" className={styles.courseFlute__actFalse_act}>
-                <div>
-                  <Image src="/images/flautaAct.png" alt="flautaAct" width={187} height={304} />
-                </div>
-                <input type="checkbox" name="a1" id="a1" onChange={() => changeInput(document.fluteForm.a1.checked, 'a1')} />
-                <input type="checkbox" name="a2" id="a2" onChange={() => changeInput(document.fluteForm.a2.checked, 'a2')} />
-                <input type="checkbox" name="a3" id="a3" onChange={() => changeInput(document.fluteForm.a3.checked, 'a3')} />
-                <input type="checkbox" name="a4" id="a4" onChange={() => changeInput(document.fluteForm.a4.checked, 'a4')} />
-                <input type="checkbox" name="a5" id="a5" onChange={() => changeInput(document.fluteForm.a5.checked, 'a5')} />
-                <input type="checkbox" name="a6" id="a6" onChange={() => changeInput(document.fluteForm.a6.checked, 'a6')} />
-                <input type="checkbox" name="a7" id="a7" onChange={() => changeInput(document.fluteForm.a7.checked, 'a7')} />
-                <input type="checkbox" name="a8" id="a8" onChange={() => changeInput(document.fluteForm.a8.checked, 'a8')} />
-                <input type="checkbox" name="a9" id="a9" onChange={() => changeInput(document.fluteForm.a9.checked, 'a9')} />
-                <input type="checkbox" name="a10" id="a10" onChange={() => changeInput(document.fluteForm.a10.checked, 'a10')} />
-                <input type="checkbox" name="a11" id="a11" onChange={() => changeInput(document.fluteForm.a11.checked, 'a11')} />
-                <input type="checkbox" name="a12" id="a12" onChange={() => changeInput(document.fluteForm.a12.checked, 'a12')} />
-                <input type="checkbox" name="a13" id="a13" onChange={() => changeInput(document.fluteForm.a13.checked, 'a13')} />
-                <input type="checkbox" name="a14" id="a14" onChange={() => changeInput(document.fluteForm.a14.checked, 'a14')} />
-                <input type="checkbox" name="a15" id="a15" onChange={() => changeInput(document.fluteForm.a15.checked, 'a15')} />
-              </form>
+            <div className={styles.courseFlute__actFalse_imgFlute}>
+              <Image src="/images/flauta.png" alt="flauta" width={183} height={600} />
             </div>
-            <div>
+            <form name="fluteForm" className={styles.courseFlute__actFalse_act}>
+              <div>
+                <Image src="/images/flautaAct.png" alt="flautaAct" width={187} height={304} />
+              </div>
+              <input type="checkbox" name="a1" id="a1" onChange={() => changeInput(document.fluteForm.a1.checked, 'a1')} />
+              <input type="checkbox" name="a2" id="a2" onChange={() => changeInput(document.fluteForm.a2.checked, 'a2')} />
+              <input type="checkbox" name="a3" id="a3" onChange={() => changeInput(document.fluteForm.a3.checked, 'a3')} />
+              <input type="checkbox" name="a4" id="a4" onChange={() => changeInput(document.fluteForm.a4.checked, 'a4')} />
+              <input type="checkbox" name="a5" id="a5" onChange={() => changeInput(document.fluteForm.a5.checked, 'a5')} />
+              <input type="checkbox" name="a6" id="a6" onChange={() => changeInput(document.fluteForm.a6.checked, 'a6')} />
+              <input type="checkbox" name="a7" id="a7" onChange={() => changeInput(document.fluteForm.a7.checked, 'a7')} />
+              <input type="checkbox" name="a8" id="a8" onChange={() => changeInput(document.fluteForm.a8.checked, 'a8')} />
+              <input type="checkbox" name="a9" id="a9" onChange={() => changeInput(document.fluteForm.a9.checked, 'a9')} />
+              <input type="checkbox" name="a10" id="a10" onChange={() => changeInput(document.fluteForm.a10.checked, 'a10')} />
+              <input type="checkbox" name="a11" id="a11" onChange={() => changeInput(document.fluteForm.a11.checked, 'a11')} />
+              <input type="checkbox" name="a12" id="a12" onChange={() => changeInput(document.fluteForm.a12.checked, 'a12')} />
+              <input type="checkbox" name="a13" id="a13" onChange={() => changeInput(document.fluteForm.a13.checked, 'a13')} />
+              <input type="checkbox" name="a14" id="a14" onChange={() => changeInput(document.fluteForm.a14.checked, 'a14')} />
+              <input type="checkbox" name="a15" id="a15" onChange={() => changeInput(document.fluteForm.a15.checked, 'a15')} />
+              <button type="button" onClick={() => isItOk()}>Responder</button>
+
+            </form>
+            {/* <div>
               <Image src="/images/mano.png" alt="mano" width={210} height={173} />
-            </div>
+            </div> */}
           </div>
-          <button type="button" className={styles.courseFlute__exercise_answer} onClick={() => isItOk()}>Responder</button>
         </div>
       )}
       <ReactModal

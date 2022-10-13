@@ -3,6 +3,7 @@
 .footer {
   width: 100%;
   background: $primary;
+
   &__main {
     padding: 3em 0;
     width: 80%;
@@ -10,24 +11,42 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+
+    @media (max-width: $tablets) {
+      width: 90%;
+    }
+
+    @media (max-width: 450px) {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
     &_logo {
       font-weight: bold;
       font-size: 30px;
       position: relative;
       color: $textWhite;
       cursor: pointer;
+
+      @media (max-width: 450px) {
+        margin-bottom: 1em;
+      }
     }
-    &_links{
+
+    &_links {
       display: flex;
       flex-direction: column;
-      a{
+
+      a {
         color: $textWhite;
         margin-bottom: 0.5em;
       }
     }
-    &_linksSocial{
+
+    &_linksSocial {
       margin-top: 1.5em;
-      a{
+
+      a {
         margin-right: 0.5em;
       }
     }
