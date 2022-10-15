@@ -996,7 +996,7 @@
 
   &__imgAct,
   &__img {
-    background: $backgroundItem2;
+    // background: $backgroundItem2;
     padding: 2em 0;
     border-radius: 1em;
 
@@ -1028,17 +1028,17 @@
 
       &:nth-child(6) {
         top: 213px;
-        left: 85px;
+        left: 124px;
       }
 
       &:nth-child(7) {
         top: 213px;
-        left: 123px;
+        left: 162px;
       }
 
       &:nth-child(8) {
         top: 213px;
-        left: 162px;
+        left: 201px;
       }
 
       &:nth-child(9) {
@@ -1067,23 +1067,23 @@
       }
 
       &:nth-child(14) {
-        top: 436px;
-        left: 78px;
+        top: 0;
+        left: 85px;
       }
 
       &:nth-child(15) {
-        top: 436px;
+        top: 0;
         left: 122px;
       }
 
       &:nth-child(16) {
-        top: 436px;
-        left: 164px;
+        top: 0;
+        left: 158px;
       }
 
       &:nth-child(17) {
-        top: 436px;
-        left: 207px;
+        top: 0;
+        left: 195px;
       }
     }
 
