@@ -1193,3 +1193,45 @@
     }
   }
 }
+
+.ukeleleNote {
+  display: flex;
+  flex-direction: column;
+
+  &__notes {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 100%;
+
+
+    &_title {
+      font-size: 1.5em;
+      font-weight: 600;
+      width: 100%;
+      margin-bottom: 1em;
+    }
+
+
+    &_note {
+      border: 1px solid $primary;
+      width: fit-content;
+      border-radius: 1em;
+      padding-top: 0.5em;
+      background: #1b1a1a;
+      margin-bottom: 0.5em;
+      margin-right: 0.5em;
+
+      p {
+        margin-bottom: 0.5em;
+        margin-left: 1em;
+        color: $textWhite;
+      }
+
+      audio {
+        border-radius: 1em;
+      }
+    }
+  }
+}

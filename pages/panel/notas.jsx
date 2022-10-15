@@ -1,10 +1,11 @@
 /* eslint-disable linebreak-style */
-import React, { useContext,useState } from 'react';
+import React, { useContext, useState } from 'react';
 import Header from '../../components/header';
 import Image from 'next/image';
 import Menu from '../../components/menu';
 import Notification from '../../components/notifications';
 import PreLoadContext from '../../context/preLoadContext';
+import UkeleleNotes from '../../components/ukeleleNotes';
 import styles from '../../styles/Dashboard.module.scss';
 
 export async function getServerSideProps({ req }) {
@@ -29,6 +30,7 @@ export default function Notes() {
       <Menu value />
       <div className={styles.main}>
         <p className={styles.main__title}>Identificar notas</p>
+        <UkeleleNotes />
       </div>
     </div>
   );
