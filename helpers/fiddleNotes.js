@@ -1,0 +1,98 @@
+export const fiddleNotes = [
+  {
+    name: 'Fa - cuerda mi',
+    data: 'Fa',
+    audio: '/music/fiddle/fa_cuerda-mi.mp3',
+    value: 'fa-mi',
+  },
+  {
+    name: 'La - cuerda sol',
+    data: 'La',
+    audio: '/music/fiddle/la_cuerda-sol.mp3',
+    value: 'la-sol',
+  },
+  {
+    name: 'Mi - cuerda re',
+    data: 'Mi',
+    audio: '/music/fiddle/mi_cuerda-re.mp3',
+    value: 'mi-re',
+  },
+  {
+    name: 'Si - cuerda la',
+    data: 'Si',
+    audio: '/music/fiddle/si_cuerda-la.mp3',
+    value: 'si-la',
+  },
+  {
+    name: 'Fa - cuerda re',
+    data: 'Fa',
+    audio: '/music/fiddle/fa_cuerda-re.mp3',
+    value: 'fa-re',
+  },
+  {
+    name: 'Do - cuerda la',
+    data: 'Do',
+    audio: '/music/fiddle/do_cuerda-la.mp3',
+    value: 'do-la',
+  },
+  {
+    name: 'Sol - cuerda mi',
+    data: 'Sol',
+    audio: '/music/fiddle/sol_cuerda-mi.mp3',
+    value: 'sol-mi',
+  },
+  {
+    name: 'Si - cuerda sol',
+    data: 'Si',
+    audio: '/music/fiddle/si_cuerda-sol.mp3',
+    value: 'si-sol',
+  },
+  {
+    name: 'Do - cuerda sol',
+    data: 'Do',
+    audio: '/music/fiddle/do_cuerda-sol.mp3',
+    value: 'do-sol',
+  },
+  {
+    name: 'Sol - cuerda re',
+    data: 'Sol',
+    audio: '/music/fiddle/sol_cuerda-re.mp3',
+    value: 'sol-re',
+  },
+  {
+    name: 'Re - cuerda la',
+    data: 'Re',
+    audio: '/music/fiddle/re_cuerda-la.mp3',
+    value: 're-la',
+  },
+  {
+    name: 'La - cuerda mi',
+    data: 'La',
+    audio: '/music/fiddle/la_cuerda-mi.mp3',
+    value: 'la-mi',
+  },
+  {
+    name: 'Re - cuerda re',
+    data: 'Re',
+    audio: '/music/fiddle/re_cuerda-re.mp3',
+    value: 're-re',
+  },
+  {
+    name: 'Mi - cuerda mi',
+    data: 'Mi',
+    audio: '/music/fiddle/mi_cuerda-mi.mp3',
+    value: 'mi-mi',
+  },
+  {
+    name: 'La - cuerda la',
+    data: 'La',
+    audio: '/music/fiddle/la_cuerda-la.mp3',
+    value: 'la-la',
+  },
+  {
+    name: 'Sol - cuerda sol',
+    data: 'Sol',
+    audio: '/music/fiddle/sol_cuerda-sol.mp3',
+    value: 'sol-sol',
+  },
+];

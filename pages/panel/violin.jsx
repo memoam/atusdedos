@@ -5,6 +5,8 @@ import Menu from '../../components/menu';
 import Notification from '../../components/notifications';
 import PreLoadContext from '../../context/preLoadContext';
 import FiddleText from '../../components/fiddleText';
+import FiddleNotes from '../../components/fiddleNotes';
+import FiddleNotesAct from '../../components/fiddleNotesAct';
 import styles from '../../styles/Dashboard.module.scss';
 
 export async function getServerSideProps({ req }) {
@@ -22,7 +24,7 @@ export async function getServerSideProps({ req }) {
 
 export default function Fiddle() {
   const { preLoad, setPreLoad } = useContext(PreLoadContext);
-  const [course, setCourse] = useState(true)
+  const [course, setCourse] = useState(1)
   return (
     <div className={styles.container}>
       <Header />
@@ -30,11 +32,16 @@ export default function Fiddle() {
       <Menu value />
       <div className={styles.main}>
         <p className={styles.main__title}>Violin</p>
-        <div className={styles.course__controls}>
-          <button type="button" className={course ? styles.course__controls_active : null} onClick={() => setCourse(true)}>Teoria</button>
-          <button type="button" className={!course ? styles.course__controls_active : null} onClick={() => setCourse(false)}>Actividades</button>
+        <div className={styles.courseGuitar__controls}>
+          <button type="button" className={course === 1 ? styles.courseGuitar__controls_active : null} onClick={() => setCourse(1)}>Teoria</button>
+          <button type="button" className={course === 2 ? styles.courseGuitar__controls_active : null} onClick={() => setCourse(2)}>Actividades</button>
+          <button type="button" className={course === 3 ? styles.courseGuitar__controls_active : null} onClick={() => setCourse(3)}>Practica</button>
         </div>
-        {course ? (<FiddleText />) : (<p>Actividades</p>)}
+        {
+          course === 1 ? (<FiddleText />)
+            : course === 2 ? (<FiddleNotesAct />)
+              : (<FiddleNotes />)
+        }
       </div>
     </div>
   );

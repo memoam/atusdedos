@@ -368,9 +368,11 @@
     align-items: center;
     justify-content: space-around;
     position: relative;
+
     @media (max-width:450px) {
       flex-direction: column;
     }
+
     &_imgFlute {
       @media (max-width:450px) {
         display: none !important;
@@ -383,10 +385,12 @@
       align-items: center;
       justify-content: center;
       position: relative;
-      button{
+
+      button {
         margin-top: 1em;
         width: 100%;
       }
+
       input {
         position: absolute;
         width: fit-content;
@@ -957,5 +961,235 @@
       border: 1px solid $primary;
     }
 
+  }
+}
+
+.fiddleNoteAct {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  align-items: center;
+
+  @media (max-width: 714px) {
+    width: 100%;
+    flex-direction: column;
+  }
+}
+
+.fiddleNote {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+
+
+
+  &__div {
+    width: 30%;
+    min-width: 334px;
+
+    @media (max-width: 714px) {
+      display: none;
+    }
+  }
+
+
+
+  &__imgAct,
+  &__img {
+    background: $backgroundItem2;
+    padding: 2em 0;
+    border-radius: 1em;
+
+    button,
+    p {
+      position: absolute;
+      height: 30px;
+      width: 30px;
+
+      &:nth-child(2) {
+        top: 103px;
+        left: 198px;
+      }
+
+      &:nth-child(3) {
+        top: 158px;
+        left: 87px;
+      }
+
+      &:nth-child(4) {
+        top: 158px;
+        left: 125px;
+      }
+
+      &:nth-child(5) {
+        top: 158px;
+        left: 161px;
+      }
+
+      &:nth-child(6) {
+        top: 213px;
+        left: 85px;
+      }
+
+      &:nth-child(7) {
+        top: 213px;
+        left: 123px;
+      }
+
+      &:nth-child(8) {
+        top: 213px;
+        left: 162px;
+      }
+
+      &:nth-child(9) {
+        top: 269px;
+        left: 83px;
+      }
+
+      &:nth-child(10) {
+        top: 324px;
+        left: 81px;
+      }
+
+      &:nth-child(11) {
+        top: 324px;
+        left: 123px;
+      }
+
+      &:nth-child(12) {
+        top: 324px;
+        left: 163px;
+      }
+
+      &:nth-child(13) {
+        top: 324px;
+        left: 204px;
+      }
+
+      &:nth-child(14) {
+        top: 436px;
+        left: 78px;
+      }
+
+      &:nth-child(15) {
+        top: 436px;
+        left: 122px;
+      }
+
+      &:nth-child(16) {
+        top: 436px;
+        left: 164px;
+      }
+
+      &:nth-child(17) {
+        top: 436px;
+        left: 207px;
+      }
+    }
+
+    p {
+      @media (max-width: 714px) {
+        display: none;
+      }
+    }
+  }
+
+  &__imgAct {
+    position: relative;
+    width: 30%;
+    min-width: 334px;
+
+    @media (max-width: 714px) {
+      width: fit-content
+    }
+  }
+
+  &__img {
+    position: fixed;
+  }
+
+  &__notesAct {
+    display: flex;
+    align-items: center;
+    justify-content: baseline;
+    flex-direction: column;
+    width: 65%;
+
+    @media (max-width: 714px) {
+      width: 100%;
+    }
+
+
+    p {
+      text-align: center;
+
+      @media (max-width: 714px) {
+        margin-top: 1em;
+      }
+    }
+
+    button {
+      margin-top: 10em;
+
+      @media (max-width: 714px) {
+        margin-top: 1em;
+      }
+    }
+  }
+
+  &__notes {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 65%;
+
+    @media (max-width: 714px) {
+      width: 100%;
+      justify-content: center;
+    }
+
+
+    &_title {
+      font-size: 1.5em;
+      font-weight: 600;
+      width: 100%;
+      margin-bottom: 1em;
+    }
+
+    &_active {
+      color: $textWhite;
+      background: $primary;
+      padding: 5px;
+      border-radius: 50%;
+    }
+
+    &_inActive {
+      color: $primary;
+      background: $textWhite;
+      padding: 5px;
+      border-radius: 50%;
+
+    }
+
+    &_note {
+      border: 1px solid $primary;
+      width: fit-content;
+      border-radius: 1em;
+      padding-top: 0.5em;
+      background: #1b1a1a;
+      margin-bottom: 0.5em;
+      margin-right: 0.5em;
+
+      p {
+        margin-bottom: 0.5em;
+        margin-left: 1em;
+        color: $textWhite;
+      }
+
+      audio {
+        border-radius: 1em;
+      }
+    }
   }
 }
