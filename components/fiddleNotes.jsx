@@ -18,6 +18,7 @@ export default function FiddleNotes() {
               <div className={styles.fiddleNote__notes_note} key={keyIndex}>
                 <p>{value.name}</p>
                 <ReactAudioPlayer
+                className={styles.fiddleNote__notes_audio}
                   src={value.audio}
                   controls
                   onPlay={() => setNote(value.value)}
