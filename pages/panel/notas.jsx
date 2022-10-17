@@ -5,12 +5,14 @@ import Image from 'next/image';
 import Menu from '../../components/menu';
 import Notification from '../../components/notifications';
 import PreLoadContext from '../../context/preLoadContext';
+import GuitarNotes from '../../components/guitarNotes';
 import UkeleleNotes from '../../components/ukeleleNotes';
 import FiddleNotes from '../../components/fiddleNotes';
 import FiddleNotesAct from '../../components/fiddleNotesAct';
 import SaxoNotes from '../../components/saxofonNotes';
+import SaxoNotesAct from '../../components/saxoNotesAct';
 import PianoNotes from '../../components/pianoNotes';
-import GuitarNotes from '../../components/guitarNotes';
+import PianoNotesAct from '../../components/pianoNotesAct';
 import styles from '../../styles/Dashboard.module.scss';
 
 export async function getServerSideProps({ req }) {
@@ -52,8 +54,8 @@ export default function Notes() {
           instrument === 1 ? course ? (<GuitarNotes />) : (<p>algo</p>)
             : instrument === 2 ? course ? (<FiddleNotes />) : (<FiddleNotesAct />)
               : instrument === 3 ? course ? (<UkeleleNotes />) : (<p>algo</p>)
-                : instrument === 4 ? course ? (<SaxoNotes />) : (<p>algo</p>)
-                  : instrument === 5 ? course ? (<PianoNotes />) : (<p>algo</p>)
+                : instrument === 4 ? course ? (<SaxoNotes />) : (<SaxoNotesAct />)
+                  : instrument === 5 ? course ? (<PianoNotes />) : (<PianoNotesAct />)
                     : null
         }
       </div>
