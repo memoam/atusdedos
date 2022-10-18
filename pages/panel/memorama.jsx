@@ -32,18 +32,20 @@ export default function Memory() {
   const [memory, setMemory] = useState([]);
   const [memorySelec, setMemorySelec] = useState(null);
   const [playing, setPlaying] = useState(false)
-
+  const [copy, setCopy] = useState(null)
+  
 
   useEffect(() => {
     const memoryRan = [...guitarNotes, ...guitarNotes].sort(function () { return Math.random() - 0.5 })
     setMemory(memoryRan.map((data, i) => ({ index: i, name: data.name, audio: data.audio, flipped: false })));
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+  // const [dataMemory, setDataMemory] = useState([])
   const updateMemory = (dataMemory) => {
     const memoryRan = [...dataMemory, ...dataMemory].sort(function () { return Math.random() - 0.5 })
     setMemory(memoryRan.map((data, i) => ({ index: i, name: data.name, audio: data.audio, flipped: false })));
+    setCopy(memoryRan.map((data, i) => ({ index: i, name: data.name, audio: data.audio, flipped: false })))
   }
-  const [copy, setCopy] = useState(null)
   const cardClick = (memoData, i) => {
     const memoAudio = new Audio(memoData.audio);
     memoAudio.play();
@@ -72,6 +74,9 @@ export default function Memory() {
       }, 1000);
     }
   }
+  const level = (value) => {
+    setIsNormal(value);
+  }
   return (
     <div className={styles.container}>
       <Header />
@@ -90,14 +95,14 @@ export default function Memory() {
           <div className={styles.memoryAct}>
             <div className={styles.notes__controls}>
               <p>Dificultad</p>
-              <button type="button" className={isNormal ? styles.notes__controls_active : null} onClick={() => setIsNormal(true)}>Normal</button>
-              <button type="button" className={!isNormal ? styles.notes__controls_active : null} onClick={() => setIsNormal(false)}>Dificil</button>
+              <button type="button" className={isNormal ? styles.notes__controls_active : null} onClick={() => level(true)}>Normal</button>
+              <button type="button" className={!isNormal ? styles.notes__controls_active : null} onClick={() => level(false)}>Dificil</button>
             </div>
             <div className={styles.memoryAct__dash}>
               {memory.map((memo, index) => {
                 const keyIndex = index + 1;
                 return (
-                  <button type="button" key={keyIndex} className={memo.flipped ? styles.memoryAct__memoryOn : styles.memoryAct__memoryOff} onClick={() => cardClick(memo, keyIndex)} disabled={playing}>
+                  <button type="button" key={keyIndex} className={memo.flipped ? styles.memoryAct__memoryOn : styles.memoryAct__memoryOff} onClick={() => cardClick(memo, keyIndex)} disabled={playing || memo.flipped}>
                     <p>{(memo.flipped && isNormal) && (memo.name)}</p>
                   </button>
                 );
