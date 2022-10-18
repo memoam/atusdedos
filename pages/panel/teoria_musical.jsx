@@ -225,6 +225,90 @@ export default function MusicalTheory() {
             </div>
           </details>
           {/* fin de seccion de claves---------------------------------*/}
+          <details className={styles.dashboard__text}>
+            <summary className={styles.dashboard__text_title}>Sección de Tiempos y Compás</summary>
+            <div className={styles.dashboard__text_body}>
+              <p className={styles.dashboard__text_subTitle}>Compás</p>
+              <p className={styles.dashboard__text_txt}>
+                El compás es el elemento que nos indica el tiempo en segundos que dura una fracción de la partitura, tenemos 5 tipos basicos:
+              </p>
+              <div className={styles.dashboard__definitionImg}>
+                <Image unoptimized loader={({ src }) => src} src="https://res.cloudinary.com/atusdedos/image/upload/v1666055083/teoria_musical/4x4-removebg-preview_rrumfu.png" alt="play" width={75} height={75} />
+                <div>
+                <strong>Compás 4/4</strong>
+                  <p className={styles.dashboard__text_txt}>
+                    El compás de 4/4 se define como aquel que divide la linea infinita del pulso en grupos de cuatro tiempos. Cada uno de estos tiempos se identifica con la 
+                    figura musical de la negra. Es decir, en un compás de 4/4 caben cuatro negras.
+                  </p>
+                </div>
+              </div>
+              <div className={styles.dashboard__text_imgs}>
+                <Image unoptimized loader={({ src }) => src} src="https://res.cloudinary.com/atusdedos/image/upload/v1666055178/teoria_musical/4x44-removebg-preview_yjbn34.png" alt="play" width={501} height={231} />
+              </div>
+              <div className={styles.dashboard__definitionImg}>
+                <Image unoptimized loader={({ src }) => src} src="https://res.cloudinary.com/atusdedos/image/upload/v1666055734/teoria_musical/3x4-removebg-preview_ipx1jr.png" alt="play" width={75} height={75} />
+                <div>
+                <strong>Compás 3/4</strong>
+                  <p className={styles.dashboard__text_txt}>
+                    El compás de 3/4 se define como el compas musical que contiene 3 tiempos, cada uno de los cuales esta formado por una negra.
+                  </p>
+                </div>
+              </div>
+              <div className={styles.dashboard__text_imgs}>
+                <Image unoptimized loader={({ src }) => src} src="https://res.cloudinary.com/atusdedos/image/upload/v1666055734/teoria_musical/3x43-removebg-preview_aaanfr.png" alt="play" width={501} height={241} />
+              </div>
+              <div className={styles.dashboard__definitionImg}>
+                <Image unoptimized loader={({ src }) => src} src="https://res.cloudinary.com/atusdedos/image/upload/v1666056329/teoria_musical/2x4-removebg-preview_vpuqcg.png" alt="play" width={75} height={75} />
+                <div>
+                <strong>Compás 2/4</strong>
+                  <p className={styles.dashboard__text_txt}>
+                    El compás de 2/4 es el que esta formado por dos tiempos, cada uno de ellos a su vez con capacidad para una negra.
+                  </p>
+                </div>
+              </div>
+              <div className={styles.dashboard__text_imgs}>
+                <Image unoptimized loader={({ src }) => src} src="https://res.cloudinary.com/atusdedos/image/upload/v1666056329/teoria_musical/2x42-removebg-preview_h6h1iv.png" alt="play" width={501} height={231} />
+              </div>
+              <div className={styles.dashboard__definitionImg}>
+                <Image unoptimized loader={({ src }) => src} src="https://res.cloudinary.com/atusdedos/image/upload/v1666056882/teoria_musical/compasillo-removebg-preview_ztibg6.png" alt="play" width={75} height={75} />
+                <div>
+                <strong>Cuaternario o Compasillo</strong>
+                  <p className={styles.dashboard__text_txt}>
+                    Es un compás de 4 tiempos, más frecuentemente utilizado para el solfeo.
+                  </p>
+                </div>
+              </div>
+              <div className={styles.dashboard__definitionImg}>
+                <Image unoptimized loader={({ src }) => src} src="https://res.cloudinary.com/atusdedos/image/upload/v1666056882/teoria_musical/compdivi-removebg-preview_jyqmo4.png" alt="play" width={75} height={75} />
+                <div>
+                <strong>Compas Dividido o alla breve</strong>
+                  <p className={styles.dashboard__text_txt}>
+                    Todas las notas que sean afectadas por este compás disminuirán su valor en tiempos a la mitad.
+                  </p>
+                </div>
+              </div>
+              <div className={styles.dashboard__definitionImg}>
+                <Image unoptimized loader={({ src }) => src} src="https://res.cloudinary.com/atusdedos/image/upload/v1666057289/teoria_musical/tempo-removebg-preview_nlxiy4.png" alt="play" width={75} height={75} />
+                <div>
+                <strong>Marca del Metrónomo</strong>
+                  <p className={styles.dashboard__text_txt}>
+                    Escrita al principio de una partitura y en el momento de cualquier cambio significativo del tiempo, este símbolo precisamente determina el tempo
+                    (tiempo) de la pieza musical asignando la duración absoluta de todas las notas en la partitura. En este ejemplo en particular, se le dice al intérprete que 120 negras caben en un minuto de tiempo.
+                  </p>
+                </div>
+              </div>
+              {/*
+              <p className={styles.dashboard__text_subTitle}></p>
+              <p className={styles.dashboard__text_txt}>
+                
+              </p>
+              <span className={styles.dashboard__text_bold}></span>  
+              <p className={styles.dashboard__text_txt}>
+
+              </p>
+                */}
+            </div>
+          </details>
         </div>
       </div>
     </div>
