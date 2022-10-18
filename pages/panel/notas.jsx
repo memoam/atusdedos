@@ -41,9 +41,9 @@ export default function Notes() {
         <p className={styles.main__title}>Identificar notas</p>
         <div className={styles.notes__controls}>
           <button type="button" className={instrument === 1 ? styles.notes__controls_active : null} onClick={() => setInstrument(1)}>Guitarra</button>
-          <button type="button" className={instrument === 2 ? styles.notes__controls_active : null} onClick={() => setInstrument(2)}>Violin</button>
+          <button type="button" className={instrument === 2 ? styles.notes__controls_active : null} onClick={() => setInstrument(2)}>Violín</button>
           <button type="button" className={instrument === 3 ? styles.notes__controls_active : null} onClick={() => setInstrument(3)}>Ukelele</button>
-          <button type="button" className={instrument === 4 ? styles.notes__controls_active : null} onClick={() => setInstrument(4)}>Saxofon alto</button>
+          <button type="button" className={instrument === 4 ? styles.notes__controls_active : null} onClick={() => setInstrument(4)}>Saxofón alto</button>
           <button type="button" className={instrument === 5 ? styles.notes__controls_active : null} onClick={() => setInstrument(5)}>Piano</button>
         </div>
         <div className={styles.course__controls}>

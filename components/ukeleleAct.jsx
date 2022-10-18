@@ -108,7 +108,7 @@ export default function UkeleleAct() {
       {!playing ? (
         <div className={styles.courseGuitar__exercise}>
           <div className={styles.courseGuitar__difficulty}>
-            <p>Elije el acorde que deses practicar</p>
+            <p>Elije el acorde que desees practicar</p>
             {chords.map((chord, index) => {
               const keyIndex = index + 1;
               return (<button key={keyIndex} type="button" className={typeGame === chord.value ? styles.courseGuitar__difficulty_active : null} onClick={() => setTypeGame(chord.value)}>{chord.name}</button>);
@@ -116,10 +116,10 @@ export default function UkeleleAct() {
           </div>
           <div className={styles.courseGuitar__actFalse}>
             <div>
-              <p>Las actividades te ayudaran mejorar tus Habilidades</p>
+              <p>Las actividades te ayudarán a mejorar tus habilidades.</p>
               <p className={styles.courseGuitar__actFalse_example}>Ejemplo:</p>
               <div className={styles.courseGuitar__actFalse_atc}>
-                <p>Visualisa la imagen y trata de compreneder la nota que representa</p>
+                <p>Visualiza la imagen y trata de comprender la nota que representa.</p>
                 <Image unoptimized loader={({ src }) => src} src="https://res.cloudinary.com/atusdedos/image/upload/v1665284479/guitarExercises/major/do__major_y8mzer.png" alt="play" width={550} height={250} />
                 <span className={styles.courseGuitar__actFalse_note}>Do# (major)</span>
               </div>
@@ -166,7 +166,7 @@ export default function UkeleleAct() {
           <p className={styles.modal2__time}>{timer}</p>
           <Image unoptimized loader={({ src }) => src} src={exercise.img} alt="play" width={550} height={250} />
           <span className={styles.modal2__note}>{exercise.name}</span>
-          <p className={styles.modal2__time}>Visualiza la reprecentacion de la nota</p>
+          <p className={styles.modal2__time}>Visualiza la representación de la nota.</p>
         </div>
       </ReactModal>
       <ReactModal

@@ -34,7 +34,7 @@ export default function RecoverAccountPass() {
       addNotification('information', '', 'La contraseña debe tener seis caracteres como mínimo.', '5');
       setPreLoad(false);
     } else {
-      addNotification('confirmation', '', 'Bienvenido!', '5');
+      addNotification('confirmation', '', '¡Bienvenido!', '5');
     }
   };
   return (

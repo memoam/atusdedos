@@ -42,10 +42,10 @@ export default function FiddleAtc() {
         !playing ? (
           <div className={styles.courseGuitar__actFalse}>
             <div>
-              <p>Las actividades te ayudaran mejorar tus Habilidades</p>
+              <p>Las actividades te ayudarán a mejorar tus habilidades.</p>
               <p className={styles.courseGuitar__actFalse_example}>Ejemplo:</p>
               <div className={styles.courseGuitar__actFalse_atc}>
-                <p>Visualisa la imagen y trata de compreneder la nota que representa</p>
+                <p>Visualiza la imagen y trata de comprender la nota que representa.</p>
                 <Image unoptimized loader={({ src }) => src} src="/images/violinAct.png" alt="play" width={550} height={250} />
               </div>
             </div>
@@ -66,7 +66,7 @@ export default function FiddleAtc() {
               })}
             </div>
             <div className={styles.fiddleNote__notesAct}>
-              <p className={styles.fiddleNote__notes_title}>Analiza y selecciona la nota que corespode a...</p>
+              <p className={styles.fiddleNote__notes_title}>Analiza la nota dada y selecciónala en el diagrama.</p>
               <div className={styles.fiddleNote__notes_name}>
                 {/* <ReactAudioPlayer src={note.audio} controls /> */}
                 <p>Identifique: <span>{note.name}</span></p>

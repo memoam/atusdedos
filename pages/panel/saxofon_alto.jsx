@@ -31,7 +31,7 @@ export default function Saxo() {
       <div className={styles.main}>
         <p className={styles.main__title}>Saxofon alto</p>
         <div className={styles.course__controls}>
-          <button type="button" className={course ? styles.course__controls_active : null} onClick={() => setCourse(true)}>Teoria</button>
+          <button type="button" className={course ? styles.course__controls_active : null} onClick={() => setCourse(true)}>Teoría</button>
           <button type="button" className={!course ? styles.course__controls_active : null} onClick={() => setCourse(false)}>Actividades</button>
         </div>
         {course ? (<SaxoText />) : (<p>Actividades</p>)}

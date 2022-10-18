@@ -15,7 +15,7 @@ export default function Home() {
   const { authData } = useContext(AuthContext);
   const courses = [
     { name: 'Para aprender', value: dataIndex, valueInit: dataIndexInit },
-    { name: 'Inspiracion', value: libraryMusic, valueInit: libraryMusicInit },
+    { name: 'Inspiración', value: libraryMusic, valueInit: libraryMusicInit },
     { name: 'Habilidades', value: skills, valueInit: skillsInit },
   ]
   return (
@@ -26,8 +26,8 @@ export default function Home() {
         <div className={styles.topHome__info}>
           <Image src="/images/logoAtril.png" alt="Logo" width={75} height={135} />
           <div className={styles.topHome__text}>
-            <p className={styles.topHome__text_title}>¿que instrumento suena en ti?</p>
-            <p className={styles.topHome__text_txt}>dale sonido, dale ritmo... dale vida </p>
+            <p className={styles.topHome__text_title}>¿qué instrumento suena en ti?</p>
+            <p className={styles.topHome__text_txt}>dale sonido, dale ritmo... dale vida</p>
           </div>
         </div>
         <Image src="/images/saxoPeople.jpg" alt="Logo" width={248} height={482} />

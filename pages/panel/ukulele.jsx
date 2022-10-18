@@ -32,7 +32,7 @@ export default function Ukelele() {
       <div className={styles.main}>
         <p className={styles.main__title}>Ukelele</p>
         <div className={styles.course__controls}>
-          <button type="button" className={course ? styles.course__controls_active : null} onClick={() => setCourse(true)}>Teoria</button>
+          <button type="button" className={course ? styles.course__controls_active : null} onClick={() => setCourse(true)}>Teoría</button>
           <button type="button" className={!course ? styles.course__controls_active : null} onClick={() => setCourse(false)}>Actividades</button>
         </div>
         {course ? (<UkeleleText />) : (<UkeleleAct />)}

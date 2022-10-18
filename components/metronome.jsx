@@ -37,7 +37,7 @@ export default function Metronome() {
   return (
     <div className={styles.metronome}>
       <div className={styles.controls}>
-        <button className={styles.controls__cancel} type="button" onClick={() => stop()}>detener</button>
+        <button className={styles.controls__cancel} type="button" onClick={() => stop()}>Detener</button>
         <button type="button" onClick={() => playing()}>Iniciar</button>
       </div>
       <div >

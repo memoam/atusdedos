@@ -124,7 +124,7 @@ export default function Calendar() {
       })
       .then((response) => response.json())
       .then(() => {
-        addNotification('confirmation', '', 'Evento creado', '5');
+        addNotification('confirmation', '', 'Evento creado.', '5');
         reset();
       })
       .catch(() => {
@@ -145,7 +145,7 @@ export default function Calendar() {
       })
       .then(() => {
         getEvents();
-        addNotification('confirmation', '', 'Evento eliminado', '5');
+        addNotification('confirmation', '', 'Evento eliminado.', '5');
         setModal(false);
         setDateEnd(null);
         setDateStart(null);
@@ -204,7 +204,7 @@ export default function Calendar() {
         {
           seeEvent ? (
             <div>
-              <p>{`Titulo: ${event.title}`}</p>
+              <p>{`Título: ${event.title}`}</p>
               <p>{`Inicio: ${moment(event.start).tz(moment.tz.guess()).format('LLLL')}`}</p>
               <p>{`Fin: ${moment(event.end).tz(moment.tz.guess()).format('LLLL')}`}</p>
               <div className={styles.modal__controls}>
@@ -220,7 +220,7 @@ export default function Calendar() {
           ) : (
             <form onSubmit={event !== undefined ? updateEvent : createEvent}>
               <p>Datos del evento</p>
-              <label htmlFor="title">Titulo</label>
+              <label htmlFor="title">Título</label>
               <input type="text" name="title" id="title" defaultValue={title} onChange={(e) => setTitle(e.target.value)} />
               <div className={styles.modal__dates}>
                 <div className={styles.modal__dates_date}>

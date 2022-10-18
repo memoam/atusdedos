@@ -34,7 +34,7 @@ export default function Value() {
       <div className={styles.main}>
         <div className={styles.dashboard}>
           <div className={styles.dashboard__header}>
-            <p>Mi metronomo</p>
+            <p>Mi Metrónomo</p>
           </div>
           <Metronome />
         </div>

@@ -24,7 +24,7 @@ export const sheetMusic = [
     name: 'Sonata sopra la Monica',
     author: 'B.Marini',
     icon: '/images/pdfIcon.svg',
-    instruments: 'Violin',
+    instruments: 'Violín',
     link: 'https://drive.google.com/file/d/15dfwtRgB07XuT4BUuIWoo2MvirpWpTSf/preview',
   },
   

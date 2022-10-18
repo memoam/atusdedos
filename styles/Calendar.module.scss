@@ -1,8 +1,10 @@
 @import "vars";
+
 .container {
   min-height: 100vh;
   background-color: $background;
 }
+
 .main {
   display: flex;
   justify-content: space-between;
@@ -12,24 +14,42 @@
   margin-left: 20%;
   padding-top: 5em;
   height: 100%;
+
   @media (max-width: $tablets) {
     max-width: 95%;
     margin: 0 auto;
     padding-top: 9em;
   }
 }
+
 .calendar {
   width: 100%;
   margin-bottom: 5em;
   height: fit-content;
+
+  a,
+  h2 {
+    text-transform: uppercase !important;
+  }
+
+  button {
+    background: $backgroundItem2 !important;
+    border: 1px solid $primary !important;
+    color: $primary !important;
+    opacity: 1 !important;
+    text-transform: capitalize !important;
+  }
+
   &__header {
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: space-between;
+
     p {
       font-size: 24px;
     }
+
     span {
       color: $primary;
       margin-left: 0.3em;
@@ -38,7 +58,7 @@
 }
 
 .logout,
-.add{
+.add {
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -48,14 +68,17 @@
   padding: 1em;
   z-index: 2;
 }
-.logout{
+
+.logout {
   background: red;
   left: 2em;
 }
-.add{
+
+.add {
   background: #66c100;
   right: 2em;
 }
+
 .modal {
   position: absolute;
   border-radius: 10px;
@@ -69,23 +92,27 @@
   padding: 2em 1em;
   max-width: 600px;
   min-width: 400px;
-  
-  &__submit{
+
+  &__submit {
     width: 100%;
     margin-top: 1em;
   }
-  &__controls{
+
+  &__controls {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    button{
+
+    button {
       width: calc(50% - 0.5em);
       margin-top: 1em;
     }
-    &_delete{
+
+    &_delete {
       background: red;
     }
   }
+
   &__close {
     position: absolute;
     right: 0.5em;
@@ -96,18 +123,21 @@
     padding: 0;
     color: $textBlack;
   }
-  &__dates{
+
+  &__dates {
     display: flex;
     align-items: center;
     justify-content: space-between;
+
     // width: 100%;
-    &_date{
+    &_date {
       display: flex;
       align-items: center;
       flex-direction: column;
       width: calc(50% - 0.5em);
     }
   }
+
   @media (max-width: $phone) {
     width: 90%;
   }

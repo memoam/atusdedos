@@ -50,13 +50,13 @@ export default function SingIn() {
             addNotification('warning', '', 'Usuario no encontrado', '5');
             setPreLoad(false);
           } else if (result.message === 'Invalid Password') {
-            addNotification('warning', '', 'Contraseña invalida', '5');
+            addNotification('warning', '', 'Contraseña inválida', '5');
             setPreLoad(false);
           } else {
             sessionStorage.setItem('auth', JSON.stringify(result));
             setAuthData(result);
             createCookie('token', result.token);
-            addNotification('confirmation', '', 'Bienvenido!', '5');
+            addNotification('confirmation', '', '¡Bienvenido!', '5');
             router.push('./panel');
             setPreLoad(false);
           }
@@ -69,13 +69,13 @@ export default function SingIn() {
   };
   return (
     <form className={styles.form} onSubmit={validateForm}>
-      <p className={styles.form__title}>Iniciar Secion</p>
+      <p className={styles.form__title}>Iniciar sesión</p>
       <label htmlFor="email">Correo</label>
       <input id="email" type="mail" onChange={(ev) => changeInput(ev, 'email')} defaultValue={user.email} />
       <label htmlFor="password">Contraseña</label>
       <input id="password" type="password" onChange={(ev) => changeInput(ev, 'password')} defaultValue={user.password} />
       <div className={styles.form__submit}>
-        <button type="submit">Iniciar Secion</button>
+        <button type="submit">Iniciar sesión</button>
       </div>
     </form>
 

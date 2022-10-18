@@ -1,6 +1,6 @@
 export const dataIndexInit = [
   {
-    name: 'violin',
+    name: 'Violín',
     link: '/panel/violin',
     icon: '/images/violinIcon.png',
   },
@@ -21,7 +21,7 @@ export const dataIndexInit = [
   },
 
   {
-    name: 'saxofon alto',
+    name: 'Saxofón alto',
     link: '/panel/saxofon_alto',
     icon: '/images/saxo.png',
   },
@@ -35,14 +35,14 @@ export const libraryMusicInit = [
 ];
 export const skillsInit =[
   {
-    name: 'Oido perfecto',
-    link: '/panel',
+    name: 'Oído perfecto',
+    link: '/panel/notas',
     icon: '/images/hear.svg',
   },
 ]
 export const dataIndex = [
   {
-    name: 'violin',
+    name: 'violín',
     link: '/para_aprender',
     icon: '/images/violinIcon.png',
   },
@@ -62,7 +62,7 @@ export const dataIndex = [
     icon: '/images/guitarIcon.svg',
   },
   {
-    name: 'saxofon alto',
+    name: 'Saxofón alto',
     link: '/para_aprender',
     icon: '/images/saxo.png',
   },
@@ -76,7 +76,7 @@ export const libraryMusic = [
 ];
 export const skills = [
   {
-    name: 'Oido perfecto',
+    name: 'Oído perfecto',
     link: '/habilidades',
     icon: '/images/hear.svg',
   },

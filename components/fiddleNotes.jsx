@@ -11,7 +11,7 @@ export default function FiddleNotes() {
     <div className={styles.dashboard}>
       <div className={styles.fiddleNote}>
         <div className={styles.fiddleNote__notes}>
-          <p className={styles.fiddleNote__notes_title}>Escucha y visualiza las notas</p>
+          <p className={styles.fiddleNote__notes_title}>Escucha y visualiza las notas.</p>
           {fiddleNotes.map((value, index) => {
             const keyIndex = index + 1;
             return (

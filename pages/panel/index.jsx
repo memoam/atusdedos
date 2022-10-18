@@ -28,7 +28,7 @@ export default function Dashboard() {
   const { preLoad, setPreLoad } = useContext(PreLoadContext);
   const courses = [
     { name: 'Instrumentos', value: instruments },
-    { name: 'Oido perfecto', value: perfectEar },
+    { name: 'Oído perfecto', value: perfectEar },
     { name: 'Recursos', value: means },
   ]
   useEffect(() => {

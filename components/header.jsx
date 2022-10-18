@@ -36,12 +36,12 @@ export default function Header({ home }) {
     if (authData.token === null) {
       return (
         <>
-          <button type="button" onClick={() => { setModal({ open: true, type: 'SingIn' }); setMenuMovil(false) }}>Iniciar secion</button>
+          <button type="button" onClick={() => { setModal({ open: true, type: 'SingIn' }); setMenuMovil(false) }}>Iniciar sesión</button>
           <button type="button" onClick={() => { setModal({ open: true, type: 'SingUp' }); setMenuMovil(false) }}>Crear cuenta</button>
         </>
       )
     }
-    return (<button type="button" onClick={() => router.push('./panel')}>Seguir aprendiendo</button> )
+    return (<button type="button" onClick={() => router.push('./panel')}>Seguir aprendiendo</button>)
 
   }
   const movil = () => {

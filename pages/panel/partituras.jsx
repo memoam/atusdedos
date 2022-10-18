@@ -58,7 +58,7 @@ export default function SheetMusic() {
             <select name="filter" id="filter" placeholder="Filtrar" defaultValue={filter} onChange={(e) => { setFilter(e.target.value) }} ref={filterRef}>
               <option value="" disabled> </option>
               <option value="Guitarra">Guitarra</option>
-              <option value="Violin">Violin</option>
+              <option value="Violin">Violín</option>
 
             </select>
           </div>

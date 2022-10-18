@@ -96,11 +96,11 @@ export default function FluteAct() {
           <Image src="/images/flauta.png" alt="flauta" width={183} height={600} />
           <div className={styles.courseFlute__data}>
             <div className={styles.courseFlute__data_data}>
-              <p>Las actividades te ayudaran mejorar tus Habilidades</p>
+              <p>Las actividades te ayudarán a mejorar tus habilidades.</p>
               <Image src="/images/mano.png" alt="mano" width={210} height={173} />
               <div className={styles.courseFlute__data_ej}>
                 <strong>Ejemplo:</strong>
-                <p>Visualisa la imagen y trata de compreneder el acorde que representa</p>
+                <p>Visualiza la imagen y trata de comprender la nota que representa.</p>
               </div>
             </div>
             <div className={styles.courseFlute__data_act}>
@@ -160,7 +160,7 @@ export default function FluteAct() {
           <p className={styles.modal2__time2}>{timer}</p>
           <Image src={exercise.img} alt="play" width={187} height={304} />
           <span className={styles.modal2__note}>{exercise.name}</span>
-          <p className={styles.modal2__time}>Visualiza la reprecentacion de la nota</p>
+          <p className={styles.modal2__time}>Visualiza la representación de la nota.</p>
         </div>
       </ReactModal>
       <ReactModal

@@ -49,7 +49,7 @@ export default function SingUp() {
     } else if (!(/^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i.test(user.email))) {
       addNotification('warning', '', 'Ingrese un correo válido.', '7');
     } else if (user.password !== user.passwordConfirmation) {
-      addNotification('warning', '', 'La contraseña y su confirmacion no coinciden.', '7');
+      addNotification('warning', '', 'La contraseña y su confirmación no coinciden.', '7');
     } else {
       setPreLoad(true);
 
@@ -72,7 +72,7 @@ export default function SingUp() {
             sessionStorage.setItem('auth', JSON.stringify(result));
             setAuthData(result);
             createCookie('token', result.token);
-            addNotification('confirmation', '', 'Bienvenido!', '5');
+            addNotification('confirmation', '', '¡Bienvenido!', '5');
             router.push('./panel');
             setPreLoad(false);
           }

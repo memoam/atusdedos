@@ -1,13 +1,13 @@
 export const music = [
   {
-    name: 'Teoria musical',
+    name: 'Teoría musical',
     link: '/panel/teoria_musical',
     icon: '/images/musicIcon2.svg',
   },
 ];
 export const instruments = [
   {
-    name: 'violin',
+    name: 'Violín',
     link: '/panel/violin',
     icon: '/images/violinIcon.png',
   },
@@ -28,7 +28,7 @@ export const instruments = [
   },
 
   {
-    name: 'saxofon alto',
+    name: 'Saxofón alto',
     link: '/panel/saxofon_alto',
     icon: '/images/saxo.png',
   },
@@ -52,7 +52,7 @@ export const means = [
     icon: '/images/libraryMusic.svg',
   },
   {
-    name: 'Metronomo',
+    name: 'Metrónomo',
     link: '/panel/metronomo',
     icon: '/images/metronomeIcon.svg',
   },

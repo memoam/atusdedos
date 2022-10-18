@@ -10,7 +10,7 @@ export default function PianoNotes() {
   const [noteImg, setNoteImg] = useState(imgInit);
   return (
     <div className={styles.dashboard}>
-      <p className={styles.ukeleleNote__notes_title}>Escucha y visualiza las notas</p>
+      <p className={styles.ukeleleNote__notes_title}>Escucha y visualiza las notas.</p>
       <div className={styles.ukeleleNote__img}>
         <Image unoptimized loader={({ src }) => src} src={noteImg} alt="play" width={586} height={202} />
       </div>

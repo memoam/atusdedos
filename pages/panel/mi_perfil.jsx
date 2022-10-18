@@ -75,7 +75,7 @@ export default function Profile() {
             </div>
             <form className={styles.profile__profile_form} onSubmit={validateData}>
               <div className={styles.profile__controlsTop}>
-                <button type="button" className={profile ? styles.profile__controlsTop_active : null} onClick={() => setProfile(true)}>Mi informacion</button>
+                <button type="button" className={profile ? styles.profile__controlsTop_active : null} onClick={() => setProfile(true)}>Mi información</button>
                 <button type="button" className={!profile ? styles.profile__controlsTop_active : null} onClick={() => setProfile(false)}>Mi contraseña</button>
               </div>
               {
@@ -85,12 +85,12 @@ export default function Profile() {
                     <input type="text" name="name" id="name" onChange={(ev) => changeInput(ev, 'name')} defaultValue={password.name} />
                     <label htmlFor="lastName">Apellido(s)</label>
                     <input type="text" name="lastName" id="lastName" onChange={(ev) => changeInput(ev, 'lastName')} defaultValue={password.lastName} />
-                    <label htmlFor="gender">Genero</label>
-                    <div className={styles.profile__profile_gender}>
+                    {/* <label htmlFor="gender">Genero</label> */}
+                    {/* <div className={styles.profile__profile_gender}>
                       <button type="button">Hombre</button>
                       <button type="button">Mujer</button>
                       <button type="button">Prefiero no decir</button>
-                    </div>
+                    </div> */}
                     <div className={styles.profile__controls}>
                       <button type="button" className={styles.profile__controls_cancel} onClick={() => router.push('/panel')}>
                         Cancelar

@@ -56,10 +56,10 @@ export default function PianoNotesAct() {
       {!playing ? (
         <div className={styles.courseGuitar__actFalse}>
           <div>
-            <p>Las actividades te ayudaran mejorar tus Habilidades</p>
+            <p>Las actividades te ayudarán a mejorar tus habilidades.</p>
             <p className={styles.courseGuitar__actFalse_example}>Ejemplo:</p>
             <div className={styles.courseGuitar__actFalse_atc}>
-              <p>Visualisa la imagen y trata de compreneder la nota que representa</p>
+              <p>Visualiza la imagen y trata de comprender la nota que representa.</p>
               <Image unoptimized loader={({ src }) => src} src="/images/pianoNoteActE.png" alt="play" width={550} height={250} />
             </div>
           </div>
@@ -84,7 +84,7 @@ export default function PianoNotesAct() {
           </div>
           <div className={styles.noteAct__notesAct}>
             <div className={styles.noteAct__data}>
-              <p className={styles.noteAct__notes_title}>Escucha, analiza y selecciona la nota que corespode al audio</p>
+              <p className={styles.noteAct__notes_title}>Escucha, analiza y selecciona la nota que corresponde al audio.</p>
               <div className={styles.noteAct__notes_note}>
                 <ReactAudioPlayer src={note.audio} controls />
               </div>
