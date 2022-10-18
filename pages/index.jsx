@@ -30,7 +30,7 @@ export default function Home() {
             <p className={styles.topHome__text_txt}>dale sonido, dale ritmo... dale vida</p>
           </div>
         </div>
-        <Image src="/images/saxoPeople.jpg" alt="Logo" width={248} height={482} />
+        <Image src="/images/saxoPeople.png" alt="Logo" width={248} height={482} />
       </div>
       <div className={styles.main}>
         <p className={styles.main__title}>APRENDE ALGO NUEVO CADA DÍA</p>

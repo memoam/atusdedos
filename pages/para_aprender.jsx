@@ -25,7 +25,7 @@ export default function ToLearn() {
             <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Excepturi voluptate quos voluptatibus nemo dicta aperiam corrupti est recusandae harum error aspernatur veniam autem, maiores soluta. Officiis dolorum consequatur est quasi!</p>
             <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Excepturi voluptate quos voluptatibus nemo dicta aperiam corrupti est recusandae harum error aspernatur veniam autem, maiores soluta. Officiis dolorum consequatur est quasi!</p>
           </div>
-          <Image src="/images/saxoPeople.jpg" alt="saxoPeople" width={248} height={482} />
+          <Image src="/images/saxoPeople.png" alt="saxoPeople" width={248} height={482} />
         </div>
         <p className={styles.main__title}>Accede a TODOS los cursos las veces que quieras</p>
         <Price />

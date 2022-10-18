@@ -34,5 +34,4 @@ export const saxoNotes=[
     audio: '/music/saxofon/si-sf.mp3',
     img:'https://res.cloudinary.com/atusdedos/image/upload/v1665984599/saxofon/si_u7grsn.png'
   },
-
 ]

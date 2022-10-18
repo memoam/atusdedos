@@ -1270,7 +1270,12 @@
 .notes {
   &__controls {
     width: 100%;
-    margin-bottom: 2em;
+    margin-bottom: 1em;
+
+    p {
+      margin-bottom: 0.5em;
+      padding-left: 1em;
+    }
 
     button {
       padding: 0.3em 1em;
@@ -1401,5 +1406,59 @@
         border-radius: 1em;
       }
     }
+  }
+}
+
+.memoryAct {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+  border-top: 1px solid $primary ;
+  padding-top: 1em;
+
+  &__dash {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    width: 80%;
+    margin-top: 1em;
+    @media (max-width: 1350px) {
+      width: 90%;
+    }
+    @media (max-width: 1200px) {
+      width: 100%;
+    }
+  }
+
+  &__memoryOn,
+  &__memoryOff {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100px;
+    height: 100px;
+    margin-right: 0.5em;
+    margin-bottom: 0.5em;
+    padding: 0.5em;
+    border-radius: 5px;
+    p {
+      color: $textWhite;
+      // width: 50%;
+      text-align: center;
+      font-weight: bold;
+    }
+  }
+
+  &__memoryOn {
+    background-color: #EF626C;
+    box-shadow: 5px 5px 10px 0px rgb(0 0 0 / 50%);
+  }
+
+  &__memoryOff {
+    background-color: #84DCCF;
   }
 }

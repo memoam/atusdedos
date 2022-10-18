@@ -42,7 +42,7 @@ export default function Dashboard() {
       <Notification />
       <Menu courses />
       <div className={styles.people}>
-        <Image src="/images/saxoPeople.jpg" alt="Logo" width={248} height={482} />
+        <Image src="/images/saxoPeople.png" alt="Logo" width={248} height={482} />
       </div>
       <div className={styles.main}>
         <div className={styles.index}>

@@ -31,7 +31,7 @@ export default function Fiddle() {
       <Notification />
       <Menu value />
       <div className={styles.main}>
-        <p className={styles.main__title}>Víolin</p>
+        <p className={styles.main__title}>Violín</p>
         <div className={styles.course__controls}>
           <button type="button" className={course ? styles.course__controls_active : null} onClick={() => setCourse(true)}>Teoría</button>
           <button type="button" className={!course ? styles.course__controls_active : null} onClick={() => setCourse(false)}>Actividades</button>
