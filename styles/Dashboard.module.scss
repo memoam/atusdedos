@@ -1454,11 +1454,11 @@
   }
 
   &__memoryOn {
-    background-color: #EF626C;
+    background-color: $green;
     box-shadow: 5px 5px 10px 0px rgb(0 0 0 / 50%);
   }
 
   &__memoryOff {
-    background-color: #84DCCF;
+    background-color: $phone;
   }
 }
