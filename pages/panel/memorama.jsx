@@ -118,7 +118,8 @@ export default function Memory() {
                 const keyIndex = index + 1;
                 return (
                   <button type="button" key={keyIndex} className={memo.flipped ? styles.memoryAct__memoryOn : styles.memoryAct__memoryOff} onClick={() => cardClick(memo, keyIndex)} disabled={playing}>
-                    <p>{(memo.flipped && isNormal) && (memo.name)}</p>
+
+                    {(memo.flipped && isNormal) ? (<p>{memo.name}</p>) : <Image src="/images/noteIcon.svg" alt="play" width={50} height={50} />}
                   </button>
                 );
               })}
