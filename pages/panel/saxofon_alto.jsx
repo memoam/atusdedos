@@ -27,7 +27,7 @@ export default function Saxo() {
     <div className={styles.container}>
       <Header />
       <Notification />
-      <Menu value />
+      <Menu saxo />
       <div className={styles.main}>
         <p className={styles.main__title}>Saxofon alto</p>
         <div className={styles.course__controls}>

@@ -148,16 +148,17 @@
 .menu {
   display: flex;
   justify-content: space-between;
-  flex-wrap: wrap;
+  // flex-wrap: wrap;
   flex-direction: column;
   position: fixed;
   min-width: 140px;
   width: fit-content;
-  height: calc(100% - 7em);
-  top: 5em;
-  left: 10%;
+  // height: calc(100% - 7em);
+  height: 100%;
+  // top: 5em;
+  left: 5%;
   z-index: 2;
-  padding: 5em 0;
+  padding: 6em 0 3em;
   border-right: 1px solid $borderGray;
 
   &__links {
@@ -172,6 +173,45 @@
 
     &_active {
       border-bottom: 3px solid $primary;
+    }
+  }
+
+  &__subLinks {
+    margin-bottom: 0.5em;
+    &[open] {
+      // border-bottom: 1px solid $textGray;
+      summary {
+        &::before {
+          transform: rotate(90deg);
+          transition: all 0.5s;
+        }
+      }
+    }
+    summary{
+      cursor: pointer;
+      margin-bottom: 0.5em;
+      position: relative;
+
+      &::before {
+        content: "";
+        background-image: url(/images/arrowLigh.svg);
+        transition: all 0.5s;
+        width: 20px;
+        height: 20px;
+        position: absolute;
+        top: 0;
+        left: -1em;
+      }
+    }
+  }
+  &__subLinkData{
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+    a{
+      margin-left: 0.5em;
+      margin-right: 0.2em;
     }
   }
 
@@ -216,11 +256,14 @@
 
   @media (max-width: $desktoplong) {
     left: 5%;
-    min-width: 120px;
+    min-width: 150px;
   }
 
-  @media (max-width: 900px) {
+  @media (max-width: 1020px) {
     left: 2%;
+  }
+  @media (max-width: 1020px) {
+    min-width: 130px;
   }
 
   @media (max-width: $tablets) {
@@ -280,6 +323,7 @@
     height: 100%;
     // display: flex;
     // flex-direction: column;
+    padding-left: 1em;
     position: relative;
   }
 

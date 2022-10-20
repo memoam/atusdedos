@@ -17,7 +17,7 @@ export const dataIndexInit = [
   {
     name: 'ukelele',
     link: '/panel/ukulele',
-    icon: '/images/guitarIcon.svg',
+    icon: '/images/ukeleleIcon.svg',
   },
 
   {
@@ -30,13 +30,13 @@ export const libraryMusicInit = [
   {
     name: 'Partituras',
     link: '/panel/partituras',
-    icon: '/images/libraryMusic.svg',
+    icon: '/images/musicRepo.svg',
   },
 ];
 export const skillsInit =[
   {
-    name: 'Oído perfecto',
-    link: '/panel/notas',
+    name: 'Identificar notas',
+    link: '/panel/identificar_notas',
     icon: '/images/hear.svg',
   },
 ]
@@ -59,7 +59,7 @@ export const dataIndex = [
   {
     name: 'ukelele',
     link: '/para_aprender',
-    icon: '/images/guitarIcon.svg',
+    icon: '/images/ukeleleIcon.svg',
   },
   {
     name: 'Saxofón alto',
@@ -71,7 +71,7 @@ export const libraryMusic = [
   {
     name: 'Partituras',
     link: '/inspiracion',
-    icon: '/images/libraryMusic.svg',
+    icon: '/images/musicRepo.svg',
   },
 ];
 export const skills = [

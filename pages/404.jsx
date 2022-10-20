@@ -1,9 +1,8 @@
 /* eslint-disable linebreak-style */
 /* eslint-disable jsx-a11y/label-has-associated-control */
-import React, { useState } from 'react';
+import React from 'react';
 import Image from 'next/image';
 import Header from '../components/header';
-import Cards from '../components/cards';
 import Notification from '../components/notifications';
 import styles from '../styles/Home.module.scss';
 import Footer from '../components/footer';

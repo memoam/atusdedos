@@ -18,17 +18,17 @@ export default function Footer() {
             <Link href="/terminos_y_condiciones" passHref>Términos y Condiciones</Link>
           </div>
           <div className={styles.footer__main_linksSocial}>
-            <Link href="/" passHref>
+            <Link href="https://www.facebook.com/" passHref>
               <a target="_blank">
                 <Image src="/images/facebook.svg" alt="facebook" width={27} height={27} />
               </a>
             </Link>
-            <Link href="/" passHref>
+            <Link href="https://www.instagram.com/" passHref>
               <a target="_blank">
                 <Image src="/images/instagram.svg" alt="instagram" width={27} height={27} />
               </a>
             </Link>
-            <Link href="/" passHref>
+            <Link href="https://twitter.com/" passHref>
               <a target="_blank">
                 <Image src="/images/twitter.svg" alt="twitter" width={27} height={27} />
               </a>

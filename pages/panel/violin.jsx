@@ -29,7 +29,7 @@ export default function Fiddle() {
     <div className={styles.container}>
       <Header />
       <Notification />
-      <Menu value />
+      <Menu fiddle />
       <div className={styles.main}>
         <p className={styles.main__title}>Violín</p>
         <div className={styles.course__controls}>

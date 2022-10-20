@@ -28,7 +28,7 @@ export default function Flute() {
     <div className={styles.container}>
       <Header />
       <Notification />
-      <Menu value />
+      <Menu flute />
       <div className={styles.main}>
         <p className={styles.main__title}>Flauta transversal</p>
         <div className={styles.course__controls}>

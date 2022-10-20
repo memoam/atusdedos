@@ -53,17 +53,19 @@ export default function Memory() {
   const cardClick = (memoData, i) => {
     const memoAudio = new Audio(memoData.audio);
     memoAudio.play();
+    // copy the data to restore
+    if (memorySelec === null)
+      setCopy(memory)
+    // if the card is flipped just play the sound
     if (!memoData.flipped) {
+      //updates the status of the clicked card
       const flippedMemory = { ...memoData, flipped: true };
       const prevStateEdit = [
         ...memory.slice(0, i - 1),
         flippedMemory,
         ...memory.slice(i, memory.length)
       ];
-      if (memorySelec === null)
-        setCopy(memory)
       setMemory(prevStateEdit)
-
       if (memorySelec === null)
         setMemorySelec(memoData)
       else if (memorySelec.name === memoData.name) {
@@ -94,7 +96,7 @@ export default function Memory() {
     <div className={styles.container}>
       <Header />
       <Notification />
-      <Menu value />
+      <Menu memory />
       <div className={styles.main}>
         <p className={styles.main__title}>Memorama</p>
         <div className={styles.notes__controls}>
@@ -111,7 +113,7 @@ export default function Memory() {
               <button type="button" className={isNormal ? styles.notes__controls_active : null} onClick={() => level(true)}>Normal</button>
               <button type="button" className={!isNormal ? styles.notes__controls_active : null} onClick={() => level(false)}>Dificil</button>
             </div>
-            <div className={styles.memoryAct__dash}>
+            <div className={styles.memoryAct__dash} style={instrument === 2 ? { width: '80%' } : null}>
               {memory.map((memo, index) => {
                 const keyIndex = index + 1;
                 return (

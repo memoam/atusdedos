@@ -26,7 +26,7 @@ export default function MusicalTheory() {
     <div className={styles.container}>
       <Header />
       <Notification />
-      <Menu value />
+      <Menu music />
       <div className={styles.main}>
         <p className={styles.main__title}>Teoría musical</p>
         <div className={styles.dashboard}>

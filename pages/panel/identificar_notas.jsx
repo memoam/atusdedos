@@ -6,6 +6,7 @@ import Menu from '../../components/menu';
 import Notification from '../../components/notifications';
 import PreLoadContext from '../../context/preLoadContext';
 import GuitarNotes from '../../components/guitarNotes';
+import GuitarNotesAct from '../../components/guitarNotesAct';
 import UkeleleNotes from '../../components/ukeleleNotes';
 import FiddleNotes from '../../components/fiddleNotes';
 import FiddleNotesAct from '../../components/fiddleNotesAct';
@@ -32,13 +33,14 @@ export default function Notes() {
   const { preLoad, setPreLoad } = useContext(PreLoadContext);
   const [course, setCourse] = useState(true)
   const [instrument, setInstrument] = useState(1)
+  const [isHard, setIsHard] = useState(false);
   return (
     <div className={styles.container}>
       <Header />
       <Notification />
-      <Menu value />
+      <Menu notes />
       <div className={styles.main}>
-        <p className={styles.main__title}>Identificar notas</p>
+        <p className={styles.main__title}>Oído perfecto</p>
         <div className={styles.notes__controls}>
           <button type="button" className={instrument === 1 ? styles.notes__controls_active : null} onClick={() => setInstrument(1)}>Guitarra</button>
           <button type="button" className={instrument === 2 ? styles.notes__controls_active : null} onClick={() => setInstrument(2)}>Violín</button>
@@ -51,12 +53,26 @@ export default function Notes() {
           <button type="button" className={!course ? styles.course__controls_active : null} onClick={() => setCourse(false)}>Actividades</button>
         </div>
         {
-          instrument === 1 ? course ? (<GuitarNotes />) : (<p>algo</p>)
-            : instrument === 2 ? course ? (<FiddleNotes />) : (<FiddleNotesAct />)
-              : instrument === 3 ? course ? (<UkeleleNotes />) : (<p>algo</p>)
-                : instrument === 4 ? course ? (<SaxoNotes />) : (<SaxoNotesAct />)
-                  : instrument === 5 ? course ? (<PianoNotes />) : (<PianoNotesAct />)
-                    : null
+          instrument === 1 ? course ? (<GuitarNotes />) : (
+            <>
+              <div className={styles.notes__controls}>
+                <button type="button" className={!isHard ? styles.notes__controls_active : null} onClick={() => setIsHard(false)}>Normal</button>
+                <button type="button" className={isHard ? styles.notes__controls_active : null} onClick={() => setIsHard(true)}>Extremo</button>
+              </div>
+              {isHard ? null : (<GuitarNotesAct />)}
+            </>
+          ) : instrument === 2 ? course ? (<FiddleNotes />) : (<FiddleNotesAct />)
+            : instrument === 3 ? course ? (<UkeleleNotes />) : (
+              <>
+                <div className={styles.notes__controls}>
+                  <button type="button" className={!isHard ? styles.notes__controls_active : null} onClick={() => setIsHard(false)}>Normal</button>
+                  <button type="button" className={isHard ? styles.notes__controls_active : null} onClick={() => setIsHard(true)}>Extremo</button>
+                </div>
+                {isHard ? null : null}
+              </>
+            ) : instrument === 4 ? course ? (<SaxoNotes />) : (<SaxoNotesAct />)
+              : instrument === 5 ? course ? (<PianoNotes />) : (<PianoNotesAct />)
+                : null
         }
       </div>
     </div>

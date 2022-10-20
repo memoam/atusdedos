@@ -24,7 +24,7 @@ export const instruments = [
   {
     name: 'ukelele',
     link: '/panel/ukulele',
-    icon: '/images/guitarIcon.svg',
+    icon: '/images/ukeleleIcon.svg',
   },
 
   {
@@ -35,21 +35,21 @@ export const instruments = [
 ];
 export const perfectEar = [
   {
-    name: 'Memorama',
-    link: '/panel/memorama',
-    icon: '/images/gameIcon.svg',
+    name: 'Identificar notas',
+    link: '/panel/identificar_notas',
+    icon: '/images/noteIcon.svg',
   },
   {
-    name: 'Identificar notas',
-    link: '/panel/notas',
-    icon: '/images/noteIcon.svg',
+    name: ' Memorama',
+    link: '/panel/memorama',
+    icon: '/images/memoIcon.svg',
   },
 ];
 export const means = [
   {
     name: 'Partituras',
     link: '/panel/partituras',
-    icon: '/images/libraryMusic.svg',
+    icon: '/images/musicRepo.svg',
   },
   {
     name: 'Metrónomo',

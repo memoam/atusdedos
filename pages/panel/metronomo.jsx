@@ -21,13 +21,13 @@ export async function getServerSideProps({ req }) {
   return { props: { token } };
 }
 
-export default function Value() {
+export default function MyMetronome() {
   const { preLoad, setPreLoad } = useContext(PreLoadContext);
   return (
     <div className={styles.container}>
       <Header />
       <Notification />
-      <Menu />
+      <Menu metronome/>
       <div className={styles.people}>
         <Image src="/images/metronomo.svg" alt="metronomo" width={300} height={204} />
       </div>

@@ -9,11 +9,17 @@
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
-  max-width: 70%;
+  max-width: 75%;
   margin: 0 auto;
   margin-left: 20%;
   padding: 5em 0;
   height: 100%;
+
+  // @media (max-width: $tablets) {
+  //   max-width: 70%;
+  //   margin: 0 auto;
+  //   margin-left: 15%;
+  // }
 
   @media (max-width: $tablets) {
     max-width: 95%;
@@ -1423,11 +1429,13 @@
     align-items: center;
     justify-content: space-around;
     flex-wrap: wrap;
-    width: 80%;
+    width: 75%;
     margin-top: 1em;
+
     @media (max-width: 1350px) {
       width: 90%;
     }
+
     @media (max-width: 1200px) {
       width: 100%;
     }
@@ -1445,6 +1453,7 @@
     margin-bottom: 0.5em;
     padding: 0.5em;
     border-radius: 5px;
+
     p {
       color: $textWhite;
       // width: 50%;

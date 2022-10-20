@@ -30,7 +30,7 @@ export default function GuitarCourse() {
     <div className={styles.container}>
       <Header />
       <Notification />
-      <Menu value />
+      <Menu guitar />
       <div className={styles.people}>
         <Image src="/images/guitarPeople.svg" alt="play" width={200} height={204} />
       </div>

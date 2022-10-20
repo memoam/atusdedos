@@ -38,7 +38,7 @@ export default function SheetMusic() {
     <div className={styles.container}>
       <Header />
       <Notification />
-      <Menu />
+      <Menu sheetMusic/>
       <div className={styles.people}>
         <Image src="/images/sheetMusicPeople.svg" alt="play" width={250} height={204} />
       </div>

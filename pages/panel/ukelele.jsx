@@ -28,7 +28,7 @@ export default function Ukelele() {
     <div className={styles.container}>
       <Header />
       <Notification />
-      <Menu value />
+      <Menu ukelele />
       <div className={styles.main}>
         <p className={styles.main__title}>Ukelele</p>
         <div className={styles.course__controls}>

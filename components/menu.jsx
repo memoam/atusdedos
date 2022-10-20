@@ -11,7 +11,7 @@ import AuthContext from '../context/authContext';
 import styles from '../styles/Header.module.scss';
 
 export default function Menu({
-  courses, profile, calendar
+  courses, profile, calendar, music, fiddle, flute, guitar, ukelele, saxo, notes, memory, sheetMusic, metronome
 }) {
   const router = useRouter();
   const [menuMovil, setMenuMovil] = useState(false);
@@ -27,8 +27,53 @@ export default function Menu({
     return (
       <div className={styles.menu__links}>
         <Link href="/panel">
-          <a className={courses ? styles.menu__links_active : null}>Para aprender</a>
+          <a className={courses ? styles.menu__links_active : null}>Inicio</a>
         </Link>
+        <Link href="/panel/teoria_musical">
+          <a className={music ? styles.menu__links_active : null}>Teoría musical</a>
+        </Link>
+        <details className={styles.menu__subLinks}>
+          <summary>Instrumentos</summary>
+          <div className={styles.menu__subLinkData}>
+            <Link href="/panel/violin">
+              <a className={fiddle ? styles.menu__links_active : null}>Violín</a>
+            </Link>
+            <Link href="/panel/flauta_transversal">
+              <a className={flute ? styles.menu__links_active : null}>Flauta transversal</a>
+            </Link>
+            <Link href="/panel/guitarra">
+              <a className={guitar ? styles.menu__links_active : null}>Guitarra</a>
+            </Link>
+            <Link href="/panel/ukelele">
+              <a className={ukelele ? styles.menu__links_active : null}>Ukelele</a>
+            </Link>
+            <Link href="/panel/saxofon_alto">
+              <a className={saxo ? styles.menu__links_active : null}>Saxofón alto</a>
+            </Link>
+          </div>
+        </details>
+        <details className={styles.menu__subLinks}>
+          <summary>Oído perfecto</summary>
+          <div className={styles.menu__subLinkData}>
+            <Link href="/panel/identificar_notas">
+              <a className={notes ? styles.menu__links_active : null}>Identificar notas</a>
+            </Link>
+            <Link href="/panel/memorama">
+              <a className={memory ? styles.menu__links_active : null}>Memorama</a>
+            </Link>
+          </div>
+        </details>
+        <details className={styles.menu__subLinks}>
+          <summary>Recursos</summary>
+          <div className={styles.menu__subLinkData}>
+            <Link href="/panel/partituras">
+              <a className={sheetMusic ? styles.menu__links_active : null}>Partituras</a>
+            </Link>
+            <Link href="/panel/metronomo">
+              <a className={metronome ? styles.menu__links_active : null}>Metrónomo</a>
+            </Link>
+          </div>
+        </details>
         <Link href="/panel/agenda">
           <a className={calendar ? styles.menu__links_active : null}>Agenda</a>
         </Link>
@@ -84,9 +129,29 @@ Menu.propTypes = {
   profile: PropTypes.bool,
   calendar: PropTypes.bool,
   courses: PropTypes.bool,
+  music: PropTypes.bool,
+  fiddle: PropTypes.bool,
+  flute: PropTypes.bool,
+  guitar: PropTypes.bool,
+  ukelele: PropTypes.bool,
+  saxo: PropTypes.bool,
+  notes: PropTypes.bool,
+  memory: PropTypes.bool,
+  sheetMusic: PropTypes.bool,
+  metronome: PropTypes.bool,
 };
 Menu.defaultProps = {
   courses: false,
   profile: false,
   calendar: false,
+  music: false,
+  fiddle: false,
+  flute: false,
+  guitar: false,
+  ukelele: false,
+  saxo: false,
+  notes: false,
+  memory: false,
+  sheetMusic: false,
+  metronome: false,
 };
