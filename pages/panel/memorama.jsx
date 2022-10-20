@@ -92,6 +92,14 @@ export default function Memory() {
   const level = (value) => {
     setIsNormal(value);
   }
+  const restartFun = () => {
+    setPreLoad(true);
+    setTimeout(() => {
+      setAnswersModal(false);
+      setPreLoad(false)
+      updateMemory(restart);
+    }, 500);
+  }
   return (
     <div className={styles.container}>
       <Header />
@@ -124,7 +132,7 @@ export default function Memory() {
                 );
               })}
             </div>
-            <button type="button" className={styles.courseGuitar__exercise_answer} onClick={() => updateMemory(restart)}>Reiniciar</button>
+            <button type="button" className={styles.courseGuitar__exercise_answer} onClick={() => restartFun()}>Reiniciar</button>
           </div>
         </div>
       </div>
@@ -136,12 +144,12 @@ export default function Memory() {
         ariaHideApp={false}
         style={{ overlay: { backgroundColor: 'rgba(34,34,34, 0.9)', zIndex: '3' } }}
       >
-        <p>Felicidades</p>
+        <p>¡Felicidades!</p>
         <p>Reto completado</p>
         <Image src="/images/nice.svg" alt="play" width={150} height={150} />
         <div className={styles.modal__controls}>
           <button className={styles.modal__controls_cancel} type="button" onClick={() => setAnswersModal(false)}>Terminar</button>
-          <button type="button" onClick={() => { updateMemory(restart); setAnswersModal(false) }}>Reiniciar</button>
+          <button type="button" onClick={() => restartFun()}>Reiniciar</button>
         </div>
       </ReactModal>
     </div >

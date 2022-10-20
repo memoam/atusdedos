@@ -1433,11 +1433,11 @@
     margin-top: 1em;
 
     @media (max-width: 1350px) {
-      width: 90%;
+      width: 90% !important;
     }
 
     @media (max-width: 1200px) {
-      width: 100%;
+      width: 100 !important;
     }
   }
 
