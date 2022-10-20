@@ -40,7 +40,7 @@ export default function Notes() {
       <Notification />
       <Menu notes />
       <div className={styles.main}>
-        <p className={styles.main__title}>Oído perfecto</p>
+        <p className={styles.main__title}>Identificar notas</p>
         <div className={styles.notes__controls}>
           <button type="button" className={instrument === 1 ? styles.notes__controls_active : null} onClick={() => setInstrument(1)}>Guitarra</button>
           <button type="button" className={instrument === 2 ? styles.notes__controls_active : null} onClick={() => setInstrument(2)}>Violín</button>
