@@ -16,20 +16,20 @@ export default function GuitarNotesAct() {
   const [answersModal, setAnswersModal] = useState(false);
 
   const start = () => {
-    const randomId = Math.floor(Math.random() * 7);
-    let randomIdAsw = Math.floor(Math.random() * 7);
-    let randomIdAswt = Math.floor(Math.random() * 7);
+    const randomId = Math.floor(Math.random() * 14);
+    let randomIdAsw = Math.floor(Math.random() * 14);
+    let randomIdAswt = Math.floor(Math.random() * 14);
 
     if (randomId === randomIdAsw) {
-      if (randomId === 7) randomIdAsw -= 1
+      if (randomId === 14) randomIdAsw -= 1
       else randomIdAsw += 1
     }
     if (randomId === randomIdAswt) {
-      if (randomId === 7) randomIdAswt -= 1
+      if (randomId === 14) randomIdAswt -= 1
       else randomIdAswt += 1
     }
     if (randomIdAswt === randomIdAsw) {
-      if (randomIdAsw === 7) randomIdAswt -= 1
+      if (randomIdAsw === 14) randomIdAswt -= 1
       else randomIdAswt += 1
     }
     setNote(guitarNotes[randomId]);

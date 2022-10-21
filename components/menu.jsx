@@ -1,6 +1,6 @@
 /* eslint-disable linebreak-style */
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import React, { useState, useContext } from 'react';
+import React, { useState, useContext, useEffect } from 'react';
 import Image from 'next/image';
 import ReactModal from 'react-modal';
 import Link from 'next/link';
@@ -22,6 +22,21 @@ export default function Menu({
     removeCookies('token');
     router.push('/');
   };
+  useEffect(() => {
+    // Fetch all the details element.
+    const details = document.querySelectorAll('details');
+    // Add the onclick listeners.
+    details.forEach((targetDetail) => {
+      targetDetail.addEventListener('click', () => {
+        // Close all the details that are not targetDetail.
+        details.forEach((detail) => {
+          if (detail !== targetDetail) {
+            detail.removeAttribute('open');
+          }
+        });
+      });
+    });
+  }, []);
 
   function links() {
     return (
