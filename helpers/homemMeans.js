@@ -16,7 +16,7 @@ export const dataIndexInit = [
   },
   {
     name: 'ukelele',
-    link: '/panel/ukulele',
+    link: '/panel/ukelele',
     icon: '/images/ukeleleIcon.svg',
   },
 

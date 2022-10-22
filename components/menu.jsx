@@ -22,21 +22,21 @@ export default function Menu({
     removeCookies('token');
     router.push('/');
   };
-  useEffect(() => {
-    // Fetch all the details element.
-    const details = document.querySelectorAll('details');
-    // Add the onclick listeners.
-    details.forEach((targetDetail) => {
-      targetDetail.addEventListener('click', () => {
-        // Close all the details that are not targetDetail.
-        details.forEach((detail) => {
-          if (detail !== targetDetail) {
-            detail.removeAttribute('open');
-          }
-        });
-      });
-    });
-  }, []);
+  // useEffect(() => {
+  //   // Fetch all the details element.
+  //   const details = document.querySelectorAll('details');
+  //   // Add the onclick listeners.
+  //   details.forEach((targetDetail) => {
+  //     targetDetail.addEventListener('click', () => {
+  //       // Close all the details that are not targetDetail.
+  //       details.forEach((detail) => {
+  //         if (detail !== targetDetail) {
+  //           detail.removeAttribute('open');
+  //         }
+  //       });
+  //     });
+  //   });
+  // }, []);
 
   function links() {
     return (

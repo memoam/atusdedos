@@ -7,11 +7,13 @@ import Notification from '../../components/notifications';
 import PreLoadContext from '../../context/preLoadContext';
 import GuitarNotes from '../../components/guitarNotes';
 import GuitarNotesAct from '../../components/guitarNotesAct';
+import GuitarNotesActH from '../../components/guitarNotesActH';
 import UkeleleNotes from '../../components/ukeleleNotes';
 import FiddleNotes from '../../components/fiddleNotes';
 import FiddleNotesAct from '../../components/fiddleNotesAct';
 import SaxoNotes from '../../components/saxofonNotes';
 import SaxoNotesAct from '../../components/saxoNotesAct';
+import SaxoNotesAtcH from '../../components/saxoNotesActH';
 import PianoNotes from '../../components/pianoNotes';
 import PianoNotesAct from '../../components/pianoNotesAct';
 import styles from '../../styles/Dashboard.module.scss';
@@ -34,6 +36,12 @@ export default function Notes() {
   const [course, setCourse] = useState(true)
   const [instrument, setInstrument] = useState(1)
   const [isHard, setIsHard] = useState(false);
+  const btn = (
+    <div className={styles.notes__controls}>
+      <button type="button" className={!isHard ? styles.notes__controls_active : null} onClick={() => setIsHard(false)}>Normal</button>
+      <button type="button" className={isHard ? styles.notes__controls_active : null} onClick={() => setIsHard(true)}>Extremo</button>
+    </div>
+  );
   return (
     <div className={styles.container}>
       <Header />
@@ -55,22 +63,21 @@ export default function Notes() {
         {
           instrument === 1 ? course ? (<GuitarNotes />) : (
             <>
-              <div className={styles.notes__controls}>
-                <button type="button" className={!isHard ? styles.notes__controls_active : null} onClick={() => setIsHard(false)}>Normal</button>
-                <button type="button" className={isHard ? styles.notes__controls_active : null} onClick={() => setIsHard(true)}>Extremo</button>
-              </div>
-              {isHard ? null : (<GuitarNotesAct />)}
+              {btn}
+              {isHard ? <GuitarNotesActH /> : (<GuitarNotesAct />)}
             </>
           ) : instrument === 2 ? course ? (<FiddleNotes />) : (<FiddleNotesAct />)
             : instrument === 3 ? course ? (<UkeleleNotes />) : (
               <>
-                <div className={styles.notes__controls}>
-                  <button type="button" className={!isHard ? styles.notes__controls_active : null} onClick={() => setIsHard(false)}>Normal</button>
-                  <button type="button" className={isHard ? styles.notes__controls_active : null} onClick={() => setIsHard(true)}>Extremo</button>
-                </div>
+                {btn}
                 {isHard ? null : null}
               </>
-            ) : instrument === 4 ? course ? (<SaxoNotes />) : (<SaxoNotesAct />)
+            ) : instrument === 4 ? course ? (<SaxoNotes />) : (
+              <>
+                {btn}
+                {isHard ? <SaxoNotesAtcH /> : (<SaxoNotesAct />)}
+              </>
+            )
               : instrument === 5 ? course ? (<PianoNotes />) : (<PianoNotesAct />)
                 : null
         }

@@ -5,6 +5,7 @@ import Menu from '../../components/menu';
 import Notification from '../../components/notifications';
 import PreLoadContext from '../../context/preLoadContext';
 import SaxoText from '../../components/saxoText';
+import SaxoAtc from '../../components/saxoAct';
 import styles from '../../styles/Dashboard.module.scss';
 
 export async function getServerSideProps({ req }) {
@@ -34,7 +35,7 @@ export default function Saxo() {
           <button type="button" className={course ? styles.course__controls_active : null} onClick={() => setCourse(true)}>Teoría</button>
           <button type="button" className={!course ? styles.course__controls_active : null} onClick={() => setCourse(false)}>Actividades</button>
         </div>
-        {course ? (<SaxoText />) : (<p>Actividades</p>)}
+        {course ? (<SaxoText />) : (<SaxoAtc />)}
       </div>
     </div>
   );

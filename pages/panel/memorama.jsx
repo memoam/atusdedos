@@ -36,6 +36,7 @@ export default function Memory() {
   const [copy, setCopy] = useState(null)
   const [restart, setRestart] = useState(null)
   const [answersModal, setAnswersModal] = useState(false);
+  const [details, setDetails] = useState(false)
 
   useEffect(() => {
     const memoryRan = [...guitarNotes, ...guitarNotes].sort(function () { return Math.random() - 0.5 })
@@ -93,12 +94,12 @@ export default function Memory() {
     setIsNormal(value);
   }
   const restartFun = () => {
-    setPreLoad(true);
+    setPreLoad(true)
     setTimeout(() => {
       setAnswersModal(false);
       setPreLoad(false)
       updateMemory(restart);
-    }, 500);
+    }, 1000);
   }
   return (
     <div className={styles.container}>
@@ -121,12 +122,20 @@ export default function Memory() {
               <button type="button" className={isNormal ? styles.notes__controls_active : null} onClick={() => level(true)}>Normal</button>
               <button type="button" className={!isNormal ? styles.notes__controls_active : null} onClick={() => level(false)}>Dificil</button>
             </div>
+            <div className={styles.notes__details}>
+              {!details ? (<button type="button" onClick={() => setDetails(true)}>¿Como jugar?</button>)
+                : (<button type="button" onClick={() => setDetails(false)}>Ocultar</button>)}
+              {details && (
+                <p className={styles.notes__details_description}>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam voluptas ex quasi, consequatur voluptate officiis. Impedit sequi porro delectus id non quidem saepe dolore sint atque, dignissimos, expedita voluptatem libero.
+                </p>
+              )}
+            </div>
             <div className={styles.memoryAct__dash} style={instrument === 2 ? { width: '80%' } : null}>
               {memory.map((memo, index) => {
                 const keyIndex = index + 1;
                 return (
                   <button type="button" key={keyIndex} className={memo.flipped ? styles.memoryAct__memoryOn : styles.memoryAct__memoryOff} onClick={() => cardClick(memo, keyIndex)} disabled={playing}>
-
                     {(memo.flipped && isNormal) ? (<p>{memo.name}</p>) : <Image src="/images/noteIcon.svg" alt="play" width={50} height={50} />}
                   </button>
                 );

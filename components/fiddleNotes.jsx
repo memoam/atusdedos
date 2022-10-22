@@ -30,7 +30,7 @@ export default function FiddleNotes() {
         </div>
         <div className={styles.fiddleNote__div}>
           <div className={styles.fiddleNote__img}>
-            <Image src="/images/violinFondo.png" alt="violinNotes" width={334} height={480} />
+            <Image  unoptimized loader={({ src }) => src} src="https://res.cloudinary.com/atusdedos/image/upload/v1666412816/Violin/violinFondo_xhy7y9.png" alt="violinNotes" width={334} height={480} />
             {fiddleNotes.map((value, index) => {
               const keyIndex = index + 1;
               return (

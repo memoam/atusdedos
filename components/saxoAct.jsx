@@ -2,24 +2,43 @@
 import React, { useState, useRef } from 'react';
 import Image from 'next/image';
 import ReactModal from 'react-modal';
-import FluterExercises, { Validate } from '../helpers/fluteExercises';
+import SaxoExercises, { Validate } from '../helpers/saxoNotes';
 import styles from '../styles/Dashboard.module.scss';
 
-export default function FluteAct() {
+export default function SaxoAtc() {
   // status
   const [modal, setModal] = useState(false);
   const [playing, setPlaying] = useState(false);
   const initAsw = {
-    a1: false, a2: false, a3: false, a4: false, a5: false, a6: false, a7: false, a8: false, a9: false, a10: false, a11: false, a12: false, a13: false, a14: false, a15: false
+    a1: false, a2: false, a3: false, a4: false, a5: false, a6: false, a7: false, a8: false, a9: false,
+    a10: false, a11: false, a12: false, a13: false, a14: false, a15: false, a16: false, a17: false,
+    a18: false, a19: false, a20: false, a21: false, a22: false, a23: false, a24: false,
   }
+  const saxoInit = [...Array(23).keys()].map((data, i) => ({ name: `a${i + 2}`, click: false }))
+  const [saxoData, setSaxoData] = useState(saxoInit);
   const [details, setDetails] = useState(false)
   const [asw, setAsw] = useState(initAsw);
   //
-  const changeInput = (value, field) => {
+  const changeInput = (value, field, info, i) => {
     const prevState = asw;
     prevState[field] = value;
+    const prevData = { ...info, click: value };
+    const prevStateEdit = [
+      ...saxoData.slice(0, i - 1),
+      prevData,
+      ...saxoData.slice(i, 23)
+    ];
     setAsw(prevState);
+    setSaxoData(prevStateEdit);
   };
+  const [aux, setAux] = useState(false);
+  const changeInputOne = (value) => {
+    const prevState = asw;
+    prevState.a1 = value;
+    setAsw(prevState);
+    setAux(value);
+  };
+
   // timer
   const Ref = useRef(null);
   const [timer, setTimer] = useState('00:00:00');
@@ -57,7 +76,7 @@ export default function FluteAct() {
   }
   const getDeadTime = () => {
     let deadline = new Date();
-    deadline.setSeconds(deadline.getSeconds() + 5); // seconds
+    deadline.setSeconds(deadline.getSeconds() + 1); // seconds
     return deadline;
   }
   const onClickReset = () => {
@@ -67,55 +86,58 @@ export default function FluteAct() {
   const [answersModal, setAnswersModal] = useState(false);
   const [isRight, setIsRight] = useState(true);
   const [exercise, setExercise] = useState({});
-  const [numRan, setNumRan] = useState(Math.floor(Math.random() * 1));
+  let initRan = Math.floor(Math.random() * 7);
+  const [numRan, setNumRan] = useState(initRan);
 
   const start = () => {
-    setExercise(FluterExercises(numRan));
+    setExercise(SaxoExercises(numRan));
     setModal(true);
     onClickReset();
   }
   // answers
   const isItOk = () => {
     setAnswersModal(true);
+    console.log(asw, numRan);
     setIsRight(Validate(asw, numRan));// aqui responde 
   }
   const nextExercise = () => {
+    const prevData = Math.floor(Math.random() * 7);
     setAsw(initAsw);
+    setSaxoData(saxoInit)
+    setAux(false)
     setAnswersModal(false);
-    setNumRan(Math.floor(Math.random() * 1));
-    start();
+    setNumRan(prevData);
+    setExercise(SaxoExercises(prevData));
+    setModal(true);
+    onClickReset();
+    // start();
   }
   const finalize = () => {
     setAnswersModal(false);
     setPlaying(false);
     setAsw(initAsw);
+    setSaxoData(saxoInit)
+    setAux(false)
   }
   return (
     <div className={styles.courseFlute}>
       {!playing ? (
-        <div className={styles.courseFlute__predata}>
-          <Image src="/images/flauta.png" alt="flauta" width={183} height={600} />
-          <div className={styles.courseFlute__data}>
-            <div className={styles.courseFlute__data_data}>
-              <p>Las actividades te ayudarán a mejorar tus habilidades.</p>
-              <Image src="/images/mano.png" alt="mano" width={210} height={173} />
-              <div className={styles.courseFlute__data_ej}>
-                <strong>Ejemplo:</strong>
-                <p>Visualiza la imagen y trata de comprender la nota que representa.</p>
-              </div>
-            </div>
-            <div className={styles.courseFlute__data_act}>
-              <Image src="/images/fluteact1.png" alt="flautaAct" width={187} height={304} />
-              <button className={styles.courseFlute__exercise_play} type="button" onClick={() => start()}>
-                <Image src="/images/play.svg" alt="play" width={150} height={150} />
-                Iniciar
-              </button>
+        <div className={styles.courseGuitar__actFalse}>
+          <div>
+            <p>Las actividades te ayudarán a mejorar tus habilidades.</p>
+            <p className={styles.courseGuitar__actFalse_example}>Ejemplo:</p>
+            <div className={styles.courseGuitar__actFalse_atc}>
+              <p>Visualiza la imagen y trata de comprender la nota que representa.</p>
+              <Image unoptimized loader={({ src }) => src} src="https://res.cloudinary.com/atusdedos/image/upload/v1666411589/saxofon/saxoNotes_ola8q0.png" alt="play" width={550} height={250} />
             </div>
           </div>
-
+          <button className={styles.courseGuitar__exercise_play} type="button" onClick={() => start()}>
+            <Image src="/images/play.svg" alt="play" width={150} height={150} />
+            Iniciar
+          </button>
         </div>
       ) : (
-        <div className={styles.courseFlute__exercise}>
+        <>
           <div className={styles.notes__details}>
             {!details ? (<button type="button" onClick={() => setDetails(true)}>¿Como jugar?</button>)
               : (<button type="button" onClick={() => setDetails(false)}>Ocultar</button>)}
@@ -125,38 +147,30 @@ export default function FluteAct() {
               </p>
             )}
           </div>
-          <p className={styles.courseFlute__exercise_exercise}>Identifica:<span>{exercise.name}</span></p>
-          <div className={styles.courseFlute__actFalse}>
-            <div className={styles.courseFlute__actFalse_imgFlute}>
-              <Image src="/images/flauta.png" alt="flauta" width={183} height={600} />
+          <div className={styles.fiddleNoteAct}>
+            <div className={styles.fiddleNote__imgSaxo}>
+              <Image unoptimized loader={({ src }) => src} src="https://res.cloudinary.com/atusdedos/image/upload/v1665985278/saxofon/saxofon_pznin2.png" alt="saxo" width={210} height={500} />
+              <button type="button" onClick={() => changeInputOne(!aux)}>
+                <Image src={aux ? '/images/saxobtn1A.png' : '/images/saxobtn1.png'} alt="play" width={81} height={121} />
+              </button>
+              {saxoData.map((value, index) => {
+                const keyIndex = index + 1;
+                return (
+                  <button type="button" key={keyIndex} className={value.click ? styles.fiddleNote__imgSaxo_act : null} onClick={() => changeInput(!value.click, value.name, value, keyIndex)} />
+                );
+              })}
             </div>
-            <form name="fluteForm" className={styles.courseFlute__actFalse_act}>
-              <div>
-                <Image src="/images/flautaAct.png" alt="flautaAct" width={187} height={304} />
+            {/*   */}
+            <div className={styles.fiddleNote__notesAct}>
+              <p className={styles.fiddleNote__notes_title}>Analiza la nota dada y selecciónala en el diagrama.</p>
+              <div className={styles.fiddleNote__notes_name}>
+                {/* <ReactAudioPlayer src={note.audio} controls /> */}
+                <p>Identifique: <span>{exercise.name}</span></p>
               </div>
-              <input type="checkbox" name="a1" id="a1" onChange={() => changeInput(document.fluteForm.a1.checked, 'a1')} />
-              <input type="checkbox" name="a2" id="a2" onChange={() => changeInput(document.fluteForm.a2.checked, 'a2')} />
-              <input type="checkbox" name="a3" id="a3" onChange={() => changeInput(document.fluteForm.a3.checked, 'a3')} />
-              <input type="checkbox" name="a4" id="a4" onChange={() => changeInput(document.fluteForm.a4.checked, 'a4')} />
-              <input type="checkbox" name="a5" id="a5" onChange={() => changeInput(document.fluteForm.a5.checked, 'a5')} />
-              <input type="checkbox" name="a6" id="a6" onChange={() => changeInput(document.fluteForm.a6.checked, 'a6')} />
-              <input type="checkbox" name="a7" id="a7" onChange={() => changeInput(document.fluteForm.a7.checked, 'a7')} />
-              <input type="checkbox" name="a8" id="a8" onChange={() => changeInput(document.fluteForm.a8.checked, 'a8')} />
-              <input type="checkbox" name="a9" id="a9" onChange={() => changeInput(document.fluteForm.a9.checked, 'a9')} />
-              <input type="checkbox" name="a10" id="a10" onChange={() => changeInput(document.fluteForm.a10.checked, 'a10')} />
-              <input type="checkbox" name="a11" id="a11" onChange={() => changeInput(document.fluteForm.a11.checked, 'a11')} />
-              <input type="checkbox" name="a12" id="a12" onChange={() => changeInput(document.fluteForm.a12.checked, 'a12')} />
-              <input type="checkbox" name="a13" id="a13" onChange={() => changeInput(document.fluteForm.a13.checked, 'a13')} />
-              <input type="checkbox" name="a14" id="a14" onChange={() => changeInput(document.fluteForm.a14.checked, 'a14')} />
-              <input type="checkbox" name="a15" id="a15" onChange={() => changeInput(document.fluteForm.a15.checked, 'a15')} />
-              <button type="button" onClick={() => isItOk()}>Responder</button>
-
-            </form>
-            {/* <div>
-              <Image src="/images/mano.png" alt="mano" width={210} height={173} />
-            </div> */}
+              <button type="button" className={styles.courseGuitar__exercise_answer} onClick={() => isItOk()}>Responder</button>
+            </div>
           </div>
-        </div>
+        </>
       )}
       <ReactModal
         isOpen={modal}

@@ -12,6 +12,13 @@ export default function FiddleNotesAct() {
   const [notes, setNotes] = useState('');
   const [note, setNote] = useState({});
   const [answersModal, setAnswersModal] = useState(false);
+  const [details, setDetails] = useState(false)
+  const [isHard, setIsHard] = useState(false);
+  const [cont, setCont] = useState(0);
+  const [help, setHelp] = useState(false);
+  const imgE = 'https://res.cloudinary.com/atusdedos/image/upload/v1666411946/Violin/violinEjemplo_wvqj47.png'
+  const imgH = 'https://res.cloudinary.com/atusdedos/image/upload/v1666411946/Violin/violinActHn_eeqiww.png'
+
   const updateNote = (value) => {
     setNotes(value);
   }
@@ -19,17 +26,25 @@ export default function FiddleNotesAct() {
     const randomId = Math.floor(Math.random() * 16);
     setNote(fiddleNotes[randomId]);
     setPlaying(true);
+    setCont(0);
+    setHelp(false);
   }
   const isItOk = () => {
-    console.log(note.value, notes);
+    const isok = note.value === notes
+    if (isok)
+      setCont(0);
+    else
+      setCont(cont + 1)
+    setIsRight(isok);
     setAnswersModal(true);
-    setIsRight(note.value === notes);
   }
   const finalize = () => {
     setAnswersModal(false);
     setPlaying(false);
     setNote({});
     setNotes('');
+    setCont(0);
+    setHelp(false);
   }
   const nextExercise = () => {
     setAnswersModal(false);
@@ -38,6 +53,10 @@ export default function FiddleNotesAct() {
   }
   return (
     <div className={styles.dashboard}>
+      <div className={styles.notes__controls}>
+        <button type="button" className={!isHard ? styles.notes__controls_active : null} onClick={() => { setIsHard(false); finalize() }}>Normal</button>
+        <button type="button" className={isHard ? styles.notes__controls_active : null} onClick={() => { setIsHard(true); finalize() }}>Dificil</button>
+      </div>
       {
         !playing ? (
           <div className={styles.courseGuitar__actFalse}>
@@ -46,7 +65,7 @@ export default function FiddleNotesAct() {
               <p className={styles.courseGuitar__actFalse_example}>Ejemplo:</p>
               <div className={styles.courseGuitar__actFalse_atc}>
                 <p>Visualiza la imagen y trata de comprender la nota que representa.</p>
-                <Image unoptimized loader={({ src }) => src} src="/images/violinEjemplo.png" alt="play" width={550} height={250} />
+                <Image unoptimized loader={({ src }) => src} src={isHard ? imgH : imgE} alt="play" width={550} height={250} />
               </div>
             </div>
             <button className={styles.courseGuitar__exercise_play} type="button" onClick={() => start()}>
@@ -55,24 +74,43 @@ export default function FiddleNotesAct() {
             </button>
           </div>
         ) : (
-          <div className={styles.fiddleNoteAct}>
-            <div className={styles.fiddleNote__imgAct}>
-              <Image src="/images/violinFondo.png" alt="violinNotes" width={334} height={480} />
-              {fiddleNotes.map((value, index) => {
-                const keyIndex = index + 1;
-                return (
-                  <button type="button" className={notes === value.value ? styles.fiddleNote__notes_active : styles.fiddleNote__notes_inActive} onClick={() => updateNote(value.value)} key={keyIndex}>{value.data}</button>
-                );
-              })}
+          <>
+            <div className={styles.notes__details}>
+              {!details ? (<button type="button" onClick={() => setDetails(true)}>¿Como jugar?</button>)
+                : (<button type="button" onClick={() => setDetails(false)}>Ocultar</button>)}
+              {details && (
+                <p className={styles.notes__details_description}>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam voluptas ex quasi, consequatur voluptate officiis. Impedit sequi porro delectus id non quidem saepe dolore sint atque, dignissimos, expedita voluptatem libero.
+                </p>
+              )}
             </div>
-            <div className={styles.fiddleNote__notesAct}>
-              <p className={styles.fiddleNote__notes_title}>Escucha, analiza y selecciona la nota que corresponde al audio.</p>
-              <div className={styles.fiddleNote__notes_note}>
-                <ReactAudioPlayer src={note.audio} controls />
+            <div className={styles.fiddleNoteAct}>
+              <div className={styles.fiddleNote__imgAct}>
+                <Image unoptimized loader={({ src }) => src} src="https://res.cloudinary.com/atusdedos/image/upload/v1666412816/Violin/violinFondo_xhy7y9.png" alt="violinNotes" width={334} height={480} />
+                {fiddleNotes.map((value, index) => {
+                  const keyIndex = index + 1;
+                  return (
+                    <button type="button" className={notes === value.value ? styles.fiddleNote__notes_active : styles.fiddleNote__notes_inActive} onClick={() => updateNote(value.value)} key={keyIndex}>{!isHard && value.data}</button>
+                  );
+                })}
               </div>
-              <button type="button" className={styles.courseGuitar__exercise_answer} onClick={() => isItOk()}>Responder</button>
+              <div className={styles.fiddleNote__notesAct}>
+                <p className={styles.fiddleNote__notes_title}>Escucha, analiza y selecciona la nota que corresponde al audio.</p>
+                {(cont >= 3 && !help) && (
+                  <button className={styles.courseGuitar__exercise_help} type="button" onClick={() => setHelp(true)}>
+                    <Image src="/images/help.svg" alt="play" width={20} height={20} />
+                    <span>Ayuda</span>
+                  </button>
+                )}
+                {help && (<p className={styles.courseGuitar__exercise_exercise}>Identifica: <span>{note.name}</span></p>)}
+                <div className={styles.courseGuitar__exercise_note}>
+
+                  <ReactAudioPlayer src={note.audio} controls />
+                </div>
+                <button type="button" className={styles.courseGuitar__exercise_answer} onClick={() => isItOk()}>Responder</button>
+              </div>
             </div>
-          </div>
+          </>
         )
       }
 

@@ -14,6 +14,7 @@ export default function GuitarNotesAct() {
   const [option, setOption] = useState([])
   const [answers, setAnswer] = useState({});
   const [answersModal, setAnswersModal] = useState(false);
+  const [details, setDetails] = useState(false)
 
   const start = () => {
     const randomId = Math.floor(Math.random() * 14);
@@ -61,7 +62,7 @@ export default function GuitarNotesAct() {
             <p className={styles.courseGuitar__actFalse_example}>Ejemplo:</p>
             <div className={styles.courseGuitar__actFalse_atc}>
               <p>Visualiza la imagen y trata de comprender la nota que representa.</p>
-              <Image unoptimized loader={({ src }) => src} src="/images/guitarNoteActE.png" alt="play" width={550} height={250} />
+              <Image unoptimized loader={({ src }) => src} src="https://res.cloudinary.com/atusdedos/image/upload/v1666412896/guitarExercises/guitarNoteActE_qdbfzn.png" alt="play" width={550} height={250} />
             </div>
           </div>
           <button className={styles.courseGuitar__exercise_play} type="button" onClick={() => start()}>
@@ -84,6 +85,15 @@ export default function GuitarNotesAct() {
             })}
           </div>
           <div className={styles.noteAct__notesAct}>
+            <div className={styles.notes__details}>
+              {!details ? (<button type="button" onClick={() => setDetails(true)}>¿Como jugar?</button>)
+                : (<button type="button" onClick={() => setDetails(false)}>Ocultar</button>)}
+              {details && (
+                <p className={styles.notes__details_description}>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam voluptas ex quasi, consequatur voluptate officiis. Impedit sequi porro delectus id non quidem saepe dolore sint atque, dignissimos, expedita voluptatem libero.
+                </p>
+              )}
+            </div>
             <div className={styles.noteAct__data}>
               <p className={styles.noteAct__notes_title}>Escucha, analiza y selecciona la nota que corresponde al audio.</p>
               <div className={styles.noteAct__notes_note}>

@@ -11,6 +11,7 @@ import GuitarExercises, { chords } from '../helpers/guitarExercises';
 
 export default function GuitarAct() {
   // status
+  const [details, setDetails] = useState(false)
   const [modal, setModal] = useState(false);
   const [playing, setPlaying] = useState(false);
   // guitar
@@ -132,6 +133,16 @@ export default function GuitarAct() {
         </div>
       ) : (
         <div className={styles.courseGuitar__exercise}>
+
+          <div className={styles.notes__details}>
+            {!details ? (<button type="button" onClick={() => setDetails(true)}>¿Como jugar?</button>)
+              : (<button type="button" onClick={() => setDetails(false)}>Ocultar</button>)}
+            {details && (
+              <p className={styles.notes__details_description}>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam voluptas ex quasi, consequatur voluptate officiis. Impedit sequi porro delectus id non quidem saepe dolore sint atque, dignissimos, expedita voluptatem libero.
+              </p>
+            )}
+          </div>
           <p className={styles.courseGuitar__exercise_exercise}>Identifica:<span>{exercise.name}</span></p>
           <div className={styles.courseGuitar__exercise}>
             <Guitar
