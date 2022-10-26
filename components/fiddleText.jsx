@@ -83,6 +83,129 @@ export default function FiddleText() {
           <div className={styles.dashboard__text_imgs}>
             <Image unoptimized loader={({ src }) => src} src="https://res.cloudinary.com/atusdedos/image/upload/v1666062517/Violin/tecnica-removebg-preview_oqkepq.png" alt="play" width={450} height={350} />
           </div>
+          <p className={styles.dashboard__text_subTitle}>Ejercicio de Arqueo #1</p>
+          <p className={styles.dashboard__text_txt}>
+            Lo primero que aremos será acostumbrarnos hacer los arqueo de manera correcta recuerda que siempre debe de ir derecho todo el tiempo el arqueo.
+          </p>
+          <p className={styles.dashboard__text_txt}>
+            Comienza haciéndolo despacio hasta que te acostumbres a deslizar el arco de manera correcta, un buen consejo es práctica frente a un espejo todos los días.
+          </p>
+          <p className={styles.dashboard__text_txt}>
+            Sigue estos sencillos pasos.
+          </p>
+          <p className={styles.dashboard__text_txt}>
+            1.- Vamos a colocar el talón del arco en la segunda cuerda y vamos a comenzar con el arqueo de 4 tiempos. Esto quiere decir que del talón a la puta debe tener una duración de 4 segundos y de la punta al talón la misma duración. Hacer este ejercicio 15 minutos.
+          </p>
+          <p className={styles.dashboard__text_txt}>
+            2.-De igual manera pero ahora con 2 tiempos y después el de 1, el de ½ etc...
+          </p>
+          <p className={styles.dashboard__text_txt}>
+            Excelente vamos avanzando muy bien. Ahora vamos a conocer la ubicación de las notas en el diapasón del violín.
+          </p>
+          <p className={styles.dashboard__text_txt}>
+            Posición de los sonidos en el diapasón del violín.
+          </p>
+          <p className={styles.dashboard__text_txt}>
+            Muy bien para esto lo vamos a ubicar como primera, segunda, y tercera posición.
+          </p>
+        </div>
+      </details>
+      <details className={styles.dashboard__text}>
+        <summary className={styles.dashboard__text_title}>Posiciones de las Notas en el Violin</summary>
+        <div className={styles.dashboard__text_body}>
+          <p className={styles.dashboard__text_txt}>
+            Antes de comenzar vamos a facilitar la ubicación de las notas colocando dos cintas en el diapasón, 
+            para que sea más sencillo memorizar las posiciones de las notas así como facilitar que memorices los sonidos
+          </p>
+          <div className={styles.dashboard__text_imgs}>
+            <Image unoptimized loader={({ src }) => src} src="" alt="play" width={450} height={350} />
+          </div>
+          <p className={styles.dashboard__text_txt}>
+            Vamos a considerar la escala natural para facilitar la ubicación de las notas.
+          </p>
+          <div className={styles.dashboard__text_imgs}>
+            <Image unoptimized loader={({ src }) => src} src="" alt="play" width={450} height={350} />
+          </div>
+          <p className={styles.dashboard__text_txt}>
+            Esto mismo se aplica al diapasón del violín. También hay que considerar los dedos con los que vamos a tocar las notas, para lograr una mejor posición. Lo primero será saber los números que tienen los dedos.
+          </p>
+          <div className={styles.dashboard__text_imgs}>
+            <Image unoptimized loader={({ src }) => src} src="" alt="play" width={450} height={350} />
+          </div>
+          <p className={styles.dashboard__text_txt}>
+            En la siguiente imagen podemos ver el rango de los dedos en el diapasón del violín.
+          </p>
+          <div className={styles.dashboard__text_imgs}>
+            <Image unoptimized loader={({ src }) => src} src="" alt="play" width={450} height={350} />
+          </div>
+          <p className={styles.dashboard__text_txt}>
+            Notamos el rango que abarcan cada uno de los dedos; el dedo 1 abarca de la primera cinta hacia la parte de atrás, 
+            esto quiere decir que las notas que encontremos en la primera cinta y detrás de la misma se pisan con el dedo uno.
+          </p>
+          <p className={styles.dashboard__text_txt}>
+            El dedo dos abarca las notas que se encuentran en medio de las dos cintas, y el dedo tres abarca las notas que se encuentran en la segunda cinta y fuera de la misma.
+          </p>
+          <p className={styles.dashboard__text_txt}>
+            AHORA VAMOS YA A UBICAR LAS NOTAS EN EL VIOLIN. Toma en cuenta la escala natural para esta posición.
+          </p>
+          <p className={styles.dashboard__text_subTitle}>Posicion de las Notas en el Diapason del Violin</p>
+          <span className={styles.dashboard__text_bold}>Primera Posicion</span>  
+          <p className={styles.dashboard__text_txt}>
+            Notas Naturales:
+          </p>
+          <div className={styles.dashboard__text_imgs}>
+            <Image unoptimized loader={({ src }) => src} src="" alt="play" width={450} height={350} />
+          </div>
+          <span className={styles.dashboard__text_bold}>Segunda Posicion</span>  
+          <p className={styles.dashboard__text_txt}>
+            Notas Sostenidas:
+          </p>
+          <div className={styles.dashboard__text_imgs}>
+            <Image unoptimized loader={({ src }) => src} src="" alt="play" width={450} height={350} />
+          </div>
+          <span className={styles.dashboard__text_bold}>Tercera Posicion</span>  
+          <p className={styles.dashboard__text_txt}>
+            Notas Bemoles:
+          </p>
+          <div className={styles.dashboard__text_imgs}>
+            <Image unoptimized loader={({ src }) => src} src="" alt="play" width={450} height={350} />
+          </div>
+          <p className={styles.dashboard__text_txt}>
+            Entonces estas son las posiciones de las notas en el violín. Una vez las hayas memorizado pasaremos ya a tocar ya las escalas.
+          </p>
+          <p className={styles.dashboard__text_subTitle}>Escalas. </p>
+          <p className={styles.dashboard__text_txt}>
+            Las escalas nos ayudaran ya a reforzar de manera concreta la memorización de las notas en el diapasón del violín, 
+            así como también afianzaremos la técnica para pisar en el mismo.
+          </p>
+          <div className={styles.dashboard__text_imgs}>
+            <Image unoptimized loader={({ src }) => src} src="" alt="play" width={450} height={350} />
+          </div>
+          <p className={styles.dashboard__text_txt}>
+            Practica todos los días estas calas con la mayor velocidad posible para que puedas ir mejorando tu técnica en el violín, 
+            recuera la práctica hace al maestro. A continuación vamos a ver los arpegios esta técnica nos ayudara a mejorar la velocidad a 
+            la hora de tocar tu instrumento.
+          </p>
+          <p className={styles.dashboard__text_subTitle}>Arpegios. </p>
+          <p className={styles.dashboard__text_txt}>
+            Los arpegios son la técnica que nos ayudara a la velocidad y a la soltura de los dedos pues que en este ejercicio vamos a trabajar 
+            más aun la velocidad combinando las notas junto con los diversos números de dedos.
+          </p>
+          <p className={styles.dashboard__text_txt}>
+            Enfócate en hacer este ejercicio de una manera muy consciente ya que este te ayudara a mejorar la técnica y la velocidad aunque continuemos 
+            avanzando te recomiendo seguirlo estudiando, también puede ser un excelente ejercicio de calentamiento antes de comenzar a tocar. Sin más comencemos.
+          </p>
+          <div className={styles.dashboard__text_imgs}>
+            <Image unoptimized loader={({ src }) => src} src="" alt="play" width={450} height={350} />
+          </div>
+          <p className={styles.dashboard__text_txt}>
+            Excelente vamos muy bien. Una vez terminados estos ejercicios estamos listos para continuar con nuestro proceso, ahora ya nos enfocaremos en perfeccionar 
+            la técnica que estamos utilizando, pero ahora, lo haremos estudiando solo con partituras, es importante tomar en cuenta que leer una partitura 
+            no es nada sencillo por lo tanto recuerda estar consultando tu manual de teoría musical para que puedas desarrollarte de una manera más eficaz.
+          </p>
+          <p className={styles.dashboard__text_txt}>
+            Recuerda que la música necesita tiempo y constancia entonces nos adentraremos a este mundo fascinante de notas y sonidos. Comencemos pues.
+          </p>
         </div>
       </details>
     </div>
