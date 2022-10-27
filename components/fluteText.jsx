@@ -21,7 +21,8 @@ export default function FluteText() {
             diversos tipos de flautas de pico, desde la quena usada en la región de los Andes hasta el shakuhachi japonés tallado en bambú.
           </p>
           <div className={styles.dashboard__text_imgs}>
-            <Image unoptimized loader={({ src }) => src} src="" alt="play" width={450} height={350} />
+            {/* img comentada para que no de error
+            <Image unoptimized loader={({ src }) => src} src="" alt="play" width={450} height={350} /> */}
           </div>
 
           <p className={styles.dashboard__text_txt}>
@@ -30,7 +31,8 @@ export default function FluteText() {
             En Europa tenemos una gran variedad de flautas oblicuas desde flautas rumanas hasta flautas griegas.
           </p>
           <div className={styles.dashboard__text_imgs}>
-            <Image unoptimized loader={({ src }) => src} src="" alt="play" width={450} height={350} />
+            {/* img comentada para que no de error
+            <Image unoptimized loader={({ src }) => src} src="" alt="play" width={450} height={350} /> */}
           </div>
           <p className={styles.dashboard__text_txt}>
           <span className={styles.dashboard__text_bold}>3.- La Flauta Traversa</span>
@@ -42,7 +44,8 @@ export default function FluteText() {
             este instrumento. En este periodo la flauta traversa lleva la delantera del restos de flautas y logra ocupar el puesto número uno.
           </p>
           <div className={styles.dashboard__text_imgs}>
-            <Image unoptimized loader={({ src }) => src} src="" alt="play" width={450} height={350} />
+            {/* img comentada para que no de error
+            <Image unoptimized loader={({ src }) => src} src="" alt="play" width={450} height={350} /> */}
           </div>
           <p className={styles.dashboard__text_txt}>
           <span className={styles.dashboard__text_bold}>Caracteristicas Generales del Instrumento: </span>
@@ -54,7 +57,8 @@ export default function FluteText() {
             pero su registro de uso más común se encuentra entre el D4 y el A6.
           </p>
           <div className={styles.dashboard__text_imgs}>
-            <Image unoptimized loader={({ src }) => src} src="" alt="play" width={450} height={350} />
+            {/* img comentada para que no de error
+            <Image unoptimized loader={({ src }) => src} src="" alt="play" width={450} height={350} /> */}
           </div>
           <p className={styles.dashboard__text_txt}>
           <span className={styles.dashboard__text_bold}>Calidades del Registro: </span>
@@ -62,7 +66,8 @@ export default function FluteText() {
            si se tiene un conocimiento previo de lo que se está tocando. En el siguiente cuadro encontramos la tesitura de la flauta dividido por características del registro.
           </p>
           <div className={styles.dashboard__text_imgs}>
-            <Image unoptimized loader={({ src }) => src} src="" alt="play" width={450} height={350} />
+            {/* img comentada para que no de error
+            <Image unoptimized loader={({ src }) => src} src="" alt="play" width={450} height={350} /> */}
           </div>
           <p className={styles.dashboard__text_txt}>
             La flauta traversa estuvo elaborada de madera en sus inicios. Actualmente, el material más usado es el metal, pero también se usan materiales 
@@ -74,7 +79,8 @@ export default function FluteText() {
             observamos en el siguiente cuadro:
           </p>
           <div className={styles.dashboard__text_imgs}>
-            <Image unoptimized loader={({ src }) => src} src="" alt="play" width={450} height={350} />
+            {/* img comentada para que no de error
+            <Image unoptimized loader={({ src }) => src} src="" alt="play" width={450} height={350} /> */}
           </div>
           <p className={styles.dashboard__text_txt}>
           <span className={styles.dashboard__text_bold}>Digitaciones: </span>
@@ -86,7 +92,8 @@ export default function FluteText() {
             los sonidos. En el siguiente cuadro podremos observar cómo se producen todos los sonidos del registro de una flauta en DO:
           </p>
           <div className={styles.dashboard__text_imgs}>
-            <Image unoptimized loader={({ src }) => src} src="" alt="play" width={450} height={350} />
+            {/* img comentada para que no de error
+            <Image unoptimized loader={({ src }) => src} src="" alt="play" width={450} height={350} /> */}
           </div>
         </div>
       </details>
@@ -102,7 +109,8 @@ export default function FluteText() {
           </p>
           <p className={styles.dashboard__text_subTitle}>Anatomia y Fidiologia del Sistema Respiratorio.</p>
           <div className={styles.dashboard__text_imgs}>
-            <Image unoptimized loader={({ src }) => src} src="" alt="play" width={450} height={350} />
+            {/* img comentada para que no de error
+            <Image unoptimized loader={({ src }) => src} src="" alt="play" width={450} height={350} /> */}
           </div>
           <p className={styles.dashboard__text_txt}>
           <span className={styles.dashboard__text_bold}>Cavidades Nasales: </span>
@@ -299,7 +307,7 @@ export default function FluteText() {
             Imite el proceso de masticación exagerándolo de tal forma que se muevan las mejillas para que se relajen. Realice este proceso unos diez segundos.
           </p>
           <p className={styles.dashboard__text_txt}>
-            Ahora respire profundamente y soltando el aire imite al "relincho de un caballo" mientras canta una nota. Puede realizar esto unas cinco veces.
+            Ahora respire profundamente y soltando el aire imite al &quot;relincho de un caballo&quot; mientras canta una nota. Puede realizar esto unas cinco veces.
           </p>
           <span className={styles.dashboard__text_bold}>2.- Ejercicios de Respiracion.</span>
           <p className={styles.dashboard__text_txt}>
@@ -347,11 +355,13 @@ export default function FluteText() {
           </p>
           <span className={styles.dashboard__text_bold}>Moderato e Tranquillo</span>
           <div className={styles.dashboard__text_imgs}>
-            <Image unoptimized loader={({ src }) => src} src="" alt="play" width={450} height={350} />
+            {/* img comentada para que no de error
+            <Image unoptimized loader={({ src }) => src} src="" alt="play" width={450} height={350} /> */}
           </div>
           <span className={styles.dashboard__text_bold}>Grave</span>
           <div className={styles.dashboard__text_imgs}>
-            <Image unoptimized loader={({ src }) => src} src="" alt="play" width={450} height={350} />
+            {/* img comentada para que no de error
+            <Image unoptimized loader={({ src }) => src} src="" alt="play" width={450} height={350} /> */}
           </div>
         </div>
       </details>
@@ -391,7 +401,8 @@ export default function FluteText() {
             Hágalo con todo el registro.
           </p>
           <div className={styles.dashboard__text_imgs}>
-            <Image unoptimized loader={({ src }) => src} src="" alt="play" width={450} height={350} />
+            {/* img comentada para que no de error
+            <Image unoptimized loader={({ src }) => src} src="" alt="play" width={450} height={350} /> */}
           </div>
           <p className={styles.dashboard__text_txt}>
             Excelente trabajo ahora vamos a comenzar de lleno el estudio de la flauta, antes que nada vamos a comenzar trabajando la velocidad 
@@ -403,7 +414,8 @@ export default function FluteText() {
             así como también afianzaremos la técnica para pisar en el mismo y reproducir los distintos sonidos.
           </p>
           <div className={styles.dashboard__text_imgs}>
-            <Image unoptimized loader={({ src }) => src} src="" alt="play" width={450} height={350} />
+            {/* img comentada para que no de error
+            <Image unoptimized loader={({ src }) => src} src="" alt="play" width={450} height={350} /> */}
           </div>
           <p className={styles.dashboard__text_txt}>
             Practica todos los días estas calas con la mayor velocidad posible para que puedas ir mejorando tu técnica en la flauta, 
@@ -419,7 +431,8 @@ export default function FluteText() {
             te recomiendo seguirlo estudiando, también puede ser un excelente ejercicio de calentamiento antes de comenzar a tocar. Sin más comencemos.
           </p>
           <div className={styles.dashboard__text_imgs}>
-            <Image unoptimized loader={({ src }) => src} src="" alt="play" width={450} height={350} />
+            {/* img comentada para que no de error
+            <Image unoptimized loader={({ src }) => src} src="" alt="play" width={450} height={350} /> */}
           </div>
           <p className={styles.dashboard__text_txt}>
             Excelente vamos muy bien. Una vez terminados estos ejercicios estamos listos para continuar con nuestro proceso, ahora ya nos enfocaremos 

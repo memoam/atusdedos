@@ -37,7 +37,7 @@ export const perfectEar = [
   {
     name: 'Identificar notas',
     link: '/panel/identificar_notas',
-    icon: '/images/noteIcon.svg',
+    icon: '/images/hear.svg',
   },
   {
     name: ' Memorama',
