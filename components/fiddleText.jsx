@@ -118,29 +118,25 @@ export default function FiddleText() {
             para que sea más sencillo memorizar las posiciones de las notas así como facilitar que memorices los sonidos
           </p>
           <div className={styles.dashboard__text_imgs}>
-            {/* Img comentada para que pueda compilar */}
-            {/* <Image unoptimized loader={({ src }) => src} src="" alt="play" width={450} height={350} /> */}
+            <Image unoptimized loader={({ src }) => src} src="https://res.cloudinary.com/atusdedos/image/upload/v1667069126/Violin/posicionnotas-removebg-preview_zvpjm8.png" alt="play" width={500} height={100} /> 
           </div>
           <p className={styles.dashboard__text_txt}>
             Vamos a considerar la escala natural para facilitar la ubicación de las notas.
           </p>
           <div className={styles.dashboard__text_imgs}>
-            {/* Img comentada para que pueda compilar */}
-            {/* <Image unoptimized loader={({ src }) => src} src="" alt="play" width={450} height={350} /> */}
+            <Image unoptimized loader={({ src }) => src} src="https://res.cloudinary.com/atusdedos/image/upload/v1667069126/Violin/doremi-removebg-preview_sbj9zx.png" alt="play" width={300} height={150} /> 
           </div>
           <p className={styles.dashboard__text_txt}>
             Esto mismo se aplica al diapasón del violín. También hay que considerar los dedos con los que vamos a tocar las notas, para lograr una mejor posición. Lo primero será saber los números que tienen los dedos.
           </p>
           <div className={styles.dashboard__text_imgs}>
-            {/* Img comentada para que pueda compilar */}
-            {/* <Image unoptimized loader={({ src }) => src} src="" alt="play" width={450} height={350} /> */}
+            <Image unoptimized loader={({ src }) => src} src="https://res.cloudinary.com/atusdedos/image/upload/v1667069126/Violin/manos-removebg-preview_vpmaqq.png" alt="play" width={400} height={200} />
           </div>
           <p className={styles.dashboard__text_txt}>
             En la siguiente imagen podemos ver el rango de los dedos en el diapasón del violín.
           </p>
           <div className={styles.dashboard__text_imgs}>
-            {/* Img comentada para que pueda compilar */}
-            {/* <Image unoptimized loader={({ src }) => src} src="" alt="play" width={450} height={350} /> */}
+            <Image unoptimized loader={({ src }) => src} src="https://res.cloudinary.com/atusdedos/image/upload/v1667069127/Violin/rango-removebg-preview_hnsd4g.png" alt="play" width={500} height={100} /> 
           </div>
           <p className={styles.dashboard__text_txt}>
             Notamos el rango que abarcan cada uno de los dedos; el dedo 1 abarca de la primera cinta hacia la parte de atrás,
@@ -158,24 +154,21 @@ export default function FiddleText() {
             Notas Naturales:
           </p>
           <div className={styles.dashboard__text_imgs}>
-            {/* Img comentada para que pueda compilar */}
-            {/* <Image unoptimized loader={({ src }) => src} src="" alt="play" width={450} height={350} /> */}
+            <Image unoptimized loader={({ src }) => src} src="https://res.cloudinary.com/atusdedos/image/upload/v1667069126/Violin/notas1-removebg-preview_1_jlkgvw.png" alt="play" width={500} height={100} /> 
           </div>
           <span className={styles.dashboard__text_bold}>Segunda Posicion</span>
           <p className={styles.dashboard__text_txt}>
             Notas Sostenidas:
           </p>
           <div className={styles.dashboard__text_imgs}>
-            {/* Img comentada para que pueda compilar */}
-            {/* <Image unoptimized loader={({ src }) => src} src="" alt="play" width={450} height={350} /> */}
+            <Image unoptimized loader={({ src }) => src} src="https://res.cloudinary.com/atusdedos/image/upload/v1667069126/Violin/notas2-removebg-preview_1_xnckea.png" alt="play" width={500} height={100} /> 
           </div>
           <span className={styles.dashboard__text_bold}>Tercera Posicion</span>
           <p className={styles.dashboard__text_txt}>
             Notas Bemoles:
           </p>
           <div className={styles.dashboard__text_imgs}>
-            {/* Img comentada para que pueda compilar */}
-            {/* <Image unoptimized loader={({ src }) => src} src="" alt="play" width={450} height={350} /> */}
+            <Image unoptimized loader={({ src }) => src} src="https://res.cloudinary.com/atusdedos/image/upload/v1667069126/Violin/notas3-removebg-preview_gupdoi.png" alt="play" width={500} height={100} /> 
           </div>
           <p className={styles.dashboard__text_txt}>
             Entonces estas son las posiciones de las notas en el violín. Una vez las hayas memorizado pasaremos ya a tocar ya las escalas.
@@ -186,8 +179,7 @@ export default function FiddleText() {
             así como también afianzaremos la técnica para pisar en el mismo.
           </p>
           <div className={styles.dashboard__text_imgs}>
-            {/* Img comentada para que pueda compilar */}
-            {/* <Image unoptimized loader={({ src }) => src} src="" alt="play" width={450} height={350} /> */}
+            <Image unoptimized loader={({ src }) => src} src="https://res.cloudinary.com/atusdedos/image/upload/v1667069127/Violin/escalas-removebg-preview_eihms4.png" alt="play" width={450} height={600} />
           </div>
           <p className={styles.dashboard__text_txt}>
             Practica todos los días estas calas con la mayor velocidad posible para que puedas ir mejorando tu técnica en el violín,
@@ -204,8 +196,7 @@ export default function FiddleText() {
             avanzando te recomiendo seguirlo estudiando, también puede ser un excelente ejercicio de calentamiento antes de comenzar a tocar. Sin más comencemos.
           </p>
           <div className={styles.dashboard__text_imgs}>
-            {/* Img comentada para que pueda compilar */}
-            {/* <Image unoptimized loader={({ src }) => src} src="" alt="play" width={450} height={350} /> */}
+            <Image unoptimized loader={({ src }) => src} src="https://res.cloudinary.com/atusdedos/image/upload/v1667069127/Violin/arpe-removebg-preview_ijmtwu.png" alt="play" width={350} height={500} />
           </div>
           <p className={styles.dashboard__text_txt}>
             Excelente vamos muy bien. Una vez terminados estos ejercicios estamos listos para continuar con nuestro proceso, ahora ya nos enfocaremos en perfeccionar
