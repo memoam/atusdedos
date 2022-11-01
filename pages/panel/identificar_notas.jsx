@@ -9,6 +9,8 @@ import GuitarNotes from '../../components/guitarNotes';
 import GuitarNotesAct from '../../components/guitarNotesAct';
 import GuitarNotesActH from '../../components/guitarNotesActH';
 import UkeleleNotes from '../../components/ukeleleNotes';
+import UkeleleNotesAct from '../../components/ukeleleNotesAct';
+import UkeleleNotesActH from '../../components/ukeleleNotesActH';
 import FiddleNotes from '../../components/fiddleNotes';
 import FiddleNotesAct from '../../components/fiddleNotesAct';
 import SaxoNotes from '../../components/saxofonNotes';
@@ -70,7 +72,7 @@ export default function Notes() {
             : instrument === 3 ? course ? (<UkeleleNotes />) : (
               <>
                 {btn}
-                {isHard ? null : null}
+                {isHard ? <UkeleleNotesActH /> : <UkeleleNotesAct />}
               </>
             ) : instrument === 4 ? course ? (<SaxoNotes />) : (
               <>

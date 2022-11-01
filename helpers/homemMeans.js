@@ -43,27 +43,27 @@ export const skillsInit =[
 export const dataIndex = [
   {
     name: 'violín',
-    link: '/para_aprender',
+    link: '/violin',
     icon: '/images/violinIcon.png',
   },
   {
     name: 'flauta transversal',
-    link: '/para_aprender',
+    link: '/flauta_transversal',
     icon: '/images/fluteIcon.svg',
   },
   {
     name: 'guitarra',
-    link: '/para_aprender',
+    link: '/guitarra',
     icon: '/images/guitarIcon.svg',
   },
   {
     name: 'ukelele',
-    link: '/para_aprender',
+    link: '/ukelele',
     icon: '/images/ukeleleIcon.svg',
   },
   {
     name: 'Saxofón alto',
-    link: '/para_aprender',
+    link: '/saxofon_alto',
     icon: '/images/saxo.png',
   },
 ];

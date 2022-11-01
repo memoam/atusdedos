@@ -1590,13 +1590,13 @@
 
     &_asw {
       position: absolute;
-      bottom: 1em;
-      right: 1em;
+      bottom: -0.5em;
+      right: -0.5em;
       box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
       background: $primary;
       color: $textWhite;
       padding: 0.5em;
-      border-radius: 50%;
+      border-radius: 1em;
     }
 
     button {

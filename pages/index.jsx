@@ -40,7 +40,7 @@ export default function Home() {
             <div className={styles.section} key={keyIndex}>
               <p className={styles.section__title}>{course.name}</p>
               <div className={styles.section__cards}>
-                <Cards data={ authData.token === null ? course.value: course.valueInit} />
+                <Cards data={authData.token === null ? course.value : course.valueInit} />
               </div>
             </div>
           );
