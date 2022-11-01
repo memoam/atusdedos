@@ -65,7 +65,7 @@ export default function UkeleleNotesActH() {
               <p className={styles.courseGuitar__actFalse_example}>Ejemplo:</p>
               <div className={styles.courseGuitar__actFalse_atc}>
                 <p>Visualiza la imagen y trata de comprender la nota que representa.</p>
-                <Image unoptimized loader={({ src }) => src} src="https://res.cloudinary.com/atusdedos/image/upload/v1666375403/guitarExercises/gNotesH_onuykl.png" alt="play" width={550} height={250} />
+                <Image unoptimized loader={({ src }) => src} src="https://res.cloudinary.com/atusdedos/image/upload/v1667277150/ukeleleExercises/ukeleleactH_px5qty.png" alt="play" width={550} height={250} />
               </div>
             </div>
             <button className={styles.courseGuitar__exercise_play} type="button" onClick={() => start()}>
