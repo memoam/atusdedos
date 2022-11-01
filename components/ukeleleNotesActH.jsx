@@ -50,7 +50,7 @@ export default function UkeleleNotesActH() {
   const finalize = () => {
     setAnswersModal(false);
     setPlaying(false);
-    setStrings([0, 0, 0, 0, 0, 0]);
+    setStrings([0, 0, 0, 0]);
     setGuitarCapo(0);
     setCont(0);
     setHelp(false);
