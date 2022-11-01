@@ -25,8 +25,8 @@ export default function GuitarText() {
             manera rápida no significa que estás listo para la siguiente. Trata de entender y dominar cada lección que tomes antes de avanzar. 
           </p>
           <p className={styles.dashboard__text_txt}>
-            4. "Todo ejercicio debe estudiarse muy lentamente, y una vez dominado puede acelerarse, pero 
-            nunca a un tiempo que impida el control de los movimientos". Esta frase es ya muy conocida, es 
+            4. &quot;Todo ejercicio debe estudiarse muy lentamente, y una vez dominado puede acelerarse, pero 
+            nunca a un tiempo que impida el control de los movimientos&quot;. Esta frase es ya muy conocida, es 
             importante que entiendas que cuando se aprende a tocar un instrumento lo más que debes darle 
             importancia es la calidad del sonido que produces, no a la velocidad en que tocas. 
           </p>
@@ -243,7 +243,7 @@ export default function GuitarText() {
           </div>
           <p className={styles.dashboard__text_txt}>
             Las letras e, B, G, D, A y E indican el nombre de la nota que produce la cuerda tocada al 
-            aire, de la más delgada a la más gruesa. La 'e' minúscula es la nota de Mi pero más aguda 
+            aire, de la más delgada a la más gruesa. La &quot;e&quot; minúscula es la nota de Mi pero más aguda 
             (dos octavas más). A veces se ven éstas letras en las tablaturas y otras veces no. La razón 
             de que no las lleva es que esta es la afinación estándar y se da por entendido que es de esta 
             forma. 
