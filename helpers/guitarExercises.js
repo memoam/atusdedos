@@ -230,7 +230,7 @@ export default function GuitarExercises(typeGame, id) {
     },
     {
       name: 'Do# (7°)',
-      answers: [-1, 1, 4, 3, 4, -1],
+      answers: [-1, 2, 4, 3, 4, -1],
       img: 'https://res.cloudinary.com/atusdedos/image/upload/v1665284474/guitarExercises/7/do__7_zmled6.png',
       guitarCapo: 0,
     },
