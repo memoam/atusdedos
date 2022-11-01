@@ -21,7 +21,7 @@ export default function Cards({ data }) {
   );
 }
 Cards.propTypes = {
-  data: PropTypes.objectOf(PropTypes.shape({
+  data: PropTypes.arrayOf(PropTypes.shape({
     name: PropTypes.string.isRequired,
     link: PropTypes.string.isRequired,
     icon: PropTypes.string.isRequired,

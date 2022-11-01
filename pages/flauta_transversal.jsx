@@ -8,7 +8,7 @@ import Price from '../components/price';
 import styles from '../styles/Home.module.scss';
 import Footer from '../components/footer';
 
-export default function ToLearn() {
+export default function Flute() {
   return (
     <div className={styles.container}>
       <Header home />
@@ -17,7 +17,7 @@ export default function ToLearn() {
       </div>
       <div className={styles.main}>
         <p className={styles.main__titleCourse}>APRENDE ALGO NUEVO CADA DÍA</p>
-        <p className={styles.main__title2}>Instrumentos musicales</p>
+        <p className={styles.main__title2}>Flauta Transversal</p>
         <div className={styles.main__text}>
           <div className={styles.main__text_txt}>
             <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Excepturi voluptate quos voluptatibus nemo dicta aperiam corrupti est recusandae harum error aspernatur veniam autem, maiores soluta. Officiis dolorum consequatur est quasi!</p>
