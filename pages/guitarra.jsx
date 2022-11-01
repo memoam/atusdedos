@@ -20,10 +20,18 @@ export default function guitar() {
         <p className={styles.main__title2}>Guitarra</p>
         <div className={styles.main__text}>
           <div className={styles.main__text_txt}>
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Excepturi voluptate quos voluptatibus nemo dicta aperiam corrupti est recusandae harum error aspernatur veniam autem, maiores soluta. Officiis dolorum consequatur est quasi!</p>
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Excepturi voluptate quos voluptatibus nemo dicta aperiam corrupti est recusandae harum error aspernatur veniam autem, maiores soluta. Officiis dolorum consequatur est quasi!</p>
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Excepturi voluptate quos voluptatibus nemo dicta aperiam corrupti est recusandae harum error aspernatur veniam autem, maiores soluta. Officiis dolorum consequatur est quasi!</p>
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Excepturi voluptate quos voluptatibus nemo dicta aperiam corrupti est recusandae harum error aspernatur veniam autem, maiores soluta. Officiis dolorum consequatur est quasi!</p>
+            <p>
+              Pregúntale a cualquier persona que quiere ser músico qué instrumento le gustaría tocar y cerca del 90 % de ellas señalaría la 
+              guitarra que está en un rincón de la sala de estar. Además de tener un uso extendido en todos los estilos y géneros musicales, 
+              también suele ser el primer instrumento que cualquier músico nuevo quiere tener (o por el que pasa las vacaciones rogándoles a sus padres).
+            </p>
+            <p>
+              Todo lo que necesitas para tocar un puñado de canciones populares es aprender algunos acordes básicos y ejercitar un poco el ritmo. 
+              Lo que hace que la guitarra sea más llamativa aun es su historia rica y compleja.
+            </p>
+            <p>
+              Si bien las raíces de la guitarra son un tanto conocidas, es probable que te sorprendas con otros aspectos de la evolución del instrumento.
+            </p>
           </div>
           <Image src="/images/saxoPeople.png" alt="saxoPeople" width={248} height={482} />
         </div>
